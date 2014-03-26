@@ -90,7 +90,7 @@ module.exports.config =
     before: 2
     after: 2
     modules: false
-    onlyMap: true
+    all: false
   # Should command exit after an uncaught error is reported
   uncaught:
     exit: true
