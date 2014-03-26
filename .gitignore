@@ -1,0 +1,6 @@
+.project
+.settings
+*.sublime-*
+/node_modules/
+/doc/
+/lib/

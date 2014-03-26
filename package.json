@@ -1,0 +1,36 @@
+{
+  "name": "alinex-error",
+  "version": "0.0.0",
+  "description": "",
+  "copyright": "Alexander Schilling 2013-2014",
+  "keywords": "",
+  "homepage": "http://alinex.github.io/node-error/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alinex/node-error.git"
+  },
+  "bugs": "https://github.com/alinex/node-error/issues",
+  "author": {
+    "name": "Alexander Schilling",
+    "email": "info@alinex.de",
+    "web": "http://alinex.de"
+  },
+  "contributors": [],
+  "license": "Apache-2.0",
+  "main": "./lib/index.js",
+  "scripts": {
+    "prepublish": "node_modules/.bin/coffee -c -m -o lib src"
+  },
+  "directories": {
+    "lib": "./lib"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "coffee-script": "1.x"
+  },
+  "optionalDependencies": {},
+  "engines": {
+    "node": ">=0.10"
+  },
+  "os": []
+}
