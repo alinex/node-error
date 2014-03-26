@@ -32,6 +32,7 @@ config = module.exports.config =
     before: 2
     after: 2
     modules: false
+    onlyMap: true
   # Should command exit after an uncaught error is reported
   uncaught:
     exit: true
@@ -110,7 +111,7 @@ prepareStackTrace = (err, stack) ->
     return '' unless config.stack.modules or !~frame.getFileName().indexOf '/node_modules/'
     return '' unless config.stack.system or ~frame.getFileName().indexOf '/'
     out = "\n  at #{ frame}"
-    out += getCodeview frame
+    out += getCodeview frame if config.code.onlyMap
     if frame = mapFrame frame
       out += "\n     #{ frame }"
       out += getCodeview frame
