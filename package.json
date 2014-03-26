@@ -1,9 +1,9 @@
 {
   "name": "alinex-error",
-  "version": "0.0.0",
-  "description": "",
+  "version": "0.0.1",
+  "description": "Configurable error handler with source-map support.",
   "copyright": "Alexander Schilling 2013-2014",
-  "keywords": "",
+  "keywords": "error, exception, handler, source-map",
   "homepage": "http://alinex.github.io/node-error/",
   "repository": {
     "type": "git",
@@ -24,7 +24,10 @@
   "directories": {
     "lib": "./lib"
   },
-  "dependencies": {},
+  "dependencies": {
+    "source-map": "^0.1.33",
+    "sprintf-js": "0.0.7"
+  },
   "devDependencies": {
     "coffee-script": "1.x"
   },
