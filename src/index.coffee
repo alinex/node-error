@@ -20,8 +20,9 @@ sprintf = require("sprintf-js").sprintf
 
 # Configuration
 # -------------------------------------------------
-config = module.exports.config = 
-  # Define if and which stack lines to show
+config = module.exports.config =
+  colors: true
+  # Define whether and which stack lines to show
   stack:
     view: true
     modules: false
@@ -83,7 +84,9 @@ uncaughtError = (err) ->
 #   Specification to be added in recursive calls
 module.exports.report = (err, level, codePart) ->
   if err instanceof Error
-    title = err.toString().bold[if level? then 'magenta' else 'red']
+    title = err.toString()
+    if config.colors
+      title = title.bold[if level? then 'magenta' else 'red']
     title = "Caused by #{ title }" if level
     title += " #{ codePart }" if codePart
     console.error title + err.stack.replace /.*?\n/, '\n'
@@ -93,9 +96,10 @@ module.exports.report = (err, level, codePart) ->
         for entry in err.cause
           module.exports.report entry, level+1, err.codePart?
       else
-        module.exports.report err.cause, level+1, err.codePart?    
+        module.exports.report err.cause, level+1, err.codePart?
   else
     console.error err.toString().red.bold
+
 
 # Helper methods
 # -------------------------------------------------
@@ -106,8 +110,10 @@ module.exports.report = (err, level, codePart) ->
 # http://code.google.com/p/v8/wiki/JavaScriptStackTraceApi
 prepareStackTrace = (err, stack) ->
   unless config.stack.view
-    stack = stack[..1]  
-  return err.toString().bold.red + stack.map (frame) ->
+    stack = stack[..1]
+  message = err.toString()
+  message = message.bold.red if config.colors
+  return message + stack.map (frame) ->
     return '' unless config.stack.modules or !~frame.getFileName().indexOf '/node_modules/'
     return '' unless config.stack.system or ~frame.getFileName().indexOf '/'
     map = mapFrame frame
@@ -131,16 +137,21 @@ getCodeview = (frame) ->
   # lines before
   num = frame.getLineNumber() - 1 - config.code.before
   for i in [1..config.code.before]
-    out += sprintf "\n     %0#{ max }d: #{ lines[num++] }".grey, num
+    line = sprintf "\n     %0#{ max }d: #{ lines[num++] }", num
+    out += if config.colors then line.grey else line
   # highlight line
   line = sprintf "\n     %0#{ max }d: #{ lines[num++] }", num
-  pos = frame.getColumnNumber() + max + 8
-  out += line.slice(0, pos-1).yellow 
-  out += line.slice(pos-1, pos+2).yellow.underline 
-  out += line.slice(pos+2).yellow 
+  if config.colors
+    pos = frame.getColumnNumber() + max + 8
+    out += line.slice(0, pos-1).yellow
+    out += line.slice(pos-1, pos+2).yellow.underline
+    out += line.slice(pos+2).yellow
+  else
+    out += line
   # lines after
   for i in [1..config.code.after]
-    out += sprintf "\n     %0#{ max }d: #{ lines[num++] }".grey, num
+    line = sprintf "\n     %0#{ max }d: #{ lines[num++] }", num
+    out += if config.colors then line.grey else line
   out
 
 # ### Get the mapped frame
@@ -178,7 +189,7 @@ mapFrame = (frame) ->
 sourceMapCache = {};
 
 # ### Find the mapped position
-mapSourcePosition = (position) ->  
+mapSourcePosition = (position) ->
   sourceMap = sourceMapCache[position.source]
   # retrieve source map
   unless sourceMap
@@ -190,7 +201,7 @@ mapSourcePosition = (position) ->
   # Resolve the source URL relative to the URL of the source map
   if sourceMap
     mapPosition = sourceMap.map.originalPositionFor position
-    if mapPosition.source 
+    if mapPosition.source
       mapPosition.source = supportRelativeURL path.dirname(position.source), mapPosition.source
       return mapPosition
   null
@@ -208,7 +219,7 @@ retrieveSourceMap = (source) ->
   match = /\/\/[#@]\s*sourceMappingURL=(.*)\s*$/m.exec(fileData)
   return null  unless match
   sourceMappingURL = match[1]
-  
+
   # Read the contents of the source map
   sourceMapData = undefined
   dataUrlPrefix = "data:application/json;base64,"
@@ -230,7 +241,7 @@ isInBrowser = -> typeof window isnt "undefined"
 # ### Retrieve file for node and browser
 retrieveFile = (path) ->
   return fileContentsCache[path]  if path of fileContentsCache
-  try   
+  try
     # Use AJAX if we are in the browser
     if isInBrowser()
       xhr = new XMLHttpRequest()
@@ -271,6 +282,6 @@ mapEvalOrigin = (origin) ->
     return "eval at " + match[1] + " (" + position.source + ":" + position.line + ":" + position.column + ")"
   # Parse nested eval() calls using recursion
   match = /^eval at ([^(]+) \((.+)\)$/.exec(origin)
-  return "eval at " + match[1] + " (" + mapEvalOrigin(match[2]) + ")"  if match  
+  return "eval at " + match[1] + " (" + mapEvalOrigin(match[2]) + ")"  if match
   # Make sure we still return useful information if we didn't find anything
   origin
