@@ -6,7 +6,7 @@ individual versions:
 
 Version 0.0.3
 -------------------------------------------------
-
+Added information for version 0.0.3
 
 Version 0.0.2
 -------------------------------------------------
