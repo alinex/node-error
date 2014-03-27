@@ -4,6 +4,12 @@ Version changes
 The following list gives a short overview about what is changed between
 individual versions:
 
+Version 0.1.0
+-------------------------------------------------
+Upgraded to V0.1.0 because feature list reached.
+Added information for version 0.0.3
+Added information for version 0.0.3
+
 Version 0.0.2
 -------------------------------------------------
 Added configuration value to switch coloring off.
