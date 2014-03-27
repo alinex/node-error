@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>README.md</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="doc-style.css" />
+  <script src="doc-filelist.js"></script>
+  <script>
+    var relativeDir = "", thisFile = "Users/alex/a3/node-error/README.md", defaultSidebar = true;
+  </script>
+  <script src="doc-script.js"></script>
+  <script src="fileSearch.js"></script>
+  <script src="goToLine.js"></script>
+  <link rel="stylesheet" href="fileSearch.css" />
+  <link rel="stylesheet" href="goToLine.css" />
+</head>
+<body>
+  <div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+      <div class="heading h1">
+        <a href="#package%3A%20alinex-error">Package: alinex-error</a>
+      </div>
+      <div class="heading h2">
+        <a href="#example%20output">Example Output</a>
+      </div>
+      <div class="heading h2">
+        <a href="#installation">Installation</a>
+      </div>
+      <div class="heading h2">
+        <a href="#usage">Usage</a>
+      </div>
+      <div class="heading h3">
+        <a href="#create%20an%20error">Create an error</a>
+      </div>
+      <div class="heading h2">
+        <a href="#configuration">Configuration</a>
+      </div>
+      <div class="heading h2">
+        <a href="#license">License</a>
+      </div>
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container"><div class="docs markdown">
+<div class="pilwrap" id="package%3A%20alinex-error">
+  <h1>
+    <a href="#package%3A%20alinex-error" name="package%3A%20alinex-error" class="pilcrow">&#182;</a>
+    Package: alinex-error
+  </h1>
+</div>
+
+
+<p>This will replace the standard error handler with one which will</p>
+
+<ul>
+<li>use source-maps</li>
+<li>colorize and highlight the output</li>
+<li>display code area</li>
+</ul>
+
+
+<div class="pilwrap" id="example%20output">
+  <h2>
+    <a href="#example%20output" name="example%20output" class="pilcrow">&#182;</a>
+    Example Output
+  </h2>
+</div>
+
+
+<p>Keep in mind that the colors here won't match the ones really displayed on your
+output:</p>
+
+
+<div class="highlight"><pre><code><span class="nx">ReferenceError</span><span class="o">:</span> <span class="nx">comand</span> <span class="nx">is</span> <span class="nx">not</span> <span class="nx">defined</span>
+  <span class="nx">at</span> <span class="o">/</span><span class="nx">home</span><span class="o">/</span><span class="nx">alex</span><span class="o">/</span><span class="nx">a3</span><span class="o">/</span><span class="nx">node</span><span class="o">-</span><span class="nx">make</span><span class="o">/</span><span class="nx">lib</span><span class="o">/</span><span class="nx">pushTask</span><span class="p">.</span><span class="nx">js</span><span class="o">:</span><span class="mi">111</span><span class="o">:</span><span class="mi">82</span>
+     <span class="o">/</span><span class="nx">home</span><span class="o">/</span><span class="nx">alex</span><span class="o">/</span><span class="nx">a3</span><span class="o">/</span><span class="nx">node</span><span class="o">-</span><span class="nx">make</span><span class="o">/</span><span class="nx">src</span><span class="o">/</span><span class="nx">pushTask</span><span class="p">.</span><span class="nx">coffee</span><span class="o">:</span><span class="mi">95</span><span class="o">:</span><span class="mi">44</span>
+     <span class="mi">093</span><span class="o">:</span>     <span class="nx">execFile</span> <span class="s2">&quot;git&quot;</span><span class="p">,</span> <span class="p">[</span>
+     <span class="mi">094</span><span class="o">:</span>       <span class="s1">&#39;commit&#39;</span>
+     <span class="mi">095</span><span class="o">:</span>       <span class="s1">&#39;-m&#39;</span><span class="p">,</span> <span class="s2">&quot;Added information for version #{comand.newVersion}&quot;</span>
+     <span class="mi">096</span><span class="o">:</span>     <span class="p">],</span> <span class="p">{</span> <span class="nx">cwd</span><span class="o">:</span> <span class="nx">command</span><span class="p">.</span><span class="nx">dir</span> <span class="p">},</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">stdout</span><span class="p">,</span> <span class="nx">stderr</span><span class="p">)</span> <span class="o">-&gt;</span>
+     <span class="mi">097</span><span class="o">:</span>       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span> <span class="nx">stdout</span><span class="p">.</span><span class="nx">trim</span><span class="p">().</span><span class="nx">grey</span> <span class="k">if</span> <span class="nx">stdout</span> <span class="nx">and</span> <span class="nx">commander</span><span class="p">.</span><span class="nx">verbose</span>
+<span class="nx">Exiting</span> <span class="nx">after</span> <span class="nx">error</span> <span class="nx">logging</span> <span class="nx">timeout</span><span class="p">.</span>
+</code></pre></div>
+
+
+
+
+<div class="pilwrap" id="installation">
+  <h2>
+    <a href="#installation" name="installation" class="pilcrow">&#182;</a>
+    Installation
+  </h2>
+</div>
+
+
+<p>To add this error handler to your application run (from your project's folder):</p>
+
+
+<div class="highlight"><pre><code><span class="o">&gt;</span> <span class="nx">npm</span> <span class="nx">install</span> <span class="nx">alinex</span><span class="o">-</span><span class="nx">error</span> <span class="o">--</span><span class="nx">save</span>
+</code></pre></div>
+
+
+
+<p>This will add the package, to your dependencies and install it.</p>
+
+
+<div class="pilwrap" id="usage">
+  <h2>
+    <a href="#usage" name="usage" class="pilcrow">&#182;</a>
+    Usage
+  </h2>
+</div>
+
+
+<p>To use the error handler it should be added for uncaught exceptions in the
+main routine using:</p>
+
+
+<div class="highlight"><pre><code><span class="nx">errorHandler</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;alinex-error&#39;</span><span class="p">);</span>
+<span class="nx">errorHandler</span><span class="p">.</span><span class="nx">install</span><span class="p">()</span>
+</code></pre></div>
+
+
+
+<p>Or the same in one statement:</p>
+
+
+<div class="highlight"><pre><code><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;alinex-error&#39;</span><span class="p">).</span><span class="nx">install</span><span class="p">();</span>
+</code></pre></div>
+
+
+
+<p>This will capture the error, log it and stop processing if one occurs.</p>
+
+<p>Alternatively an already caught Error may be reported using:</p>
+
+
+<div class="highlight"><pre><code><span class="nx">errorHandler</span><span class="p">.</span><span class="nx">report</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+</code></pre></div>
+
+
+
+<p>The error may have some nested errors in it's <code>cause</code> property. Also a
+<code>codePart</code> property may give a hint where the error comes from.</p>
+
+
+<div class="pilwrap" id="create%20an%20error">
+  <h3>
+    <a href="#create%20an%20error" name="create%20an%20error" class="pilcrow">&#182;</a>
+    Create an error
+  </h3>
+</div>
+
+
+<p>You may always throw an error the same way using:</p>
+
+
+<div class="highlight"><pre><code><span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s2">&quot;Message&quot;</span><span class="p">);</span>
+</code></pre></div>
+
+
+
+<p>You may also report any object as error like:</p>
+
+
+<div class="highlight"><pre><code><span class="nx">errorHandler</span><span class="p">.</span><span class="nx">report</span><span class="p">(</span><span class="s2">&quot;Something went wrong!&quot;</span><span class="p">);</span>
+</code></pre></div>
+
+
+
+<p>If you catch an error and rethrow it you may use:</p>
+
+
+<div class="highlight"><pre><code><span class="k">try</span> <span class="p">{</span>
+  <span class="p">...</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">ex</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">err</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s2">&quot;Something went wrong!&quot;</span><span class="p">);</span>
+  <span class="nx">err</span><span class="p">.</span><span class="nx">cause</span> <span class="o">=</span> <span class="nx">ex</span><span class="p">;</span>
+  <span class="nx">err</span><span class="p">.</span><span class="nx">codePart</span> <span class="o">=</span> <span class="s2">&quot;input-1&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+
+
+<div class="pilwrap" id="configuration">
+  <h2>
+    <a href="#configuration" name="configuration" class="pilcrow">&#182;</a>
+    Configuration
+  </h2>
+</div>
+
+
+<p>To configure the output you may set values within the exported config
+structure:</p>
+
+
+<div class="highlight"><pre><code><span class="nx">errorHandler</span><span class="p">.</span><span class="nx">config</span> <span class="o">=</span>
+  <span class="nx">colors</span><span class="o">:</span> <span class="kc">true</span>          <span class="err">#</span> <span class="nx">should</span> <span class="nx">colors</span> <span class="nx">be</span> <span class="nx">allowed</span> <span class="nx">on</span> <span class="nx">console</span> <span class="nx">output</span>
+
+  <span class="err">#</span> <span class="nx">Define</span> <span class="nx">whether</span> <span class="nx">and</span> <span class="nx">which</span> <span class="nx">stack</span> <span class="nx">lines</span> <span class="nx">to</span> <span class="nx">show</span>
+  <span class="nx">stack</span><span class="o">:</span>
+    <span class="nx">view</span><span class="o">:</span> <span class="kc">true</span>          <span class="err">#</span> <span class="nx">show</span> <span class="nx">stack</span> <span class="nx">trace</span> <span class="nx">or</span> <span class="nx">not</span>
+    <span class="nx">modules</span><span class="o">:</span> <span class="kc">false</span>      <span class="err">#</span> <span class="nx">show</span> <span class="nx">node_module</span> <span class="nx">trace</span>
+    <span class="nx">system</span><span class="o">:</span> <span class="kc">false</span>       <span class="err">#</span> <span class="nx">show</span> <span class="nx">system</span> <span class="nx">module</span> <span class="nx">trace</span>
+
+  <span class="err">#</span> <span class="nx">Define</span> <span class="k">if</span> <span class="nx">and</span> <span class="nx">how</span> <span class="nx">much</span> <span class="nx">code</span> <span class="nx">to</span> <span class="nx">show</span>
+  <span class="nx">code</span><span class="o">:</span>
+    <span class="nx">view</span><span class="o">:</span> <span class="kc">true</span>          <span class="err">#</span> <span class="nx">view</span> <span class="nx">code</span> <span class="nx">sources</span> <span class="nx">or</span> <span class="nx">not</span>
+    <span class="nx">before</span><span class="o">:</span> <span class="mi">2</span>           <span class="err">#</span> <span class="nx">number</span> <span class="nx">of</span> <span class="nx">lines</span> <span class="nx">to</span> <span class="nx">show</span> <span class="nx">before</span> <span class="nx">the</span> <span class="nx">referenced</span> <span class="nx">one</span>
+    <span class="nx">after</span><span class="o">:</span> <span class="mi">2</span>            <span class="err">#</span> <span class="nx">number</span> <span class="nx">of</span> <span class="nx">lines</span> <span class="nx">to</span> <span class="nx">show</span> <span class="nx">after</span> <span class="nx">the</span> <span class="nx">referenced</span> <span class="nx">one</span>
+    <span class="nx">modules</span><span class="o">:</span> <span class="kc">false</span>      <span class="err">#</span> <span class="nx">show</span> <span class="nx">code</span> <span class="nx">within</span> <span class="nx">node_modules</span>
+    <span class="nx">all</span><span class="o">:</span> <span class="kc">false</span>          <span class="err">#</span> <span class="nx">show</span> <span class="nx">all</span> <span class="nx">code</span> <span class="nx">or</span> <span class="nx">only</span> <span class="nx">from</span> <span class="nx">origin</span>
+
+  <span class="err">#</span> <span class="nx">Should</span> <span class="nx">command</span> <span class="nx">exit</span> <span class="nx">after</span> <span class="nx">an</span> <span class="nx">uncaught</span> <span class="nx">error</span> <span class="nx">is</span> <span class="nx">reported</span>
+  <span class="nx">uncaught</span><span class="o">:</span>
+    <span class="nx">exit</span><span class="o">:</span> <span class="kc">true</span>          <span class="err">#</span> <span class="nx">should</span> <span class="nx">process</span> <span class="nx">be</span> <span class="nx">exited</span> <span class="nx">after</span> <span class="nx">uncaught</span> <span class="nx">error</span>
+    <span class="nx">timeout</span><span class="o">:</span> <span class="mi">100</span>        <span class="err">#</span> <span class="nx">timeout</span> <span class="nx">to</span> <span class="nx">wait</span> <span class="nx">before</span> <span class="nx">exit</span> <span class="nx">to</span> <span class="nx">write</span> <span class="nx">logs</span>
+    <span class="nx">code</span><span class="o">:</span> <span class="mi">2</span>             <span class="err">#</span> <span class="nx">exit</span> <span class="nx">code</span> <span class="nx">to</span> <span class="nx">use</span>
+</code></pre></div>
+
+
+
+<p>The above given values are the default values which you may change to customize
+the output.</p>
+
+
+<div class="pilwrap" id="license">
+  <h2>
+    <a href="#license" name="license" class="pilcrow">&#182;</a>
+    License
+  </h2>
+</div>
+
+
+<p>Copyright 2013-2014 Alexander Schilling</p>
+
+<p>Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at</p>
+
+<blockquote>
+  <p><a href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a></p>
+</blockquote>
+
+<p>Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.</p></div>
+  </div>
+</body>
+</html>
