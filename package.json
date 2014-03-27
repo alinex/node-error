@@ -1,6 +1,6 @@
 {
   "name": "alinex-error",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Configurable error handler with source-map support.",
   "copyright": "Alexander Schilling 2013-2014",
   "keywords": "error, exception, handler, source-map",
