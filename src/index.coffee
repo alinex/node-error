@@ -34,6 +34,9 @@ config = module.exports.config =
     after: 2
     modules: false
     all: false
+  # Display of the errors cause if there is one
+  cause: true
+    stack: true
   # Should command exit after an uncaught error is reported
   uncaught:
     exit: true
@@ -87,10 +90,12 @@ module.exports.report = (err, level, codePart) ->
     title = err.toString()
     if config.colors
       title = title.bold[if level? then 'magenta' else 'red']
-    title = "Caused by #{ title }" if level
-    title += " #{ codePart }" if codePart
+    title = "Caused by #{title}" if level
+    title += " #{codePart}" if codePart
+    if not config.cause.stack and level
+      return console.error title
     console.error title + err.stack.replace /.*?\n/, '\n'
-    if err.cause?
+    if err.cause? and config.cause.view
       level ?= 0
       if typeof err.cause is 'object'
         for entry in err.cause
@@ -117,10 +122,10 @@ prepareStackTrace = (err, stack) ->
     return '' unless config.stack.modules or !~frame.getFileName().indexOf '/node_modules/'
     return '' unless config.stack.system or ~frame.getFileName().indexOf '/'
     map = mapFrame frame
-    out = "\n  at #{ frame}"
+    out = "\n  at #{frame}"
     out += getCodeview frame if map and not config.code.all
     if map
-      out += "\n     #{ map }"
+      out += "\n     #{map}"
       out += getCodeview map
     return out
   .join ''
@@ -137,10 +142,10 @@ getCodeview = (frame) ->
   # lines before
   num = frame.getLineNumber() - 1 - config.code.before
   for i in [1..config.code.before]
-    line = sprintf "\n     %0#{ max }d: #{ lines[num++] }", num
+    line = sprintf "\n     %0#{max}d: #{lines[num++]}", num
     out += if config.colors then line.grey else line
   # highlight line
-  line = sprintf "\n     %0#{ max }d: #{ lines[num++] }", num
+  line = sprintf "\n     %0#{max}d: #{lines[num++]}", num
   if config.colors
     pos = frame.getColumnNumber() + max + 8
     out += line.slice(0, pos-1).yellow
@@ -150,7 +155,7 @@ getCodeview = (frame) ->
     out += line
   # lines after
   for i in [1..config.code.after]
-    line = sprintf "\n     %0#{ max }d: #{ lines[num++] }", num
+    line = sprintf "\n     %0#{max}d: #{lines[num++]}", num
     out += if config.colors then line.grey else line
   out
 

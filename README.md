@@ -11,12 +11,15 @@ This will replace the standard error handler with one which will
 Example Output
 -------------------------------------------------
 
+Keep in mind that the colors here won't match the ones really displayed on your
+output:
+
     ReferenceError: comand is not defined
       at /home/alex/a3/node-make/lib/pushTask.js:111:82
          /home/alex/a3/node-make/src/pushTask.coffee:95:44
          093:     execFile "git", [
          094:       'commit'
-         **095:       '-m', "Added information for version #{comand.newVersion}"**
+         095:       '-m', "Added information for version #{comand.newVersion}"
          096:     ], { cwd: command.dir }, (err, stdout, stderr) ->
          097:       console.log stdout.trim().grey if stdout and commander.verbose
     Exiting after error logging timeout.
@@ -54,7 +57,7 @@ Alternatively an already caught Error may be reported using:
 The error may have some nested errors in it's `cause` property. Also a
 `codePart` property may give a hint where the error comes from.
 
-# ### Create an error
+### Create an error
 
 You may always throw an error the same way using:
 
@@ -63,6 +66,8 @@ You may always throw an error the same way using:
 You may also report any object as error like:
 
     errorHandler.report("Something went wrong!");
+
+### Support cause error
 
 If you catch an error and rethrow it you may use:
 
@@ -73,6 +78,20 @@ If you catch an error and rethrow it you may use:
       err.cause = ex;
       err.codePart = "input-1";
     }
+
+This ensures that the new error will be reported but also with it's real cause.
+
+### Send multiple errors
+
+That's done the same way as an error with another error as cause. You create a 
+new error instance and add all your different real errors as the `cause` array:
+
+    errList = doSomething();
+    err = new Error("Something went wrong!");
+    err.cause = errList;
+
+If this resulting error will be reported it is done with all the causes if
+enabled in configuration.
 
 
 Configuration
@@ -98,6 +117,10 @@ structure:
         modules: false      # show code within node_modules
         all: false          # show all code or only from origin
 
+      # Display of the errors cause if there is one
+      cause: true          # view caused errors
+        stack: true         # view also stack like on main error
+        
       # Should command exit after an uncaught error is reported
       uncaught:
         exit: true          # should process be exited after uncaught error
