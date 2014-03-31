@@ -123,7 +123,7 @@ prepareStackTrace = (err, stack) ->
     return '' unless config.stack.system or ~frame.getFileName().indexOf '/'
     map = mapFrame frame
     out = "\n  at #{frame}"
-    out += getCodeview frame if map and not config.code.all
+    out += getCodeview frame unless map or config.code.all is false
     if map
       out += "\n     #{map}"
       out += getCodeview map
