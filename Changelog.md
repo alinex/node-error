@@ -4,6 +4,10 @@ Version changes
 The following list gives a short overview about what is changed between
 individual versions:
 
+Version 0.1.2
+-------------------------------------------------
+- Fixed typo in configuration settings for config.stack
+
 Version 0.1.1
 -------------------------------------------------
 - Fixed interpretation of config.code.all switch.
