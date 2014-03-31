@@ -35,7 +35,11 @@ config = module.exports.config =
     modules: false
     all: false
   # Display of the errors cause if there is one
+<<<<<<< HEAD
   cause:
+=======
+  cause: 
+>>>>>>> 11c51fdfaad6f522e24195e01af6093416b5beac
     view: true
     stack: true
   # Should command exit after an uncaught error is reported
