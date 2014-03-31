@@ -118,7 +118,8 @@ structure:
         all: false          # show all code or only from origin
 
       # Display of the errors cause if there is one
-      cause: true          # view caused errors
+      cause: 
+        view: true          # view caused errors
         stack: true         # view also stack like on main error
         
       # Should command exit after an uncaught error is reported

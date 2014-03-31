@@ -35,7 +35,8 @@ config = module.exports.config =
     modules: false
     all: false
   # Display of the errors cause if there is one
-  cause: true
+  cause: 
+    view: true
     stack: true
   # Should command exit after an uncaught error is reported
   uncaught:
