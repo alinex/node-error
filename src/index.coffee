@@ -86,6 +86,8 @@ uncaughtError = (err) ->
 #   Number of level for recursive calls
 # * `codePart`
 #   Specification to be added in recursive calls
+#report = module.exports.report = (err) ->
+#  console.error format
 report = module.exports.report = (err, level, codePart) ->
   if err instanceof Error
     title = err.toString()
@@ -120,9 +122,9 @@ report = module.exports.report = (err, level, codePart) ->
 #   Number of level for recursive calls
 # * `codePart`
 #   Specification to be added in recursive calls
-module.exports.toString = (err) -> toString err
+module.exports.format = (err) -> format err
 
-toString = (err, level, codePart) ->
+format = (err, level, codePart) ->
   if err instanceof Error
     msg = err.toString()
     if config.colors
@@ -136,9 +138,9 @@ toString = (err, level, codePart) ->
       level ?= 0
       if typeof err.cause is 'object'
         for entry in err.cause
-          msg += toString entry, level+1, err.codePart?
+          msg += format entry, level+1, err.codePart?
       else
-        msg += toString err.cause, level+1, err.codePart?
+        msg += format err.cause, level+1, err.codePart?
   else
     err?.toString().red.bold
 
