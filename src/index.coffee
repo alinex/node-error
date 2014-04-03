@@ -86,7 +86,7 @@ uncaughtError = (err) ->
 #   Number of level for recursive calls
 # * `codePart`
 #   Specification to be added in recursive calls
-module.exports.report = (err, level, codePart) ->
+report = module.exports.report = (err, level, codePart) ->
   if err instanceof Error
     title = err.toString()
     if config.colors
@@ -105,6 +105,42 @@ module.exports.report = (err, level, codePart) ->
         module.exports.report err.cause, level+1, err.codePart?
   else
     console.error err.toString().red.bold
+
+
+# Report error
+# -------------------------------------------------
+# The given error will be reported to error output like configured. This may
+# be colorful with stack trace, source mapping and code view.
+#
+# __Arguments:__
+#
+# * `err`
+#   Error object instance to report.
+# * `level`
+#   Number of level for recursive calls
+# * `codePart`
+#   Specification to be added in recursive calls
+module.exports.toString = (err) -> toString err
+
+toString = (err, level, codePart) ->
+  if err instanceof Error
+    msg = err.toString()
+    if config.colors
+      msg = msg.bold[if level? then 'magenta' else 'red']
+    msg = "Caused by #{title}" if level
+    msg += " #{codePart}" if codePart
+    if not config.cause.stack and level
+      return msg
+    msg += err.stack.replace /.*?\n/, '\n'
+    if err.cause? and config.cause.view
+      level ?= 0
+      if typeof err.cause is 'object'
+        for entry in err.cause
+          msg += toString entry, level+1, err.codePart?
+      else
+        msg += toString err.cause, level+1, err.codePart?
+  else
+    err?.toString().red.bold
 
 
 # Helper methods

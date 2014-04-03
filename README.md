@@ -34,6 +34,8 @@ To add this error handler to your application run (from your project's folder):
 
 This will add the package, to your dependencies and install it.
 
+[![NPM](https://nodei.co/npm/alinex-error.png?downloads=true&stars=true)](https://nodei.co/npm/alinex-error/)
+
 
 Usage
 -------------------------------------------------

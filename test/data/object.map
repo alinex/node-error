@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "object.js",
+  "sourceRoot": "",
+  "sources": [
+    "object.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAGA;CAAA,CAAA,CAA6B,GAAvB,CAAQ,EAAe,EAA7B;CACQ,IAAN,MAAA,WAAA;CADF,EAA6B;CAA7B"
+}

@@ -19,7 +19,8 @@
   "license": "Apache-2.0",
   "main": "./lib/index.js",
   "scripts": {
-    "prepublish": "node_modules/.bin/coffee -c -m -o lib src"
+    "prepublish": "node_modules/.bin/coffee -c -m -o lib src",
+    "test": "node_modules/.bin/mocha --compilers coffee:coffee-script/register --reporter spec -c test/run"
   },
   "directories": {
     "lib": "./lib"
@@ -29,7 +30,9 @@
     "sprintf-js": "0.x"
   },
   "devDependencies": {
-    "coffee-script": "1.x"
+    "coffee-script": ">=1.7.0",
+    "mocha": "1.x",
+    "chai": "1.x"
   },
   "optionalDependencies": {},
   "engines": {
