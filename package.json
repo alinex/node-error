@@ -27,7 +27,8 @@
   },
   "dependencies": {
     "source-map": "0.1.x",
-    "sprintf-js": "0.x"
+    "sprintf-js": "0.x",
+    "colors": "0.x"
   },
   "devDependencies": {
     "coffee-script": ">=1.7.0",
