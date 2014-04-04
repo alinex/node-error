@@ -59,6 +59,10 @@ Alternatively an already caught Error may be reported using:
 
     errorHandler.report(error);
 
+or retrieved as formatted string using:
+
+    errorHandler.format(error);
+
 The error may have some nested errors in it's `cause` property. Also a
 `codePart` property may give a hint where the error comes from.
 
