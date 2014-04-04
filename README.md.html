@@ -6,7 +6,7 @@
   <link rel="stylesheet" media="all" href="doc-style.css" />
   <script src="doc-filelist.js"></script>
   <script>
-    var relativeDir = "", thisFile = "Users/alex/a3/node-error/README.md", defaultSidebar = true;
+    var relativeDir = "", thisFile = "home/alex/a3/node-error/README.md", defaultSidebar = true;
   </script>
   <script src="doc-script.js"></script>
   <script src="fileSearch.js"></script>
@@ -37,6 +37,12 @@
       <div class="heading h3">
         <a href="#create%20an%20error">Create an error</a>
       </div>
+      <div class="heading h3">
+        <a href="#support%20cause%20error">Support cause error</a>
+      </div>
+      <div class="heading h3">
+        <a href="#send%20multiple%20errors">Send multiple errors</a>
+      </div>
       <div class="heading h2">
         <a href="#configuration">Configuration</a>
       </div>
@@ -55,12 +61,16 @@
 </div>
 
 
+<p><a href="https://travis-ci.org/alinex/node-error"><img src="https://travis-ci.org/alinex/node-error.svg?branch=master" alt="Build Status" title="" /></a>
+<a href="https://gemnasium.com/alinex/node-error"><img src="https://gemnasium.com/alinex/node-error.png" alt="Dependency Status" title="" /></a></p>
+
 <p>This will replace the standard error handler with one which will</p>
 
 <ul>
 <li>use source-maps</li>
 <li>colorize and highlight the output</li>
 <li>display code area</li>
+<li>support error nesting (multi level)</li>
 </ul>
 
 
@@ -108,6 +118,8 @@ output:</p>
 
 <p>This will add the package, to your dependencies and install it.</p>
 
+<p><a href="https://nodei.co/npm/alinex-error/"><img src="https://nodei.co/npm/alinex-error.png?downloads=true&amp;stars=true" alt="NPM" title="" /></a></p>
+
 
 <div class="pilwrap" id="usage">
   <h2>
@@ -145,6 +157,14 @@ main routine using:</p>
 
 
 
+<p>or retrieved as formatted string using:</p>
+
+
+<div class="highlight"><pre><code><span class="nx">errorHandler</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+</code></pre></div>
+
+
+
 <p>The error may have some nested errors in it's <code>cause</code> property. Also a
 <code>codePart</code> property may give a hint where the error comes from.</p>
 
@@ -173,6 +193,15 @@ main routine using:</p>
 
 
 
+
+<div class="pilwrap" id="support%20cause%20error">
+  <h3>
+    <a href="#support%20cause%20error" name="support%20cause%20error" class="pilcrow">&#182;</a>
+    Support cause error
+  </h3>
+</div>
+
+
 <p>If you catch an error and rethrow it you may use:</p>
 
 
@@ -186,6 +215,31 @@ main routine using:</p>
 </code></pre></div>
 
 
+
+<p>This ensures that the new error will be reported but also with it's real cause.</p>
+
+
+<div class="pilwrap" id="send%20multiple%20errors">
+  <h3>
+    <a href="#send%20multiple%20errors" name="send%20multiple%20errors" class="pilcrow">&#182;</a>
+    Send multiple errors
+  </h3>
+</div>
+
+
+<p>That's done the same way as an error with another error as cause. You create a 
+new error instance and add all your different real errors as the <code>cause</code> array:</p>
+
+
+<div class="highlight"><pre><code><span class="nx">errList</span> <span class="o">=</span> <span class="nx">doSomething</span><span class="p">();</span>
+<span class="nx">err</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s2">&quot;Something went wrong!&quot;</span><span class="p">);</span>
+<span class="nx">err</span><span class="p">.</span><span class="nx">cause</span> <span class="o">=</span> <span class="nx">errList</span><span class="p">;</span>
+</code></pre></div>
+
+
+
+<p>If this resulting error will be reported it is done with all the causes if
+enabled in configuration.</p>
 
 
 <div class="pilwrap" id="configuration">
@@ -216,6 +270,11 @@ structure:</p>
     <span class="nx">after</span><span class="o">:</span> <span class="mi">2</span>            <span class="err">#</span> <span class="nx">number</span> <span class="nx">of</span> <span class="nx">lines</span> <span class="nx">to</span> <span class="nx">show</span> <span class="nx">after</span> <span class="nx">the</span> <span class="nx">referenced</span> <span class="nx">one</span>
     <span class="nx">modules</span><span class="o">:</span> <span class="kc">false</span>      <span class="err">#</span> <span class="nx">show</span> <span class="nx">code</span> <span class="nx">within</span> <span class="nx">node_modules</span>
     <span class="nx">all</span><span class="o">:</span> <span class="kc">false</span>          <span class="err">#</span> <span class="nx">show</span> <span class="nx">all</span> <span class="nx">code</span> <span class="nx">or</span> <span class="nx">only</span> <span class="nx">from</span> <span class="nx">origin</span>
+
+  <span class="err">#</span> <span class="nx">Display</span> <span class="nx">of</span> <span class="nx">the</span> <span class="nx">errors</span> <span class="nx">cause</span> <span class="k">if</span> <span class="nx">there</span> <span class="nx">is</span> <span class="nx">one</span>
+  <span class="nx">cause</span><span class="o">:</span> 
+    <span class="nx">view</span><span class="o">:</span> <span class="kc">true</span>          <span class="err">#</span> <span class="nx">view</span> <span class="nx">caused</span> <span class="nx">errors</span>
+    <span class="nx">stack</span><span class="o">:</span> <span class="kc">true</span>         <span class="err">#</span> <span class="nx">view</span> <span class="nx">also</span> <span class="nx">stack</span> <span class="nx">like</span> <span class="nx">on</span> <span class="nx">main</span> <span class="nx">error</span>
 
   <span class="err">#</span> <span class="nx">Should</span> <span class="nx">command</span> <span class="nx">exit</span> <span class="nx">after</span> <span class="nx">an</span> <span class="nx">uncaught</span> <span class="nx">error</span> <span class="nx">is</span> <span class="nx">reported</span>
   <span class="nx">uncaught</span><span class="o">:</span>
