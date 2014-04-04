@@ -2,6 +2,7 @@ Package: alinex-error
 =================================================
 
 [![Build Status](https://travis-ci.org/alinex/node-error.svg?branch=master)](https://travis-ci.org/alinex/node-error)
+[![Coverage Status](https://coveralls.io/repos/alinex/node-error/badge.png?branch=master)](https://coveralls.io/r/alinex/node-error?branch=master)
 [![Dependency Status](https://gemnasium.com/alinex/node-error.png)](https://gemnasium.com/alinex/node-error)
 
 This will replace the standard error handler with one which will
@@ -93,7 +94,7 @@ This ensures that the new error will be reported but also with it's real cause.
 
 ### Send multiple errors
 
-That's done the same way as an error with another error as cause. You create a 
+That's done the same way as an error with another error as cause. You create a
 new error instance and add all your different real errors as the `cause` array:
 
     errList = doSomething();
@@ -128,10 +129,10 @@ structure:
         all: false          # show all code or only from origin
 
       # Display of the errors cause if there is one
-      cause: 
+      cause:
         view: true          # view caused errors
         stack: true         # view also stack like on main error
-        
+
       # Should command exit after an uncaught error is reported
       uncaught:
         exit: true          # should process be exited after uncaught error
