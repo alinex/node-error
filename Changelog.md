@@ -4,6 +4,19 @@ Version changes
 The following list gives a short overview about what is changed between
 individual versions:
 
+Version 0.1.3
+-------------------------------------------------
+- Added dependency for colors module.
+- Added help for new format() method.
+- Added help for new format() method.
+- Added unit tests. Added format() option to return formatted string.
+- Rename internal functions for more modular structure.
+- First test routines to get propper testing.
+- Made dependencies more open.
+- Merge with existing.
+- Merge with existing source.
+- Fixed lint errors.
+
 Version 0.1.2
 -------------------------------------------------
 - Fixed typo in configuration settings for config.stack
