@@ -33,7 +33,9 @@
   "devDependencies": {
     "coffee-script": ">=1.7.0",
     "mocha": "1.x",
-    "chai": "1.x"
+    "chai": "1.x",
+    "istanbul": "0.2.x",
+    "coveralls": "2.x"
   },
   "optionalDependencies": {},
   "engines": {
