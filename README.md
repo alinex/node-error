@@ -1,6 +1,9 @@
 Package: alinex-error
 =================================================
 
+[![Build Status](https://travis-ci.org/alinex/node-error.svg?branch=master)](https://travis-ci.org/alinex/node-error)
+[![Dependency Status](https://gemnasium.com/alinex/node-error.png)](https://gemnasium.com/alinex/node-error)
+
 This will replace the standard error handler with one which will
 
 * use source-maps

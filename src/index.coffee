@@ -20,7 +20,7 @@ sprintf = require("sprintf-js").sprintf
 
 # Configuration
 # -------------------------------------------------
-config = module.exports.config =
+module.exports.config =
   colors: true
   # Define whether and which stack lines to show
   stack:
@@ -64,6 +64,7 @@ module.exports.install = ->
 #   Error object instance to report.
 #
 uncaughtError = (err) ->
+  config = module.exports.config
   module.exports.report err
   # stop processing after short timeout to finish logging
   if config.uncaught.exit
@@ -82,67 +83,51 @@ uncaughtError = (err) ->
 #
 # * `err`
 #   Error object instance to report.
-# * `level`
-#   Number of level for recursive calls
-# * `codePart`
-#   Specification to be added in recursive calls
-#report = module.exports.report = (err) ->
-#  console.error format
-report = module.exports.report = (err, level, codePart) ->
-  if err instanceof Error
-    title = err.toString()
-    if config.colors
-      title = title.bold[if level? then 'magenta' else 'red']
-    title = "Caused by #{title}" if level
-    title += " #{codePart}" if codePart
-    if not config.cause.stack and level
-      return console.error title
-    console.error title + err.stack.replace /.*?\n/, '\n'
-    if err.cause? and config.cause.view
-      level ?= 0
-      if typeof err.cause is 'object'
-        for entry in err.cause
-          module.exports.report entry, level+1, err.codePart?
-      else
-        module.exports.report err.cause, level+1, err.codePart?
-  else
-    console.error err.toString().red.bold
+report = module.exports.report = (err) ->
+  console.error format
 
 
-# Report error
+# Format error
 # -------------------------------------------------
-# The given error will be reported to error output like configured. This may
-# be colorful with stack trace, source mapping and code view.
+# The given error will be formatted as string. This may be colorful with stack
+# trace, source mapping and code view.
 #
 # __Arguments:__
 #
 # * `err`
 #   Error object instance to report.
-# * `level`
-#   Number of level for recursive calls
-# * `codePart`
-#   Specification to be added in recursive calls
 module.exports.format = (err) -> format err
 
+# ### Recursive part to format errors with cause
 format = (err, level, codePart) ->
+  config = module.exports.config
   if err instanceof Error
     msg = err.toString()
+    msg = "Caused by #{msg}" if level
+    msg += " (#{codePart})" if codePart
     if config.colors
       msg = msg.bold[if level? then 'magenta' else 'red']
-    msg = "Caused by #{title}" if level
-    msg += " #{codePart}" if codePart
+    if config.stack.view
+      msg += err.stack.replace /.*?\n/, '\n'
     if not config.cause.stack and level
       return msg
-    msg += err.stack.replace /.*?\n/, '\n'
-    if err.cause? and config.cause.view
+    if err.cause and config.cause.view
       level ?= 0
-      if typeof err.cause is 'object'
+      if Array.isArray err.cause
         for entry in err.cause
-          msg += format entry, level+1, err.codePart?
+          cause = format entry, level+1, err.codePart?
+          msg += "\n" + cause.split(/\n/).map (l) ->
+            l = "  #{l}" for i in [0..level]
+          .join "\n"
       else
-        msg += format err.cause, level+1, err.codePart?
+        cause = format err.cause, level+1, err.codePart?
+        msg += "\n" + cause.split(/\n/).map (l) ->
+          l = "  #{l}" for i in [0..level]
+        .join "\n"
   else
-    err?.toString().red.bold
+    msg = "Error: #{err?.toString()}"
+    msg = msg.bold.red if config.colors
+  return msg
 
 
 # Helper methods
@@ -153,13 +138,15 @@ format = (err, level, codePart) ->
 # This function is part of the V8 stack trace API, for more info see:
 # http://code.google.com/p/v8/wiki/JavaScriptStackTraceApi
 prepareStackTrace = (err, stack) ->
+  config = module.exports.config
   unless config.stack.view
     stack = stack[..1]
   message = err.toString()
   message = message.bold.red if config.colors
   return message + stack.map (frame) ->
-    return '' unless config.stack.modules or !~frame.getFileName().indexOf '/node_modules/'
-    return '' unless config.stack.system or ~frame.getFileName().indexOf '/'
+    unless config.stack.modules
+      return '' if ~frame.getFileName()?.indexOf '/node_modules/'
+    return '' unless config.stack.system or ~frame.getFileName()?.indexOf '/'
     map = mapFrame frame
     out = "\n  at #{frame}"
     out += getCodeview frame unless map or config.code.all is false
@@ -171,18 +158,22 @@ prepareStackTrace = (err, stack) ->
 
 # ### Retrieve highlighted code display
 getCodeview = (frame) ->
+  config = module.exports.config
   return '' unless config.code.view
-  return '' unless config.code.modules or !~frame.getFileName().indexOf '/node_modules/'
+  unless config.code.modules
+    return '' if ~frame.getFileName()?.indexOf '/node_modules/'
   contents = retrieveFile frame.getFileName()
   return '' unless contents
   lines = contents?.split /(?:\r\n|\r|\n)/
   out = ''
   max = lines.length.toString().length
+  num = frame.getLineNumber() - 1
   # lines before
-  num = frame.getLineNumber() - 1 - config.code.before
-  for i in [1..config.code.before]
-    line = sprintf "\n     %0#{max}d: #{lines[num++]}", num
-    out += if config.colors then line.grey else line
+  if config.code.before
+    num = num - config.code.before
+    for i in [1..config.code.before]
+      line = sprintf "\n     %0#{max}d: #{lines[num++]}", num
+      out += if config.colors then line.grey else line
   # highlight line
   line = sprintf "\n     %0#{max}d: #{lines[num++]}", num
   if config.colors
@@ -193,9 +184,10 @@ getCodeview = (frame) ->
   else
     out += line
   # lines after
-  for i in [1..config.code.after]
-    line = sprintf "\n     %0#{max}d: #{lines[num++]}", num
-    out += if config.colors then line.grey else line
+  if config.code.after
+    for i in [1..config.code.after]
+      line = sprintf "\n     %0#{max}d: #{lines[num++]}", num
+      out += if config.colors then line.grey else line
   out
 
 # ### Get the mapped frame
