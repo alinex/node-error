@@ -1,5 +1,7 @@
 .project
 .settings
+.DS_Store
 *.sublime-*
 src
 doc
+coverage
