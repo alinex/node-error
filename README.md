@@ -9,6 +9,7 @@ This will replace the standard error handler with one which will
 * use source-maps
 * colorize and highlight the output
 * display code area
+* support error nesting (multi level)
 
 
 Example Output
