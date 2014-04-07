@@ -102,7 +102,8 @@ new error instance and add all your different real errors as the `cause` array:
     err.cause = errList;
 
 If this resulting error will be reported it is done with all the causes if
-enabled in configuration.
+enabled in configuration. The cause-list may be an array or an associative
+array.
 
 
 Configuration

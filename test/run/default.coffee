@@ -80,6 +80,14 @@ describe "Default Error reporting", ->
       msg = errorHandler.format err
       expect(msg).to.have.string '08:   new Error "Something went wrong"'
       expect(msg.split(/\n/).length).is.equal 5
+    it "line with colors", ->
+      err = object.returnError()
+      config.colors = true
+      config.stack.view = true
+      config.code.view = true
+      msg = errorHandler.format err
+      expect(msg).to.have.string '08:   new\u001b[39m\u001b[4m\u001b[33m Er\u001b[39m\u001b[24m\u001b[33mror "Something went wrong"\u001b[39m'
+      expect(msg.split(/\n/).length).is.equal 5
     it "with context", ->
       err = object.returnError()
       config.stack.view = true

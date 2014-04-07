@@ -53,8 +53,20 @@ describe "Error with cause reporting", ->
       err = object.returnCause()
       config.cause.view = true
       msg = errorHandler.format err
-      expect(msg).is.equal 'Error: Something went wrong\n  Caused by Error: root fault'
+      expect(msg).is.equal 'Error: Something went wrong\n  Caused by Error: root fault (somethere)'
       expect(msg.split(/\n/).length).is.equal 2
+    it "for array", ->
+      err = object.returnCauseArray()
+      config.cause.view = true
+      msg = errorHandler.format err
+      expect(msg).is.equal 'Error: Something went wrong\n  Caused by Error: root fault 1 (somethere)\n  Caused by Error: root fault 2 (somethere)'
+#      expect(msg.split(/\n/).length).is.equal 2
+    it "for hash", ->
+      err = object.returnCauseHash()
+      config.cause.view = true
+      msg = errorHandler.format err
+      expect(msg).is.equal 'Error: Something went wrong\n  Caused by Error: root fault 1 (here)\n  Caused by Error: root fault 2 (there)'
+#      expect(msg.split(/\n/).length).is.equal 2
 
   describe "show cause with stack", ->
     it "default", ->

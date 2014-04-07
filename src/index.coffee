@@ -113,14 +113,31 @@ format = (err, level, codePart) ->
       return msg
     if err.cause and config.cause.view
       level ?= 0
+      console.log '-----------??????-------'
+      console.log err.cause
+      console.log Array.isArray err.cause
       if Array.isArray err.cause
+        console.log '-----------array-------'
         for entry in err.cause
-          cause = format entry, level+1, err.codePart?
+          if entry
+            console.log '------------------'
+            console.log entry
+            cause = format entry, level+1, err.codePart ? null
+            msg += "\n" + cause.split(/\n/).map (l) ->
+              l = "  #{l}" for i in [0..level]
+            .join "\n"
+      else if typeof err.cause is 'object' and not(err.cause instanceof Error)
+        console.log '-----------hash-------'
+        for codePart, entry of err.cause
+          console.log '------------------'
+          console.log entry
+          cause = format entry, level+1, codePart ? null
           msg += "\n" + cause.split(/\n/).map (l) ->
             l = "  #{l}" for i in [0..level]
           .join "\n"
       else
-        cause = format err.cause, level+1, err.codePart?
+        console.log '-----------Error-------'
+        cause = format err.cause, level+1, err.codePart ? null
         msg += "\n" + cause.split(/\n/).map (l) ->
           l = "  #{l}" for i in [0..level]
         .join "\n"
