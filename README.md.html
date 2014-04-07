@@ -6,7 +6,7 @@
   <link rel="stylesheet" media="all" href="doc-style.css" />
   <script src="doc-filelist.js"></script>
   <script>
-    var relativeDir = "", thisFile = "home/alex/a3/node-error/README.md", defaultSidebar = true;
+    var relativeDir = "", thisFile = "Users/alex/a3/node-error/README.md", defaultSidebar = true;
   </script>
   <script src="doc-script.js"></script>
   <script src="fileSearch.js"></script>
@@ -62,6 +62,7 @@
 
 
 <p><a href="https://travis-ci.org/alinex/node-error"><img src="https://travis-ci.org/alinex/node-error.svg?branch=master" alt="Build Status" title="" /></a>
+<a href="https://coveralls.io/r/alinex/node-error?branch=master"><img src="https://coveralls.io/repos/alinex/node-error/badge.png?branch=master" alt="Coverage Status" title="" /></a>
 <a href="https://gemnasium.com/alinex/node-error"><img src="https://gemnasium.com/alinex/node-error.png" alt="Dependency Status" title="" /></a></p>
 
 <p>This will replace the standard error handler with one which will</p>
@@ -227,7 +228,7 @@ main routine using:</p>
 </div>
 
 
-<p>That's done the same way as an error with another error as cause. You create a 
+<p>That's done the same way as an error with another error as cause. You create a
 new error instance and add all your different real errors as the <code>cause</code> array:</p>
 
 
@@ -239,7 +240,8 @@ new error instance and add all your different real errors as the <code>cause</co
 
 
 <p>If this resulting error will be reported it is done with all the causes if
-enabled in configuration.</p>
+enabled in configuration. The cause-list may be an array or an associative
+array.</p>
 
 
 <div class="pilwrap" id="configuration">
@@ -272,7 +274,7 @@ structure:</p>
     <span class="nx">all</span><span class="o">:</span> <span class="kc">false</span>          <span class="err">#</span> <span class="nx">show</span> <span class="nx">all</span> <span class="nx">code</span> <span class="nx">or</span> <span class="nx">only</span> <span class="nx">from</span> <span class="nx">origin</span>
 
   <span class="err">#</span> <span class="nx">Display</span> <span class="nx">of</span> <span class="nx">the</span> <span class="nx">errors</span> <span class="nx">cause</span> <span class="k">if</span> <span class="nx">there</span> <span class="nx">is</span> <span class="nx">one</span>
-  <span class="nx">cause</span><span class="o">:</span> 
+  <span class="nx">cause</span><span class="o">:</span>
     <span class="nx">view</span><span class="o">:</span> <span class="kc">true</span>          <span class="err">#</span> <span class="nx">view</span> <span class="nx">caused</span> <span class="nx">errors</span>
     <span class="nx">stack</span><span class="o">:</span> <span class="kc">true</span>         <span class="err">#</span> <span class="nx">view</span> <span class="nx">also</span> <span class="nx">stack</span> <span class="nx">like</span> <span class="nx">on</span> <span class="nx">main</span> <span class="nx">error</span>
 
