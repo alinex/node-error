@@ -4,6 +4,11 @@ Version changes
 The following list gives a short overview about what is changed between
 individual versions:
 
+Version 0.2.0
+-------------------------------------------------
+- Fixed changelog
+- Added logger support to report to any possible logger and transport.
+
 Version 0.1.4
 -------------------------------------------------
 - Fixed bug in calling report() which prevented output to be created.
