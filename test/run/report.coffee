@@ -1,7 +1,8 @@
 chai = require 'chai'
 expect = chai.expect
+winston = require 'winston'
 
-describe "Report error to console", ->
+describe "Report error", ->
 
   object = require '../data/object.js'
   errorHandler = require '../../lib/index.js'
@@ -32,10 +33,27 @@ describe "Report error to console", ->
         exit: false
         timeout: 100
         code: 2
+  # define a specific logger
+  logger: null
 
-  describe "for strings", ->
+
+  describe "default", ->
     err = object.returnString()
-    it "manuel", ->
+    it "to console error", ->
       errorHandler.report err
-#    it "uncaught", ->
-#      throw err
+
+  describe "using logger", ->
+    it "to console as error", ->
+      errorHandler.config.logger = new winston.Logger
+        transports: [
+          new winston.transports.Console()
+        ]
+      err = object.returnString()
+      errorHandler.report err
+    it "to console as info", ->
+      errorHandler.config.logger = new winston.Logger
+        transports: [
+          new winston.transports.Console()
+        ]
+      err = object.returnString()
+      errorHandler.report err, 'info'

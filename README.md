@@ -60,6 +60,7 @@ This will capture the error, log it and stop processing if one occurs.
 Alternatively an already caught Error may be reported using:
 
     errorHandler.report(error);
+    errorHandler.report(error, level);
 
 or retrieved as formatted string using:
 
@@ -140,8 +141,12 @@ structure:
         timeout: 100        # timeout to wait before exit to write logs
         code: 2             # exit code to use
 
+      # define a specific logger
+      logger: console
+
 The above given values are the default values which you may change to customize
-the output.
+the output. As logger you may specify any logger like `console` or `winston` or
+any other which have an `error()` method to call.
 
 
 License
