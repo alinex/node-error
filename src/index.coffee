@@ -85,7 +85,7 @@ uncaughtError = (err) ->
 # * `err`
 #   Error object instance to report.
 report = module.exports.report = (err) ->
-  console.error format
+  console.error format err
 
 
 # Format error
