@@ -9,14 +9,11 @@ Version 0.1.4
 - Fixed bug in calling report() which prevented output to be created.
 - Allow chaining in install() method.
 - Add test for report method.
-- Added support for associative error causes. Extended test scripts.
+- Added support for associative error causes.
+- Extended test scripts.
 - Remove coverage report from git.
 - Fixup git files.
 - Finished coveralls integration.
-- Try to push to coveralls.
-- Try to push to coveralls.
-- Try to push to coveralls.
-- Try to push to coveralls.
 
 Version 0.1.3
 -------------------------------------------------
