@@ -4,6 +4,20 @@ Version changes
 The following list gives a short overview about what is changed between
 individual versions:
 
+Version 0.1.4
+-------------------------------------------------
+- Fixed bug in calling report() which prevented output to be created.
+- Allow chaining in install() method.
+- Add test for report method.
+- Added support for associative error causes. Extended test scripts.
+- Remove coverage report from git.
+- Fixup git files.
+- Finished coveralls integration.
+- Try to push to coveralls.
+- Try to push to coveralls.
+- Try to push to coveralls.
+- Try to push to coveralls.
+
 Version 0.1.3
 -------------------------------------------------
 - Added dependency for colors module.
