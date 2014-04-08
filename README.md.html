@@ -154,6 +154,7 @@ main routine using:</p>
 
 
 <div class="highlight"><pre><code><span class="nx">errorHandler</span><span class="p">.</span><span class="nx">report</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+<span class="nx">errorHandler</span><span class="p">.</span><span class="nx">report</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">level</span><span class="p">);</span>
 </code></pre></div>
 
 
@@ -283,12 +284,16 @@ structure:</p>
     <span class="nx">exit</span><span class="o">:</span> <span class="kc">true</span>          <span class="err">#</span> <span class="nx">should</span> <span class="nx">process</span> <span class="nx">be</span> <span class="nx">exited</span> <span class="nx">after</span> <span class="nx">uncaught</span> <span class="nx">error</span>
     <span class="nx">timeout</span><span class="o">:</span> <span class="mi">100</span>        <span class="err">#</span> <span class="nx">timeout</span> <span class="nx">to</span> <span class="nx">wait</span> <span class="nx">before</span> <span class="nx">exit</span> <span class="nx">to</span> <span class="nx">write</span> <span class="nx">logs</span>
     <span class="nx">code</span><span class="o">:</span> <span class="mi">2</span>             <span class="err">#</span> <span class="nx">exit</span> <span class="nx">code</span> <span class="nx">to</span> <span class="nx">use</span>
+
+  <span class="err">#</span> <span class="nx">define</span> <span class="nx">a</span> <span class="nx">specific</span> <span class="nx">logger</span>
+  <span class="nx">logger</span><span class="o">:</span> <span class="nx">console</span>
 </code></pre></div>
 
 
 
 <p>The above given values are the default values which you may change to customize
-the output.</p>
+the output. As logger you may specify any logger like <code>console</code> or <code>winston</code> or
+any other which have an <code>error()</code> method to call.</p>
 
 
 <div class="pilwrap" id="license">

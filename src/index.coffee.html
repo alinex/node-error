@@ -212,6 +212,19 @@ then the default behavior will be used.</p>
     <span class="nv">timeout: </span><span class="mi">100</span>
     <span class="nv">code: </span><span class="mi">2</span>
 
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs">
+<div class="pilwrap">
+  <a class="pilcrow" href="#section-9" id="section-9">&#182;</a>
+</div>
+<p>define a specific logger</p>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+  <span class="nv">logger: </span><span class="nx">console</span>
+
 
 
 </pre></div>
@@ -233,6 +246,7 @@ then the default behavior will be used.</p>
 <span class="nv">module.exports.install = </span><span class="nf">-&gt;</span>
   <span class="nb">Error</span><span class="p">.</span><span class="nv">prepareStackTrace = </span><span class="nx">prepareStackTrace</span>
   <span class="nx">process</span><span class="p">.</span><span class="nx">on</span> <span class="s">&#39;uncaughtException&#39;</span><span class="p">,</span> <span class="nx">uncaughtError</span>
+  <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span>
 
 
 
@@ -270,7 +284,7 @@ Error object instance to report.</li>
       <tr>
         <td class="docs">
 <div class="pilwrap">
-  <a class="pilcrow" href="#section-11" id="section-11">&#182;</a>
+  <a class="pilcrow" href="#section-12" id="section-12">&#182;</a>
 </div>
 <p>stop processing after short timeout to finish logging</p>
         </td>
@@ -304,12 +318,21 @@ be colorful with stack trace, source mapping and code view.</p>
 <ul>
 <li><code>err</code>
 Error object instance to report.</li>
+<li><code>level</code>
+Log level to use, must correspond with a method in logger.</li>
 </ul>
+
+<p>This may use any specified logger, which have <code>logger.&lt;level&gt;(&lt;error&gt;)</code> or
+a method <code>logger.log(&lt;level&gt;, &lt;error&gt;)</code>.</p>
         </td>
         <td class="code highlight"><div class="highlight"><pre>
-<span class="nv">report = module.exports.report = </span><span class="nf">(err) -&gt;</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">error</span> <span class="nx">format</span>
-
+<span class="nv">report = module.exports.report = </span><span class="nf">(err, level = &#39;error&#39;) -&gt;</span>
+  <span class="k">if</span> <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">logger</span><span class="o">?</span><span class="p">[</span><span class="nx">level</span><span class="p">]</span><span class="o">?</span>
+    <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">logger</span><span class="p">[</span><span class="nx">level</span><span class="p">]</span> <span class="nx">format</span> <span class="nx">err</span>
+  <span class="k">else</span> <span class="k">if</span> <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">logger</span><span class="o">?</span><span class="p">.</span><span class="nx">log</span><span class="o">?</span>
+    <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">logger</span><span class="p">.</span><span class="nx">log</span> <span class="nx">level</span><span class="p">,</span> <span class="nx">format</span> <span class="nx">err</span>
+  <span class="k">else</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span> <span class="nx">format</span> <span class="nx">err</span>
 
 
 </pre></div>
@@ -477,7 +500,7 @@ Error object instance to report.</li>
       <tr>
         <td class="docs">
 <div class="pilwrap">
-  <a class="pilcrow" href="#section-18" id="section-18">&#182;</a>
+  <a class="pilcrow" href="#section-19" id="section-19">&#182;</a>
 </div>
 <p>lines before</p>
         </td>
@@ -494,7 +517,7 @@ Error object instance to report.</li>
       <tr>
         <td class="docs">
 <div class="pilwrap">
-  <a class="pilcrow" href="#section-19" id="section-19">&#182;</a>
+  <a class="pilcrow" href="#section-20" id="section-20">&#182;</a>
 </div>
 <p>highlight line</p>
         </td>
@@ -514,7 +537,7 @@ Error object instance to report.</li>
       <tr>
         <td class="docs">
 <div class="pilwrap">
-  <a class="pilcrow" href="#section-20" id="section-20">&#182;</a>
+  <a class="pilcrow" href="#section-21" id="section-21">&#182;</a>
 </div>
 <p>lines after</p>
         </td>
@@ -548,7 +571,7 @@ Error object instance to report.</li>
       <tr>
         <td class="docs">
 <div class="pilwrap">
-  <a class="pilcrow" href="#section-22" id="section-22">&#182;</a>
+  <a class="pilcrow" href="#section-23" id="section-23">&#182;</a>
 </div>
 <p>Most call sites will return the source file from getFileName(), but code
 passed to eval() ending in "//# sourceURL=..." will return the source file
@@ -577,7 +600,7 @@ from getScriptNameOrSourceURL() instead</p>
       <tr>
         <td class="docs">
 <div class="pilwrap">
-  <a class="pilcrow" href="#section-23" id="section-23">&#182;</a>
+  <a class="pilcrow" href="#section-24" id="section-24">&#182;</a>
 </div>
 <p>Code called using eval() needs special handling</p>
         </td>
@@ -597,7 +620,7 @@ from getScriptNameOrSourceURL() instead</p>
       <tr>
         <td class="docs">
 <div class="pilwrap">
-  <a class="pilcrow" href="#section-24" id="section-24">&#182;</a>
+  <a class="pilcrow" href="#section-25" id="section-25">&#182;</a>
 </div>
 <p>If we get here then we were unable to change the source position</p>
         </td>
@@ -610,7 +633,7 @@ from getScriptNameOrSourceURL() instead</p>
       <tr>
         <td class="docs">
 <div class="pilwrap">
-  <a class="pilcrow" href="#section-25" id="section-25">&#182;</a>
+  <a class="pilcrow" href="#section-26" id="section-26">&#182;</a>
 </div>
 <p>Maps a file path to a source map for that file</p>
         </td>
@@ -641,7 +664,7 @@ from getScriptNameOrSourceURL() instead</p>
       <tr>
         <td class="docs">
 <div class="pilwrap">
-  <a class="pilcrow" href="#section-27" id="section-27">&#182;</a>
+  <a class="pilcrow" href="#section-28" id="section-28">&#182;</a>
 </div>
 <p>retrieve source map</p>
         </td>
@@ -659,7 +682,7 @@ from getScriptNameOrSourceURL() instead</p>
       <tr>
         <td class="docs">
 <div class="pilwrap">
-  <a class="pilcrow" href="#section-28" id="section-28">&#182;</a>
+  <a class="pilcrow" href="#section-29" id="section-29">&#182;</a>
 </div>
 <p>Resolve the source URL relative to the URL of the source map</p>
         </td>
@@ -700,7 +723,7 @@ constructor).</p>
       <tr>
         <td class="docs">
 <div class="pilwrap">
-  <a class="pilcrow" href="#section-30" id="section-30">&#182;</a>
+  <a class="pilcrow" href="#section-31" id="section-31">&#182;</a>
 </div>
 <p>Get the URL of the source map</p>
         </td>
@@ -717,7 +740,7 @@ constructor).</p>
       <tr>
         <td class="docs">
 <div class="pilwrap">
-  <a class="pilcrow" href="#section-31" id="section-31">&#182;</a>
+  <a class="pilcrow" href="#section-32" id="section-32">&#182;</a>
 </div>
 <p>Read the contents of the source map</p>
         </td>
@@ -732,7 +755,7 @@ constructor).</p>
       <tr>
         <td class="docs">
 <div class="pilwrap">
-  <a class="pilcrow" href="#section-32" id="section-32">&#182;</a>
+  <a class="pilcrow" href="#section-33" id="section-33">&#182;</a>
 </div>
 <p>Support source map URL as a data url</p>
         </td>
@@ -746,7 +769,7 @@ constructor).</p>
       <tr>
         <td class="docs">
 <div class="pilwrap">
-  <a class="pilcrow" href="#section-33" id="section-33">&#182;</a>
+  <a class="pilcrow" href="#section-34" id="section-34">&#182;</a>
 </div>
 <p>Support source map URLs relative to the source URL</p>
         </td>
@@ -765,7 +788,7 @@ constructor).</p>
       <tr>
         <td class="docs">
 <div class="pilwrap">
-  <a class="pilcrow" href="#section-34" id="section-34">&#182;</a>
+  <a class="pilcrow" href="#section-35" id="section-35">&#182;</a>
 </div>
 <p>Maps a file path to a source map for that file</p>
         </td>
@@ -797,7 +820,7 @@ constructor).</p>
       <tr>
         <td class="docs">
 <div class="pilwrap">
-  <a class="pilcrow" href="#section-36" id="section-36">&#182;</a>
+  <a class="pilcrow" href="#section-37" id="section-37">&#182;</a>
 </div>
 <p>Use AJAX if we are in the browser</p>
         </td>
@@ -814,7 +837,7 @@ constructor).</p>
       <tr>
         <td class="docs">
 <div class="pilwrap">
-  <a class="pilcrow" href="#section-37" id="section-37">&#182;</a>
+  <a class="pilcrow" href="#section-38" id="section-38">&#182;</a>
 </div>
 <p>Otherwise, use the file system</p>
         </td>
@@ -831,7 +854,7 @@ constructor).</p>
       <tr>
         <td class="docs">
 <div class="pilwrap">
-  <a class="pilcrow" href="#section-38" id="section-38">&#182;</a>
+  <a class="pilcrow" href="#section-39" id="section-39">&#182;</a>
 </div>
 <p>Maps a file path to a string containing the file contents</p>
         </td>
@@ -887,7 +910,7 @@ in case we are in the browser (i.e. directories may start with "http://")</p>
       <tr>
         <td class="docs">
 <div class="pilwrap">
-  <a class="pilcrow" href="#section-41" id="section-41">&#182;</a>
+  <a class="pilcrow" href="#section-42" id="section-42">&#182;</a>
 </div>
 <p>Most eval() calls are in this format</p>
         </td>
@@ -907,7 +930,7 @@ in case we are in the browser (i.e. directories may start with "http://")</p>
       <tr>
         <td class="docs">
 <div class="pilwrap">
-  <a class="pilcrow" href="#section-42" id="section-42">&#182;</a>
+  <a class="pilcrow" href="#section-43" id="section-43">&#182;</a>
 </div>
 <p>Parse nested eval() calls using recursion</p>
         </td>
@@ -921,7 +944,7 @@ in case we are in the browser (i.e. directories may start with "http://")</p>
       <tr>
         <td class="docs">
 <div class="pilwrap">
-  <a class="pilcrow" href="#section-43" id="section-43">&#182;</a>
+  <a class="pilcrow" href="#section-44" id="section-44">&#182;</a>
 </div>
 <p>Make sure we still return useful information if we didn't find anything</p>
         </td>
