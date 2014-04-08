@@ -51,6 +51,7 @@ module.exports.config =
 module.exports.install = ->
   Error.prepareStackTrace = prepareStackTrace
   process.on 'uncaughtException', uncaughtError
+  module.exports
 
 
 # ### Process uncaught error
