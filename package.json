@@ -1,6 +1,6 @@
 {
   "name": "alinex-error",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "description": "Configurable error handler with source-map support.",
   "copyright": "Alexander Schilling 2013-2014",
   "keywords": "error, exception, handler, source-map",
@@ -35,7 +35,8 @@
     "mocha": "1.x",
     "chai": "1.x",
     "istanbul": "0.2.x",
-    "coveralls": "2.x"
+    "coveralls": "2.x",
+    "winston": "0.x"
   },
   "optionalDependencies": {},
   "engines": {

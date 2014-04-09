@@ -43,6 +43,8 @@ module.exports.config =
     exit: true
     timeout: 100
     code: 2
+  # define a specific logger
+  logger: console
 
 
 # Install error handler
@@ -84,9 +86,18 @@ uncaughtError = (err) ->
 #
 # * `err`
 #   Error object instance to report.
-report = module.exports.report = (err) ->
-  console.error format err
-
+# * `level`
+#   Log level to use, must correspond with a method in logger.
+#
+# This may use any specified logger, which have `logger.<level>(<error>)` or
+# a method `logger.log(<level>, <error>)`.
+report = module.exports.report = (err, level = 'error') ->
+  if module.exports.config.logger?[level]?
+    module.exports.config.logger[level] format err
+  else if module.exports.config.logger?.log?
+    module.exports.config.logger.log level, format err
+  else
+    console.error format err
 
 # Format error
 # -------------------------------------------------
