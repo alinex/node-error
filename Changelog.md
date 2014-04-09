@@ -9,14 +9,12 @@ Version 0.1.4
 - Fixed bug in calling report() which prevented output to be created.
 - Allow chaining in install() method.
 - Add test for report method.
-- Added support for associative error causes. Extended test scripts.
+- Added support for associative error causes. 
+- Extended test scripts.
 - Remove coverage report from git.
 - Fixup git files.
 - Finished coveralls integration.
-- Try to push to coveralls.
-- Try to push to coveralls.
-- Try to push to coveralls.
-- Try to push to coveralls.
+- Push to coveralls.
 
 Version 0.1.3
 -------------------------------------------------
@@ -24,7 +22,7 @@ Version 0.1.3
 - Added help for new format() method.
 - Added unit tests. Added format() option to return formatted string.
 - Rename internal functions for more modular structure.
-- First test routines to get propper testing.
+- First test routines to get proper testing.
 - Made dependencies more open.
 - Fixed lint errors.
 

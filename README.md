@@ -53,7 +53,7 @@ main routine using:
 
 Or the same in one statement:
 
-    require('alinex-error').install();
+    errorHandler = require('alinex-error').install();
 
 This will capture the error, log it and stop processing if one occurs.
 
