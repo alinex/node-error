@@ -8,7 +8,6 @@ Version 0.2.1 (2014-04-10)
 -------------------------------------------------
 - Small documentation updates.
 - Added config flag to show also the compiled code.
-- Merge branch 'master' of https://github.com/alinex/node-error
 - Description changes.
 
 Version 0.2.0

@@ -1,12 +1,9 @@
 Package: alinex-error
 =================================================
 
-[![Build Status](https://travis-ci.org/alinex/node-error.svg?branch=master)]\
-(https://travis-ci.org/alinex/node-error)
-[![Coverage Status](https://coveralls.io/repos/alinex/node-error/badge.png?branch=master)]\
-(https://coveralls.io/r/alinex/node-error?branch=master)
-[![Dependency Status](https://gemnasium.com/alinex/node-error.png)]\
-(https://gemnasium.com/alinex/node-error)
+[![Build Status](https://travis-ci.org/alinex/node-error.svg?branch=master)](https://travis-ci.org/alinex/node-error)
+[![Coverage Status](https://coveralls.io/repos/alinex/node-error/badge.png?branch=master)](https://coveralls.io/r/alinex/node-error?branch=master)
+[![Dependency Status](https://gemnasium.com/alinex/node-error.png)](https://gemnasium.com/alinex/node-error)
 
 This will replace the standard error handler with one which will
 
