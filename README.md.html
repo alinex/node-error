@@ -6,7 +6,7 @@
   <link rel="stylesheet" media="all" href="doc-style.css" />
   <script src="doc-filelist.js"></script>
   <script>
-    var relativeDir = "", thisFile = "Users/alex/a3/node-error/README.md", defaultSidebar = true;
+    var relativeDir = "", thisFile = "home/alex/a3/node-error/README.md", defaultSidebar = true;
   </script>
   <script src="doc-script.js"></script>
   <script src="fileSearch.js"></script>
@@ -26,7 +26,49 @@
         <a href="#package%3A%20alinex-error">Package: alinex-error</a>
       </div>
       <div class="heading h2">
-        <a href="#example%20output">Example Output</a>
+        <a href="#default%20output">Default Output</a>
+      </div>
+      <div class="heading h3">
+        <a href="#only%20the%20real%20error%20message">Only the real error message</a>
+      </div>
+      <div class="heading h3">
+        <a href="#default%20stack%20trace">Default stack trace</a>
+      </div>
+      <div class="heading h3">
+        <a href="#stack%20with%20node_modules">Stack with node_modules</a>
+      </div>
+      <div class="heading h3">
+        <a href="#stack%20with%20system">Stack with system</a>
+      </div>
+      <div class="heading h3">
+        <a href="#full%20stack%20with%20node_modules%20and%20system">Full stack with node_modules and system</a>
+      </div>
+      <div class="heading h3">
+        <a href="#show%20code%20line">Show code line</a>
+      </div>
+      <div class="heading h3">
+        <a href="#show%20code%20context">Show code context</a>
+      </div>
+      <div class="heading h3">
+        <a href="#show%20code%20lines">Show code lines</a>
+      </div>
+      <div class="heading h3">
+        <a href="#show%20all%20code%20lines">Show all code lines</a>
+      </div>
+      <div class="heading h3">
+        <a href="#show%20also%20compiled%20code%20lines">Show also compiled code lines</a>
+      </div>
+      <div class="heading h3">
+        <a href="#show%20error%20with%20cause">Show error with cause</a>
+      </div>
+      <div class="heading h3">
+        <a href="#show%20error%20with%20cause%20array">Show error with cause array</a>
+      </div>
+      <div class="heading h3">
+        <a href="#show%20error%20with%20cause%20hash">Show error with cause hash</a>
+      </div>
+      <div class="heading h3">
+        <a href="#show%20stack%20with%20error%20cause">Show stack with error cause</a>
       </div>
       <div class="heading h2">
         <a href="#installation">Installation</a>
@@ -61,24 +103,32 @@
 </div>
 
 
-<p><a href="https://travis-ci.org/alinex/node-error"><img src="https://travis-ci.org/alinex/node-error.svg?branch=master" alt="Build Status" title="" /></a>
-<a href="https://coveralls.io/r/alinex/node-error?branch=master"><img src="https://coveralls.io/repos/alinex/node-error/badge.png?branch=master" alt="Coverage Status" title="" /></a>
-<a href="https://gemnasium.com/alinex/node-error"><img src="https://gemnasium.com/alinex/node-error.png" alt="Dependency Status" title="" /></a></p>
+<p>[<img src="https://travis-ci.org/alinex/node-error.svg?branch=master" alt="Build Status" title="" />]\
+(<a href='https://travis-ci.org/alinex/node-error'>https://travis-ci.org/alinex/node-error</a>)
+[<img src="https://coveralls.io/repos/alinex/node-error/badge.png?branch=master" alt="Coverage Status" title="" />]\
+(<a href='https://coveralls.io/r/alinex/node-error?branch=master'>https://coveralls.io/r/alinex/node-error?branch=master</a>)
+[<img src="https://gemnasium.com/alinex/node-error.png" alt="Dependency Status" title="" />]\
+(<a href='https://gemnasium.com/alinex/node-error'>https://gemnasium.com/alinex/node-error</a>)</p>
 
 <p>This will replace the standard error handler with one which will</p>
 
 <ul>
+<li>report of Error or other object</li>
+<li>display code with context</li>
 <li>use source-maps</li>
-<li>colorize and highlight the output</li>
-<li>display code area</li>
 <li>support error nesting (multi level)</li>
+<li>support individual loggers like winston...</li>
+<li>colorize and highlight the output</li>
 </ul>
 
+<p>For the normal use it is really simple and only have to be loaded and installed 
+once in your application.</p>
 
-<div class="pilwrap" id="example%20output">
+
+<div class="pilwrap" id="default%20output">
   <h2>
-    <a href="#example%20output" name="example%20output" class="pilcrow">&#182;</a>
-    Example Output
+    <a href="#default%20output" name="default%20output" class="pilcrow">&#182;</a>
+    Default Output
   </h2>
 </div>
 
@@ -96,6 +146,523 @@ output:</p>
      <span class="mi">096</span><span class="o">:</span>     <span class="p">],</span> <span class="p">{</span> <span class="nx">cwd</span><span class="o">:</span> <span class="nx">command</span><span class="p">.</span><span class="nx">dir</span> <span class="p">},</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">stdout</span><span class="p">,</span> <span class="nx">stderr</span><span class="p">)</span> <span class="o">-&gt;</span>
      <span class="mi">097</span><span class="o">:</span>       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span> <span class="nx">stdout</span><span class="p">.</span><span class="nx">trim</span><span class="p">().</span><span class="nx">grey</span> <span class="k">if</span> <span class="nx">stdout</span> <span class="nx">and</span> <span class="nx">commander</span><span class="p">.</span><span class="nx">verbose</span>
 <span class="nx">Exiting</span> <span class="nx">after</span> <span class="nx">error</span> <span class="nx">logging</span> <span class="nx">timeout</span><span class="p">.</span>
+</code></pre></div>
+
+
+
+<p>You may change the output in different ways using the configuration. Below are 
+some output examples for different configurations (keep in mind the colors
+displayed here won't match).</p>
+
+
+<div class="pilwrap" id="only%20the%20real%20error%20message">
+  <h3>
+    <a href="#only%20the%20real%20error%20message" name="only%20the%20real%20error%20message" class="pilcrow">&#182;</a>
+    Only the real error message
+  </h3>
+</div>
+
+
+<p>Configuration:</p>
+
+
+<div class="highlight"><pre><code><span class="p">{</span> <span class="nx">colors</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="nx">stack</span><span class="o">:</span> <span class="p">{</span> <span class="nx">view</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">modules</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">system</span><span class="o">:</span> <span class="kc">false</span> <span class="p">},</span>
+  <span class="nx">code</span><span class="o">:</span> <span class="p">{</span> <span class="nx">view</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">before</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">after</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">compiled</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">all</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">modules</span><span class="o">:</span> <span class="kc">false</span> <span class="p">},</span>
+  <span class="nx">cause</span><span class="o">:</span> <span class="p">{</span> <span class="nx">view</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">stack</span><span class="o">:</span> <span class="kc">false</span> <span class="p">},</span>
+  <span class="nx">uncaught</span><span class="o">:</span> <span class="p">{</span> <span class="nx">exit</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">timeout</span><span class="o">:</span> <span class="mi">100</span><span class="p">,</span> <span class="nx">code</span><span class="o">:</span> <span class="mi">2</span> <span class="p">}</span> <span class="p">}</span>
+</code></pre></div>
+
+
+
+<p>Error message:</p>
+
+
+<div class="highlight"><pre><code><span class="nb">Error</span><span class="o">:</span> <span class="nx">Something</span> <span class="nx">went</span> <span class="nx">wrong</span>
+</code></pre></div>
+
+
+
+
+<div class="pilwrap" id="default%20stack%20trace">
+  <h3>
+    <a href="#default%20stack%20trace" name="default%20stack%20trace" class="pilcrow">&#182;</a>
+    Default stack trace
+  </h3>
+</div>
+
+
+<p>Configuration:</p>
+
+
+<div class="highlight"><pre><code><span class="p">{</span> <span class="nx">colors</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="nx">stack</span><span class="o">:</span> <span class="p">{</span> <span class="nx">view</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">modules</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">system</span><span class="o">:</span> <span class="kc">false</span> <span class="p">},</span>
+  <span class="nx">code</span><span class="o">:</span> <span class="p">{</span> <span class="nx">view</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">before</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">after</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">compiled</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">all</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">modules</span><span class="o">:</span> <span class="kc">false</span> <span class="p">},</span>
+  <span class="nx">cause</span><span class="o">:</span> <span class="p">{</span> <span class="nx">view</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">stack</span><span class="o">:</span> <span class="kc">false</span> <span class="p">},</span>
+  <span class="nx">uncaught</span><span class="o">:</span> <span class="p">{</span> <span class="nx">exit</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">timeout</span><span class="o">:</span> <span class="mi">100</span><span class="p">,</span> <span class="nx">code</span><span class="o">:</span> <span class="mi">2</span> <span class="p">}</span> <span class="p">}</span>
+</code></pre></div>
+
+
+
+<p>Error message:</p>
+
+
+<div class="highlight"><pre><code><span class="nb">Error</span><span class="o">:</span> <span class="nx">Something</span> <span class="nx">went</span> <span class="nx">wrong</span>
+  <span class="nx">at</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">returnError</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/test/data/object.js:8:12)</span>
+     <span class="nb">Object</span><span class="p">.</span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">returnError</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/test/data/object.coffee:8:6)</span>
+  <span class="nx">at</span> <span class="nx">Context</span><span class="p">.</span><span class="o">&lt;</span><span class="nx">anonymous</span><span class="o">&gt;</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/test/run/default.coffee:78:22)</span>
+</code></pre></div>
+
+
+
+
+<div class="pilwrap" id="stack%20with%20node_modules">
+  <h3>
+    <a href="#stack%20with%20node_modules" name="stack%20with%20node_modules" class="pilcrow">&#182;</a>
+    Stack with node_modules
+  </h3>
+</div>
+
+
+<p>Configuration:</p>
+
+
+<div class="highlight"><pre><code><span class="p">{</span> <span class="nx">colors</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="nx">stack</span><span class="o">:</span> <span class="p">{</span> <span class="nx">view</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">modules</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">system</span><span class="o">:</span> <span class="kc">false</span> <span class="p">},</span>
+  <span class="nx">code</span><span class="o">:</span> <span class="p">{</span> <span class="nx">view</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">before</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">after</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">compiled</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">all</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">modules</span><span class="o">:</span> <span class="kc">false</span> <span class="p">},</span>
+  <span class="nx">cause</span><span class="o">:</span> <span class="p">{</span> <span class="nx">view</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">stack</span><span class="o">:</span> <span class="kc">false</span> <span class="p">},</span>
+  <span class="nx">uncaught</span><span class="o">:</span> <span class="p">{</span> <span class="nx">exit</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">timeout</span><span class="o">:</span> <span class="mi">100</span><span class="p">,</span> <span class="nx">code</span><span class="o">:</span> <span class="mi">2</span> <span class="p">}</span> <span class="p">}</span>
+</code></pre></div>
+
+
+
+<p>Error message:</p>
+
+
+<div class="highlight"><pre><code><span class="nb">Error</span><span class="o">:</span> <span class="nx">Something</span> <span class="nx">went</span> <span class="nx">wrong</span>
+  <span class="nx">at</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">returnError</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/test/data/object.js:8:12)</span>
+     <span class="nb">Object</span><span class="p">.</span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">returnError</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/test/data/object.coffee:8:6)</span>
+  <span class="nx">at</span> <span class="nx">Context</span><span class="p">.</span><span class="o">&lt;</span><span class="nx">anonymous</span><span class="o">&gt;</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/test/run/default.coffee:85:22)</span>
+  <span class="nx">at</span> <span class="nx">callFn</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/node_modules/mocha/lib/runnable.js:223:21)</span>
+  <span class="nx">at</span> <span class="nx">Test</span><span class="p">.</span><span class="nx">Runnable</span><span class="p">.</span><span class="nx">run</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/node_modules/mocha/lib/runnable.js:216:7)</span>
+  <span class="nx">at</span> <span class="nx">Runner</span><span class="p">.</span><span class="nx">runTest</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/node_modules/mocha/lib/runner.js:374:10)</span>
+  <span class="nx">at</span> <span class="o">/</span><span class="nx">home</span><span class="o">/</span><span class="nx">alex</span><span class="o">/</span><span class="nx">a3</span><span class="o">/</span><span class="nx">node</span><span class="o">-</span><span class="nx">error</span><span class="o">/</span><span class="nx">node_modules</span><span class="o">/</span><span class="nx">mocha</span><span class="o">/</span><span class="nx">lib</span><span class="o">/</span><span class="nx">runner</span><span class="p">.</span><span class="nx">js</span><span class="o">:</span><span class="mi">452</span><span class="o">:</span><span class="mi">12</span>
+  <span class="nx">at</span> <span class="nx">next</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/node_modules/mocha/lib/runner.js:299:14)</span>
+  <span class="nx">at</span> <span class="o">/</span><span class="nx">home</span><span class="o">/</span><span class="nx">alex</span><span class="o">/</span><span class="nx">a3</span><span class="o">/</span><span class="nx">node</span><span class="o">-</span><span class="nx">error</span><span class="o">/</span><span class="nx">node_modules</span><span class="o">/</span><span class="nx">mocha</span><span class="o">/</span><span class="nx">lib</span><span class="o">/</span><span class="nx">runner</span><span class="p">.</span><span class="nx">js</span><span class="o">:</span><span class="mi">309</span><span class="o">:</span><span class="mi">7</span>
+  <span class="nx">at</span> <span class="nx">next</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/node_modules/mocha/lib/runner.js:247:23)</span>
+  <span class="nx">at</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">_onImmediate</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/node_modules/mocha/lib/runner.js:276:5)</span>
+</code></pre></div>
+
+
+
+
+<div class="pilwrap" id="stack%20with%20system">
+  <h3>
+    <a href="#stack%20with%20system" name="stack%20with%20system" class="pilcrow">&#182;</a>
+    Stack with system
+  </h3>
+</div>
+
+
+<p>Configuration:</p>
+
+
+<div class="highlight"><pre><code><span class="p">{</span> <span class="nx">colors</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="nx">stack</span><span class="o">:</span> <span class="p">{</span> <span class="nx">view</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">modules</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">system</span><span class="o">:</span> <span class="kc">true</span> <span class="p">},</span>
+  <span class="nx">code</span><span class="o">:</span> <span class="p">{</span> <span class="nx">view</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">before</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">after</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">compiled</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">all</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">modules</span><span class="o">:</span> <span class="kc">false</span> <span class="p">},</span>
+  <span class="nx">cause</span><span class="o">:</span> <span class="p">{</span> <span class="nx">view</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">stack</span><span class="o">:</span> <span class="kc">false</span> <span class="p">},</span>
+  <span class="nx">uncaught</span><span class="o">:</span> <span class="p">{</span> <span class="nx">exit</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">timeout</span><span class="o">:</span> <span class="mi">100</span><span class="p">,</span> <span class="nx">code</span><span class="o">:</span> <span class="mi">2</span> <span class="p">}</span> <span class="p">}</span>
+</code></pre></div>
+
+
+
+<p>Error message:</p>
+
+
+<div class="highlight"><pre><code><span class="nb">Error</span><span class="o">:</span> <span class="nx">Something</span> <span class="nx">went</span> <span class="nx">wrong</span>
+  <span class="nx">at</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">returnError</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/test/data/object.js:8:12)</span>
+     <span class="nb">Object</span><span class="p">.</span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">returnError</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/test/data/object.coffee:8:6)</span>
+  <span class="nx">at</span> <span class="nx">Context</span><span class="p">.</span><span class="o">&lt;</span><span class="nx">anonymous</span><span class="o">&gt;</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/test/run/default.coffee:93:22)</span>
+  <span class="nx">at</span> <span class="nx">processImmediate</span> <span class="p">[</span><span class="nx">as</span> <span class="nx">_immediateCallback</span><span class="p">]</span> <span class="p">(</span><span class="nx">timers</span><span class="p">.</span><span class="nx">js</span><span class="o">:</span><span class="mi">330</span><span class="o">:</span><span class="mi">15</span><span class="p">)</span>
+</code></pre></div>
+
+
+
+
+<div class="pilwrap" id="full%20stack%20with%20node_modules%20and%20system">
+  <h3>
+    <a href="#full%20stack%20with%20node_modules%20and%20system" name="full%20stack%20with%20node_modules%20and%20system" class="pilcrow">&#182;</a>
+    Full stack with node_modules and system
+  </h3>
+</div>
+
+
+<p>Configuration:</p>
+
+
+<div class="highlight"><pre><code><span class="p">{</span> <span class="nx">colors</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="nx">stack</span><span class="o">:</span> <span class="p">{</span> <span class="nx">view</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">modules</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">system</span><span class="o">:</span> <span class="kc">true</span> <span class="p">},</span>
+  <span class="nx">code</span><span class="o">:</span> <span class="p">{</span> <span class="nx">view</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">before</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">after</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">compiled</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">all</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">modules</span><span class="o">:</span> <span class="kc">false</span> <span class="p">},</span>
+  <span class="nx">cause</span><span class="o">:</span> <span class="p">{</span> <span class="nx">view</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">stack</span><span class="o">:</span> <span class="kc">false</span> <span class="p">},</span>
+  <span class="nx">uncaught</span><span class="o">:</span> <span class="p">{</span> <span class="nx">exit</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">timeout</span><span class="o">:</span> <span class="mi">100</span><span class="p">,</span> <span class="nx">code</span><span class="o">:</span> <span class="mi">2</span> <span class="p">}</span> <span class="p">}</span>
+</code></pre></div>
+
+
+
+<p>Error message:</p>
+
+
+<div class="highlight"><pre><code><span class="nb">Error</span><span class="o">:</span> <span class="nx">Something</span> <span class="nx">went</span> <span class="nx">wrong</span>
+  <span class="nx">at</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">returnError</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/test/data/object.js:8:12)</span>
+     <span class="nb">Object</span><span class="p">.</span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">returnError</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/test/data/object.coffee:8:6)</span>
+  <span class="nx">at</span> <span class="nx">Context</span><span class="p">.</span><span class="o">&lt;</span><span class="nx">anonymous</span><span class="o">&gt;</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/test/run/default.coffee:101:22)</span>
+  <span class="nx">at</span> <span class="nx">callFn</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/node_modules/mocha/lib/runnable.js:223:21)</span>
+  <span class="nx">at</span> <span class="nx">Test</span><span class="p">.</span><span class="nx">Runnable</span><span class="p">.</span><span class="nx">run</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/node_modules/mocha/lib/runnable.js:216:7)</span>
+  <span class="nx">at</span> <span class="nx">Runner</span><span class="p">.</span><span class="nx">runTest</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/node_modules/mocha/lib/runner.js:374:10)</span>
+  <span class="nx">at</span> <span class="o">/</span><span class="nx">home</span><span class="o">/</span><span class="nx">alex</span><span class="o">/</span><span class="nx">a3</span><span class="o">/</span><span class="nx">node</span><span class="o">-</span><span class="nx">error</span><span class="o">/</span><span class="nx">node_modules</span><span class="o">/</span><span class="nx">mocha</span><span class="o">/</span><span class="nx">lib</span><span class="o">/</span><span class="nx">runner</span><span class="p">.</span><span class="nx">js</span><span class="o">:</span><span class="mi">452</span><span class="o">:</span><span class="mi">12</span>
+  <span class="nx">at</span> <span class="nx">next</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/node_modules/mocha/lib/runner.js:299:14)</span>
+  <span class="nx">at</span> <span class="o">/</span><span class="nx">home</span><span class="o">/</span><span class="nx">alex</span><span class="o">/</span><span class="nx">a3</span><span class="o">/</span><span class="nx">node</span><span class="o">-</span><span class="nx">error</span><span class="o">/</span><span class="nx">node_modules</span><span class="o">/</span><span class="nx">mocha</span><span class="o">/</span><span class="nx">lib</span><span class="o">/</span><span class="nx">runner</span><span class="p">.</span><span class="nx">js</span><span class="o">:</span><span class="mi">309</span><span class="o">:</span><span class="mi">7</span>
+  <span class="nx">at</span> <span class="nx">next</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/node_modules/mocha/lib/runner.js:247:23)</span>
+  <span class="nx">at</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">_onImmediate</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/node_modules/mocha/lib/runner.js:276:5)</span>
+  <span class="nx">at</span> <span class="nx">processImmediate</span> <span class="p">[</span><span class="nx">as</span> <span class="nx">_immediateCallback</span><span class="p">]</span> <span class="p">(</span><span class="nx">timers</span><span class="p">.</span><span class="nx">js</span><span class="o">:</span><span class="mi">330</span><span class="o">:</span><span class="mi">15</span><span class="p">)</span>
+</code></pre></div>
+
+
+
+
+<div class="pilwrap" id="show%20code%20line">
+  <h3>
+    <a href="#show%20code%20line" name="show%20code%20line" class="pilcrow">&#182;</a>
+    Show code line
+  </h3>
+</div>
+
+
+<p>Configuration:</p>
+
+
+<div class="highlight"><pre><code><span class="p">{</span> <span class="nx">colors</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="nx">stack</span><span class="o">:</span> <span class="p">{</span> <span class="nx">view</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">modules</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">system</span><span class="o">:</span> <span class="kc">false</span> <span class="p">},</span>
+  <span class="nx">code</span><span class="o">:</span> 
+   <span class="p">{</span> <span class="nx">view</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+     <span class="nx">before</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+     <span class="nx">after</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+     <span class="nx">compiled</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+     <span class="nx">modules</span><span class="o">:</span> <span class="kc">false</span> <span class="p">},</span>
+  <span class="nx">cause</span><span class="o">:</span> <span class="p">{</span> <span class="nx">view</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">stack</span><span class="o">:</span> <span class="kc">false</span> <span class="p">},</span>
+  <span class="nx">uncaught</span><span class="o">:</span> <span class="p">{</span> <span class="nx">exit</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">timeout</span><span class="o">:</span> <span class="mi">100</span><span class="p">,</span> <span class="nx">code</span><span class="o">:</span> <span class="mi">2</span> <span class="p">}</span> <span class="p">}</span>
+</code></pre></div>
+
+
+
+<p>Error message:</p>
+
+
+<div class="highlight"><pre><code><span class="nb">Error</span><span class="o">:</span> <span class="nx">Something</span> <span class="nx">went</span> <span class="nx">wrong</span>
+  <span class="nx">at</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">returnError</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/test/data/object.js:8:12)</span>
+     <span class="nb">Object</span><span class="p">.</span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">returnError</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/test/data/object.coffee:8:6)</span>
+     <span class="mi">08</span><span class="o">:</span>   <span class="k">new</span> <span class="nb">Error</span> <span class="s2">&quot;Something went wrong&quot;</span>
+  <span class="nx">at</span> <span class="nx">Context</span><span class="p">.</span><span class="o">&lt;</span><span class="nx">anonymous</span><span class="o">&gt;</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/test/run/default.coffee:112:22)</span>
+</code></pre></div>
+
+
+
+
+<div class="pilwrap" id="show%20code%20context">
+  <h3>
+    <a href="#show%20code%20context" name="show%20code%20context" class="pilcrow">&#182;</a>
+    Show code context
+  </h3>
+</div>
+
+
+<p>Configuration:</p>
+
+
+<div class="highlight"><pre><code><span class="p">{</span> <span class="nx">colors</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="nx">stack</span><span class="o">:</span> <span class="p">{</span> <span class="nx">view</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">modules</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">system</span><span class="o">:</span> <span class="kc">false</span> <span class="p">},</span>
+  <span class="nx">code</span><span class="o">:</span> 
+   <span class="p">{</span> <span class="nx">view</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+     <span class="nx">before</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+     <span class="nx">after</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+     <span class="nx">compiled</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+     <span class="nx">modules</span><span class="o">:</span> <span class="kc">false</span> <span class="p">},</span>
+  <span class="nx">cause</span><span class="o">:</span> <span class="p">{</span> <span class="nx">view</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">stack</span><span class="o">:</span> <span class="kc">false</span> <span class="p">},</span>
+  <span class="nx">uncaught</span><span class="o">:</span> <span class="p">{</span> <span class="nx">exit</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">timeout</span><span class="o">:</span> <span class="mi">100</span><span class="p">,</span> <span class="nx">code</span><span class="o">:</span> <span class="mi">2</span> <span class="p">}</span> <span class="p">}</span>
+</code></pre></div>
+
+
+
+<p>Error message:</p>
+
+
+<div class="highlight"><pre><code><span class="nb">Error</span><span class="o">:</span> <span class="nx">Something</span> <span class="nx">went</span> <span class="nx">wrong</span>
+  <span class="nx">at</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">returnError</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/test/data/object.js:8:12)</span>
+     <span class="nb">Object</span><span class="p">.</span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">returnError</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/test/data/object.coffee:8:6)</span>
+     <span class="mi">06</span><span class="o">:</span> 
+     <span class="mi">07</span><span class="o">:</span> <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">returnError</span> <span class="o">=</span> <span class="o">-&gt;</span>
+     <span class="mi">08</span><span class="o">:</span>   <span class="k">new</span> <span class="nb">Error</span> <span class="s2">&quot;Something went wrong&quot;</span>
+     <span class="mi">09</span><span class="o">:</span> 
+     <span class="mi">10</span><span class="o">:</span> <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">returnCause</span> <span class="o">=</span> <span class="o">-&gt;</span>
+  <span class="nx">at</span> <span class="nx">Context</span><span class="p">.</span><span class="o">&lt;</span><span class="nx">anonymous</span><span class="o">&gt;</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/test/run/default.coffee:131:22)</span>
+</code></pre></div>
+
+
+
+
+<div class="pilwrap" id="show%20code%20lines">
+  <h3>
+    <a href="#show%20code%20lines" name="show%20code%20lines" class="pilcrow">&#182;</a>
+    Show code lines
+  </h3>
+</div>
+
+
+<p>Configuration:</p>
+
+
+<div class="highlight"><pre><code><span class="p">{</span> <span class="nx">colors</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="nx">stack</span><span class="o">:</span> <span class="p">{</span> <span class="nx">view</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">modules</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">system</span><span class="o">:</span> <span class="kc">false</span> <span class="p">},</span>
+  <span class="nx">code</span><span class="o">:</span> 
+   <span class="p">{</span> <span class="nx">view</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+     <span class="nx">before</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+     <span class="nx">after</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+     <span class="nx">compiled</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+     <span class="nx">modules</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+     <span class="nx">all</span><span class="o">:</span> <span class="kc">true</span> <span class="p">},</span>
+  <span class="nx">cause</span><span class="o">:</span> <span class="p">{</span> <span class="nx">view</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">stack</span><span class="o">:</span> <span class="kc">false</span> <span class="p">},</span>
+  <span class="nx">uncaught</span><span class="o">:</span> <span class="p">{</span> <span class="nx">exit</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">timeout</span><span class="o">:</span> <span class="mi">100</span><span class="p">,</span> <span class="nx">code</span><span class="o">:</span> <span class="mi">2</span> <span class="p">}</span> <span class="p">}</span>
+</code></pre></div>
+
+
+
+<p>Error message:</p>
+
+
+<div class="highlight"><pre><code><span class="nb">Error</span><span class="o">:</span> <span class="nx">Something</span> <span class="nx">went</span> <span class="nx">wrong</span>
+  <span class="nx">at</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">returnError</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/test/data/object.js:8:12)</span>
+     <span class="nb">Object</span><span class="p">.</span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">returnError</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/test/data/object.coffee:8:6)</span>
+     <span class="mi">08</span><span class="o">:</span>   <span class="k">new</span> <span class="nb">Error</span> <span class="s2">&quot;Something went wrong&quot;</span>
+  <span class="nx">at</span> <span class="nx">Context</span><span class="p">.</span><span class="o">&lt;</span><span class="nx">anonymous</span><span class="o">&gt;</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/test/run/default.coffee:142:22)</span>
+     <span class="mi">142</span><span class="o">:</span> <span class="err">#</span>      <span class="nx">makedoc</span> <span class="nx">msg</span>
+</code></pre></div>
+
+
+
+
+<div class="pilwrap" id="show%20all%20code%20lines">
+  <h3>
+    <a href="#show%20all%20code%20lines" name="show%20all%20code%20lines" class="pilcrow">&#182;</a>
+    Show all code lines
+  </h3>
+</div>
+
+
+<p>Configuration:</p>
+
+
+<div class="highlight"><pre><code><span class="p">{</span> <span class="nx">colors</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="nx">stack</span><span class="o">:</span> <span class="p">{</span> <span class="nx">view</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">modules</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">system</span><span class="o">:</span> <span class="kc">false</span> <span class="p">},</span>
+  <span class="nx">code</span><span class="o">:</span> 
+   <span class="p">{</span> <span class="nx">view</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+     <span class="nx">before</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+     <span class="nx">after</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+     <span class="nx">compiled</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+     <span class="nx">modules</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+     <span class="nx">all</span><span class="o">:</span> <span class="kc">true</span> <span class="p">},</span>
+  <span class="nx">cause</span><span class="o">:</span> <span class="p">{</span> <span class="nx">view</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">stack</span><span class="o">:</span> <span class="kc">false</span> <span class="p">},</span>
+  <span class="nx">uncaught</span><span class="o">:</span> <span class="p">{</span> <span class="nx">exit</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">timeout</span><span class="o">:</span> <span class="mi">100</span><span class="p">,</span> <span class="nx">code</span><span class="o">:</span> <span class="mi">2</span> <span class="p">}</span> <span class="p">}</span>
+</code></pre></div>
+
+
+
+<p>Error message:</p>
+
+
+<div class="highlight"><pre><code><span class="nb">Error</span><span class="o">:</span> <span class="nx">Something</span> <span class="nx">went</span> <span class="nx">wrong</span>
+  <span class="nx">at</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">returnError</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/test/data/object.js:8:12)</span>
+     <span class="nb">Object</span><span class="p">.</span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">returnError</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/test/data/object.coffee:8:6)</span>
+     <span class="mi">08</span><span class="o">:</span>   <span class="k">new</span> <span class="nb">Error</span> <span class="s2">&quot;Something went wrong&quot;</span>
+  <span class="nx">at</span> <span class="nx">Context</span><span class="p">.</span><span class="o">&lt;</span><span class="nx">anonymous</span><span class="o">&gt;</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/test/run/default.coffee:152:22)</span>
+     <span class="mi">152</span><span class="o">:</span> <span class="kc">undefined</span>
+  <span class="nx">at</span> <span class="nx">callFn</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/node_modules/mocha/lib/runnable.js:223:21)</span>
+     <span class="mi">223</span><span class="o">:</span>     <span class="kd">var</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">fn</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">ctx</span><span class="p">);</span>
+  <span class="nx">at</span> <span class="nx">Test</span><span class="p">.</span><span class="nx">Runnable</span><span class="p">.</span><span class="nx">run</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/node_modules/mocha/lib/runnable.js:216:7)</span>
+     <span class="mi">216</span><span class="o">:</span>       <span class="nx">callFn</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">fn</span><span class="p">);</span>
+  <span class="nx">at</span> <span class="nx">Runner</span><span class="p">.</span><span class="nx">runTest</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/node_modules/mocha/lib/runner.js:374:10)</span>
+     <span class="mi">374</span><span class="o">:</span>     <span class="nx">test</span><span class="p">.</span><span class="nx">run</span><span class="p">(</span><span class="nx">fn</span><span class="p">);</span>
+  <span class="nx">at</span> <span class="o">/</span><span class="nx">home</span><span class="o">/</span><span class="nx">alex</span><span class="o">/</span><span class="nx">a3</span><span class="o">/</span><span class="nx">node</span><span class="o">-</span><span class="nx">error</span><span class="o">/</span><span class="nx">node_modules</span><span class="o">/</span><span class="nx">mocha</span><span class="o">/</span><span class="nx">lib</span><span class="o">/</span><span class="nx">runner</span><span class="p">.</span><span class="nx">js</span><span class="o">:</span><span class="mi">452</span><span class="o">:</span><span class="mi">12</span>
+     <span class="mi">452</span><span class="o">:</span>       <span class="nx">self</span><span class="p">.</span><span class="nx">runTest</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+  <span class="nx">at</span> <span class="nx">next</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/node_modules/mocha/lib/runner.js:299:14)</span>
+     <span class="mi">299</span><span class="o">:</span>       <span class="k">return</span> <span class="nx">fn</span><span class="p">();</span>
+  <span class="nx">at</span> <span class="o">/</span><span class="nx">home</span><span class="o">/</span><span class="nx">alex</span><span class="o">/</span><span class="nx">a3</span><span class="o">/</span><span class="nx">node</span><span class="o">-</span><span class="nx">error</span><span class="o">/</span><span class="nx">node_modules</span><span class="o">/</span><span class="nx">mocha</span><span class="o">/</span><span class="nx">lib</span><span class="o">/</span><span class="nx">runner</span><span class="p">.</span><span class="nx">js</span><span class="o">:</span><span class="mi">309</span><span class="o">:</span><span class="mi">7</span>
+     <span class="mi">309</span><span class="o">:</span>       <span class="nx">next</span><span class="p">(</span><span class="nx">suites</span><span class="p">.</span><span class="nx">pop</span><span class="p">());</span>
+  <span class="nx">at</span> <span class="nx">next</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/node_modules/mocha/lib/runner.js:247:23)</span>
+     <span class="mi">247</span><span class="o">:</span>     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">hook</span><span class="p">)</span> <span class="k">return</span> <span class="nx">fn</span><span class="p">();</span>
+  <span class="nx">at</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">_onImmediate</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/node_modules/mocha/lib/runner.js:276:5)</span>
+     <span class="mi">276</span><span class="o">:</span>     <span class="nx">next</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</code></pre></div>
+
+
+
+
+<div class="pilwrap" id="show%20also%20compiled%20code%20lines">
+  <h3>
+    <a href="#show%20also%20compiled%20code%20lines" name="show%20also%20compiled%20code%20lines" class="pilcrow">&#182;</a>
+    Show also compiled code lines
+  </h3>
+</div>
+
+
+<p>Configuration:</p>
+
+
+<div class="highlight"><pre><code><span class="p">{</span> <span class="nx">colors</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="nx">stack</span><span class="o">:</span> <span class="p">{</span> <span class="nx">view</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">modules</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">system</span><span class="o">:</span> <span class="kc">false</span> <span class="p">},</span>
+  <span class="nx">code</span><span class="o">:</span> <span class="p">{</span> <span class="nx">view</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">before</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">after</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">compiled</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">modules</span><span class="o">:</span> <span class="kc">false</span> <span class="p">},</span>
+  <span class="nx">cause</span><span class="o">:</span> <span class="p">{</span> <span class="nx">view</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">stack</span><span class="o">:</span> <span class="kc">false</span> <span class="p">},</span>
+  <span class="nx">uncaught</span><span class="o">:</span> <span class="p">{</span> <span class="nx">exit</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">timeout</span><span class="o">:</span> <span class="mi">100</span><span class="p">,</span> <span class="nx">code</span><span class="o">:</span> <span class="mi">2</span> <span class="p">}</span> <span class="p">}</span>
+</code></pre></div>
+
+
+
+<p>Error message:</p>
+
+
+<div class="highlight"><pre><code><span class="nb">Error</span><span class="o">:</span> <span class="nx">Something</span> <span class="nx">went</span> <span class="nx">wrong</span>
+  <span class="nx">at</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">returnError</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/test/data/object.js:8:12)</span>
+     <span class="mi">08</span><span class="o">:</span>     <span class="k">return</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s2">&quot;Something went wrong&quot;</span><span class="p">);</span>
+     <span class="nb">Object</span><span class="p">.</span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">returnError</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/test/data/object.coffee:8:6)</span>
+     <span class="mi">08</span><span class="o">:</span>   <span class="k">new</span> <span class="nb">Error</span> <span class="s2">&quot;Something went wrong&quot;</span>
+  <span class="nx">at</span> <span class="nx">Context</span><span class="p">.</span><span class="o">&lt;</span><span class="nx">anonymous</span><span class="o">&gt;</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/test/run/default.coffee:167:22)</span>
+</code></pre></div>
+
+
+
+
+<div class="pilwrap" id="show%20error%20with%20cause">
+  <h3>
+    <a href="#show%20error%20with%20cause" name="show%20error%20with%20cause" class="pilcrow">&#182;</a>
+    Show error with cause
+  </h3>
+</div>
+
+
+<p>Configuration:</p>
+
+
+<div class="highlight"><pre><code><span class="p">{</span> <span class="nx">colors</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="nx">stack</span><span class="o">:</span> <span class="p">{</span> <span class="nx">view</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">modules</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">system</span><span class="o">:</span> <span class="kc">false</span> <span class="p">},</span>
+  <span class="nx">code</span><span class="o">:</span> <span class="p">{</span> <span class="nx">view</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">before</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">after</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">compiled</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">all</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">modules</span><span class="o">:</span> <span class="kc">false</span> <span class="p">},</span>
+  <span class="nx">cause</span><span class="o">:</span> <span class="p">{</span> <span class="nx">view</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">stack</span><span class="o">:</span> <span class="kc">false</span> <span class="p">},</span>
+  <span class="nx">uncaught</span><span class="o">:</span> <span class="p">{</span> <span class="nx">exit</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">timeout</span><span class="o">:</span> <span class="mi">100</span><span class="p">,</span> <span class="nx">code</span><span class="o">:</span> <span class="mi">2</span> <span class="p">}</span> <span class="p">}</span>
+</code></pre></div>
+
+
+
+<p>Error message:</p>
+
+
+<div class="highlight"><pre><code><span class="nb">Error</span><span class="o">:</span> <span class="nx">Something</span> <span class="nx">went</span> <span class="nx">wrong</span>
+  <span class="nx">Caused</span> <span class="nx">by</span> <span class="nb">Error</span><span class="o">:</span> <span class="nx">root</span> <span class="nx">fault</span> <span class="p">(</span><span class="nx">somethere</span><span class="p">)</span>
+</code></pre></div>
+
+
+
+
+<div class="pilwrap" id="show%20error%20with%20cause%20array">
+  <h3>
+    <a href="#show%20error%20with%20cause%20array" name="show%20error%20with%20cause%20array" class="pilcrow">&#182;</a>
+    Show error with cause array
+  </h3>
+</div>
+
+
+<p>Configuration:</p>
+
+
+<div class="highlight"><pre><code><span class="p">{</span> <span class="nx">colors</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="nx">stack</span><span class="o">:</span> <span class="p">{</span> <span class="nx">view</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">modules</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">system</span><span class="o">:</span> <span class="kc">false</span> <span class="p">},</span>
+  <span class="nx">code</span><span class="o">:</span> <span class="p">{</span> <span class="nx">view</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">before</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">after</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">compiled</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">all</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">modules</span><span class="o">:</span> <span class="kc">false</span> <span class="p">},</span>
+  <span class="nx">cause</span><span class="o">:</span> <span class="p">{</span> <span class="nx">view</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">stack</span><span class="o">:</span> <span class="kc">false</span> <span class="p">},</span>
+  <span class="nx">uncaught</span><span class="o">:</span> <span class="p">{</span> <span class="nx">exit</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">timeout</span><span class="o">:</span> <span class="mi">100</span><span class="p">,</span> <span class="nx">code</span><span class="o">:</span> <span class="mi">2</span> <span class="p">}</span> <span class="p">}</span>
+</code></pre></div>
+
+
+
+<p>Error message:</p>
+
+
+<div class="highlight"><pre><code><span class="nb">Error</span><span class="o">:</span> <span class="nx">Something</span> <span class="nx">went</span> <span class="nx">wrong</span>
+  <span class="nx">Caused</span> <span class="nx">by</span> <span class="nb">Error</span><span class="o">:</span> <span class="nx">root</span> <span class="nx">fault</span> <span class="mi">1</span> <span class="p">(</span><span class="nx">somethere</span><span class="p">)</span>
+  <span class="nx">Caused</span> <span class="nx">by</span> <span class="nb">Error</span><span class="o">:</span> <span class="nx">root</span> <span class="nx">fault</span> <span class="mi">2</span> <span class="p">(</span><span class="nx">somethere</span><span class="p">)</span>
+</code></pre></div>
+
+
+
+
+<div class="pilwrap" id="show%20error%20with%20cause%20hash">
+  <h3>
+    <a href="#show%20error%20with%20cause%20hash" name="show%20error%20with%20cause%20hash" class="pilcrow">&#182;</a>
+    Show error with cause hash
+  </h3>
+</div>
+
+
+<p>Configuration:</p>
+
+
+<div class="highlight"><pre><code><span class="p">{</span> <span class="nx">colors</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="nx">stack</span><span class="o">:</span> <span class="p">{</span> <span class="nx">view</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">modules</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">system</span><span class="o">:</span> <span class="kc">false</span> <span class="p">},</span>
+  <span class="nx">code</span><span class="o">:</span> <span class="p">{</span> <span class="nx">view</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">before</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">after</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">compiled</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">all</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">modules</span><span class="o">:</span> <span class="kc">false</span> <span class="p">},</span>
+  <span class="nx">cause</span><span class="o">:</span> <span class="p">{</span> <span class="nx">view</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">stack</span><span class="o">:</span> <span class="kc">false</span> <span class="p">},</span>
+  <span class="nx">uncaught</span><span class="o">:</span> <span class="p">{</span> <span class="nx">exit</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">timeout</span><span class="o">:</span> <span class="mi">100</span><span class="p">,</span> <span class="nx">code</span><span class="o">:</span> <span class="mi">2</span> <span class="p">}</span> <span class="p">}</span>
+</code></pre></div>
+
+
+
+<p>Error message:</p>
+
+
+<div class="highlight"><pre><code><span class="nb">Error</span><span class="o">:</span> <span class="nx">Something</span> <span class="nx">went</span> <span class="nx">wrong</span>
+  <span class="nx">Caused</span> <span class="nx">by</span> <span class="nb">Error</span><span class="o">:</span> <span class="nx">root</span> <span class="nx">fault</span> <span class="mi">1</span> <span class="p">(</span><span class="nx">here</span><span class="p">)</span>
+  <span class="nx">Caused</span> <span class="nx">by</span> <span class="nb">Error</span><span class="o">:</span> <span class="nx">root</span> <span class="nx">fault</span> <span class="mi">2</span> <span class="p">(</span><span class="nx">there</span><span class="p">)</span>
+</code></pre></div>
+
+
+
+
+<div class="pilwrap" id="show%20stack%20with%20error%20cause">
+  <h3>
+    <a href="#show%20stack%20with%20error%20cause" name="show%20stack%20with%20error%20cause" class="pilcrow">&#182;</a>
+    Show stack with error cause
+  </h3>
+</div>
+
+
+<p>Configuration:</p>
+
+
+<div class="highlight"><pre><code><span class="p">{</span> <span class="nx">colors</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="nx">stack</span><span class="o">:</span> <span class="p">{</span> <span class="nx">view</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">modules</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">system</span><span class="o">:</span> <span class="kc">false</span> <span class="p">},</span>
+  <span class="nx">code</span><span class="o">:</span> <span class="p">{</span> <span class="nx">view</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">before</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">after</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">compiled</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">all</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">modules</span><span class="o">:</span> <span class="kc">false</span> <span class="p">},</span>
+  <span class="nx">cause</span><span class="o">:</span> <span class="p">{</span> <span class="nx">view</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">stack</span><span class="o">:</span> <span class="kc">true</span> <span class="p">},</span>
+  <span class="nx">uncaught</span><span class="o">:</span> <span class="p">{</span> <span class="nx">exit</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">timeout</span><span class="o">:</span> <span class="mi">100</span><span class="p">,</span> <span class="nx">code</span><span class="o">:</span> <span class="mi">2</span> <span class="p">}</span> <span class="p">}</span>
+</code></pre></div>
+
+
+
+<p>Error message:</p>
+
+
+<div class="highlight"><pre><code><span class="nb">Error</span><span class="o">:</span> <span class="nx">Something</span> <span class="nx">went</span> <span class="nx">wrong</span>
+  <span class="nx">at</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">returnCause</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/test/data/object.js:13:11)</span>
+     <span class="nb">Object</span><span class="p">.</span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">returnCause</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/test/data/object.coffee:11:12)</span>
+  <span class="nx">at</span> <span class="nx">Context</span><span class="p">.</span><span class="o">&lt;</span><span class="nx">anonymous</span><span class="o">&gt;</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/test/run/cause.coffee:105:22)</span>
+  <span class="nx">Caused</span> <span class="nx">by</span> <span class="nb">Error</span><span class="o">:</span> <span class="nx">root</span> <span class="nx">fault</span> <span class="p">(</span><span class="nx">somethere</span><span class="p">)</span>
+    <span class="nx">at</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">returnCause</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/test/data/object.js:14:17)</span>
+       <span class="nb">Object</span><span class="p">.</span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">returnCause</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/test/data/object.coffee:12:18)</span>
+    <span class="nx">at</span> <span class="nx">Context</span><span class="p">.</span><span class="o">&lt;</span><span class="nx">anonymous</span><span class="o">&gt;</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/test/run/cause.coffee:105:22)</span>
 </code></pre></div>
 
 
@@ -271,8 +838,9 @@ structure:</p>
     <span class="nx">view</span><span class="o">:</span> <span class="kc">true</span>          <span class="err">#</span> <span class="nx">view</span> <span class="nx">code</span> <span class="nx">sources</span> <span class="nx">or</span> <span class="nx">not</span>
     <span class="nx">before</span><span class="o">:</span> <span class="mi">2</span>           <span class="err">#</span> <span class="nx">number</span> <span class="nx">of</span> <span class="nx">lines</span> <span class="nx">to</span> <span class="nx">show</span> <span class="nx">before</span> <span class="nx">the</span> <span class="nx">referenced</span> <span class="nx">one</span>
     <span class="nx">after</span><span class="o">:</span> <span class="mi">2</span>            <span class="err">#</span> <span class="nx">number</span> <span class="nx">of</span> <span class="nx">lines</span> <span class="nx">to</span> <span class="nx">show</span> <span class="nx">after</span> <span class="nx">the</span> <span class="nx">referenced</span> <span class="nx">one</span>
+    <span class="nx">compiled</span><span class="o">:</span> <span class="kc">false</span>     <span class="err">#</span> <span class="nx">show</span> <span class="nx">also</span> <span class="nx">code</span> <span class="nx">of</span> <span class="nx">compiled</span> <span class="nx">code</span>
+    <span class="nx">all</span><span class="o">:</span> <span class="kc">false</span>          <span class="err">#</span> <span class="nx">show</span> <span class="nx">code</span> <span class="nx">of</span> <span class="nx">all</span> <span class="nx">lines</span> <span class="nx">or</span> <span class="nx">only</span> <span class="nx">the</span> <span class="nx">first</span>
     <span class="nx">modules</span><span class="o">:</span> <span class="kc">false</span>      <span class="err">#</span> <span class="nx">show</span> <span class="nx">code</span> <span class="nx">within</span> <span class="nx">node_modules</span>
-    <span class="nx">all</span><span class="o">:</span> <span class="kc">false</span>          <span class="err">#</span> <span class="nx">show</span> <span class="nx">all</span> <span class="nx">code</span> <span class="nx">or</span> <span class="nx">only</span> <span class="nx">from</span> <span class="nx">origin</span>
 
   <span class="err">#</span> <span class="nx">Display</span> <span class="nx">of</span> <span class="nx">the</span> <span class="nx">errors</span> <span class="nx">cause</span> <span class="k">if</span> <span class="nx">there</span> <span class="nx">is</span> <span class="nx">one</span>
   <span class="nx">cause</span><span class="o">:</span>
