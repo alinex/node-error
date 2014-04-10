@@ -4,6 +4,13 @@ Version changes
 The following list gives a short overview about what is changed between
 individual versions:
 
+Version 0.2.1 (2014-04-10)
+-------------------------------------------------
+- Small documentation updates.
+- Added config flag to show also the compiled code.
+- Merge branch 'master' of https://github.com/alinex/node-error
+- Description changes.
+
 Version 0.2.0
 -------------------------------------------------
 - Added logger support to report to any possible logger and transport.
