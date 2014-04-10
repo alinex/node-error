@@ -32,8 +32,9 @@ module.exports.config =
     view: true
     before: 2
     after: 2
-    modules: false
+    compiled: false
     all: false
+    modules: false
   # Display of the errors cause if there is one
   cause:
     view: true
@@ -162,13 +163,16 @@ prepareStackTrace = (err, stack) ->
     stack = stack[..1]
   message = err.toString()
   message = message.bold.red if config.colors
+  stackline = 0
   return message + stack.map (frame) ->
+    stackline++
     unless config.stack.modules
       return '' if ~frame.getFileName()?.indexOf '/node_modules/'
     return '' unless config.stack.system or ~frame.getFileName()?.indexOf '/'
     map = mapFrame frame
     out = "\n  at #{frame}"
-    out += getCodeview frame unless map or config.code.all is false
+    if (config.code.all or stackline is 1) and (not map or config.code.compiled is true)
+      out += getCodeview frame 
     if map
       out += "\n     #{map}"
       out += getCodeview map

@@ -29,6 +29,313 @@ output:
          097:       console.log stdout.trim().grey if stdout and commander.verbose
     Exiting after error logging timeout.
 
+You may change the output in different ways using the configuration. Below are 
+some output examples for different configurations (keep in mind the colors
+displayed here won't match).
+
+### Only the real error message
+
+Configuration:
+
+    { colors: false,
+      stack: { view: false, modules: false, system: false },
+      code: { view: false, before: 0, after: 0, compiled: false, all: false, modules: false },
+      cause: { view: false, stack: false },
+      uncaught: { exit: true, timeout: 100, code: 2 } }
+
+Error message:
+
+    Error: Something went wrong
+
+### Default stack trace
+
+Configuration:
+
+    { colors: false,
+      stack: { view: true, modules: false, system: false },
+      code: { view: false, before: 0, after: 0, compiled: false, all: false, modules: false },
+      cause: { view: false, stack: false },
+      uncaught: { exit: true, timeout: 100, code: 2 } }
+
+Error message:
+
+    Error: Something went wrong
+      at Object.module.exports.returnError (/home/alex/a3/node-error/test/data/object.js:8:12)
+         Object.module.exports.returnError (/home/alex/a3/node-error/test/data/object.coffee:8:6)
+      at Context.<anonymous> (/home/alex/a3/node-error/test/run/default.coffee:78:22)
+
+### Stack with node_modules
+
+Configuration:
+
+    { colors: false,
+      stack: { view: true, modules: true, system: false },
+      code: { view: false, before: 0, after: 0, compiled: false, all: false, modules: false },
+      cause: { view: false, stack: false },
+      uncaught: { exit: true, timeout: 100, code: 2 } }
+
+Error message:
+
+    Error: Something went wrong
+      at Object.module.exports.returnError (/home/alex/a3/node-error/test/data/object.js:8:12)
+         Object.module.exports.returnError (/home/alex/a3/node-error/test/data/object.coffee:8:6)
+      at Context.<anonymous> (/home/alex/a3/node-error/test/run/default.coffee:85:22)
+      at callFn (/home/alex/a3/node-error/node_modules/mocha/lib/runnable.js:223:21)
+      at Test.Runnable.run (/home/alex/a3/node-error/node_modules/mocha/lib/runnable.js:216:7)
+      at Runner.runTest (/home/alex/a3/node-error/node_modules/mocha/lib/runner.js:374:10)
+      at /home/alex/a3/node-error/node_modules/mocha/lib/runner.js:452:12
+      at next (/home/alex/a3/node-error/node_modules/mocha/lib/runner.js:299:14)
+      at /home/alex/a3/node-error/node_modules/mocha/lib/runner.js:309:7
+      at next (/home/alex/a3/node-error/node_modules/mocha/lib/runner.js:247:23)
+      at Object._onImmediate (/home/alex/a3/node-error/node_modules/mocha/lib/runner.js:276:5)
+
+### Stack with system
+
+Configuration:
+
+    { colors: false,
+      stack: { view: true, modules: false, system: true },
+      code: { view: false, before: 0, after: 0, compiled: false, all: false, modules: false },
+      cause: { view: false, stack: false },
+      uncaught: { exit: true, timeout: 100, code: 2 } }
+
+Error message:
+
+    Error: Something went wrong
+      at Object.module.exports.returnError (/home/alex/a3/node-error/test/data/object.js:8:12)
+         Object.module.exports.returnError (/home/alex/a3/node-error/test/data/object.coffee:8:6)
+      at Context.<anonymous> (/home/alex/a3/node-error/test/run/default.coffee:93:22)
+      at processImmediate [as _immediateCallback] (timers.js:330:15)
+
+### Full stack with node_modules and system
+
+Configuration:
+
+    { colors: false,
+      stack: { view: true, modules: true, system: true },
+      code: { view: false, before: 0, after: 0, compiled: false, all: false, modules: false },
+      cause: { view: false, stack: false },
+      uncaught: { exit: true, timeout: 100, code: 2 } }
+
+Error message:
+
+    Error: Something went wrong
+      at Object.module.exports.returnError (/home/alex/a3/node-error/test/data/object.js:8:12)
+         Object.module.exports.returnError (/home/alex/a3/node-error/test/data/object.coffee:8:6)
+      at Context.<anonymous> (/home/alex/a3/node-error/test/run/default.coffee:101:22)
+      at callFn (/home/alex/a3/node-error/node_modules/mocha/lib/runnable.js:223:21)
+      at Test.Runnable.run (/home/alex/a3/node-error/node_modules/mocha/lib/runnable.js:216:7)
+      at Runner.runTest (/home/alex/a3/node-error/node_modules/mocha/lib/runner.js:374:10)
+      at /home/alex/a3/node-error/node_modules/mocha/lib/runner.js:452:12
+      at next (/home/alex/a3/node-error/node_modules/mocha/lib/runner.js:299:14)
+      at /home/alex/a3/node-error/node_modules/mocha/lib/runner.js:309:7
+      at next (/home/alex/a3/node-error/node_modules/mocha/lib/runner.js:247:23)
+      at Object._onImmediate (/home/alex/a3/node-error/node_modules/mocha/lib/runner.js:276:5)
+      at processImmediate [as _immediateCallback] (timers.js:330:15)
+
+### Show code line
+
+Configuration:
+
+    { colors: false,
+      stack: { view: true, modules: false, system: false },
+      code: 
+       { view: true,
+         before: 0,
+         after: 0,
+         compiled: false,
+         modules: false },
+      cause: { view: false, stack: false },
+      uncaught: { exit: true, timeout: 100, code: 2 } }
+
+Error message:
+
+    Error: Something went wrong
+      at Object.module.exports.returnError (/home/alex/a3/node-error/test/data/object.js:8:12)
+         Object.module.exports.returnError (/home/alex/a3/node-error/test/data/object.coffee:8:6)
+         08:   new Error "Something went wrong"
+      at Context.<anonymous> (/home/alex/a3/node-error/test/run/default.coffee:112:22)
+
+### Show code context
+
+Configuration:
+
+    { colors: false,
+      stack: { view: true, modules: false, system: false },
+      code: 
+       { view: true,
+         before: 2,
+         after: 2,
+         compiled: false,
+         modules: false },
+      cause: { view: false, stack: false },
+      uncaught: { exit: true, timeout: 100, code: 2 } }
+
+Error message:
+
+    Error: Something went wrong
+      at Object.module.exports.returnError (/home/alex/a3/node-error/test/data/object.js:8:12)
+         Object.module.exports.returnError (/home/alex/a3/node-error/test/data/object.coffee:8:6)
+         06: 
+         07: module.exports.returnError = ->
+         08:   new Error "Something went wrong"
+         09: 
+         10: module.exports.returnCause = ->
+      at Context.<anonymous> (/home/alex/a3/node-error/test/run/default.coffee:131:22)
+
+### Show code lines
+
+Configuration:
+
+    { colors: false,
+      stack: { view: true, modules: false, system: false },
+      code: 
+       { view: true,
+         before: 0,
+         after: 0,
+         compiled: false,
+         modules: false,
+         all: true },
+      cause: { view: false, stack: false },
+      uncaught: { exit: true, timeout: 100, code: 2 } }
+
+Error message:
+
+    Error: Something went wrong
+      at Object.module.exports.returnError (/home/alex/a3/node-error/test/data/object.js:8:12)
+         Object.module.exports.returnError (/home/alex/a3/node-error/test/data/object.coffee:8:6)
+         08:   new Error "Something went wrong"
+      at Context.<anonymous> (/home/alex/a3/node-error/test/run/default.coffee:142:22)
+         142: #      makedoc msg
+
+### Show all code lines
+
+Configuration:
+
+    { colors: false,
+      stack: { view: true, modules: true, system: false },
+      code: 
+       { view: true,
+         before: 0,
+         after: 0,
+         compiled: false,
+         modules: true,
+         all: true },
+      cause: { view: false, stack: false },
+      uncaught: { exit: true, timeout: 100, code: 2 } }
+
+Error message:
+
+    Error: Something went wrong
+      at Object.module.exports.returnError (/home/alex/a3/node-error/test/data/object.js:8:12)
+         Object.module.exports.returnError (/home/alex/a3/node-error/test/data/object.coffee:8:6)
+         08:   new Error "Something went wrong"
+      at Context.<anonymous> (/home/alex/a3/node-error/test/run/default.coffee:152:22)
+         152: undefined
+      at callFn (/home/alex/a3/node-error/node_modules/mocha/lib/runnable.js:223:21)
+         223:     var result = fn.call(ctx);
+      at Test.Runnable.run (/home/alex/a3/node-error/node_modules/mocha/lib/runnable.js:216:7)
+         216:       callFn(this.fn);
+      at Runner.runTest (/home/alex/a3/node-error/node_modules/mocha/lib/runner.js:374:10)
+         374:     test.run(fn);
+      at /home/alex/a3/node-error/node_modules/mocha/lib/runner.js:452:12
+         452:       self.runTest(function(err){
+      at next (/home/alex/a3/node-error/node_modules/mocha/lib/runner.js:299:14)
+         299:       return fn();
+      at /home/alex/a3/node-error/node_modules/mocha/lib/runner.js:309:7
+         309:       next(suites.pop());
+      at next (/home/alex/a3/node-error/node_modules/mocha/lib/runner.js:247:23)
+         247:     if (!hook) return fn();
+      at Object._onImmediate (/home/alex/a3/node-error/node_modules/mocha/lib/runner.js:276:5)
+         276:     next(0);
+
+### Show also compiled code lines
+
+Configuration:
+
+    { colors: false,
+      stack: { view: true, modules: false, system: false },
+      code: { view: true, before: 0, after: 0, compiled: true, modules: false },
+      cause: { view: false, stack: false },
+      uncaught: { exit: true, timeout: 100, code: 2 } }
+
+Error message:
+
+    Error: Something went wrong
+      at Object.module.exports.returnError (/home/alex/a3/node-error/test/data/object.js:8:12)
+         08:     return new Error("Something went wrong");
+         Object.module.exports.returnError (/home/alex/a3/node-error/test/data/object.coffee:8:6)
+         08:   new Error "Something went wrong"
+      at Context.<anonymous> (/home/alex/a3/node-error/test/run/default.coffee:167:22)
+
+### Show error with cause
+
+Configuration:
+
+    { colors: false,
+      stack: { view: false, modules: false, system: false },
+      code: { view: false, before: 0, after: 0, compiled: false, all: false, modules: false },
+      cause: { view: true, stack: false },
+      uncaught: { exit: true, timeout: 100, code: 2 } }
+
+Error message:
+
+    Error: Something went wrong
+      Caused by Error: root fault (somethere)
+
+### Show error with cause array
+
+Configuration:
+
+    { colors: false,
+      stack: { view: false, modules: false, system: false },
+      code: { view: false, before: 0, after: 0, compiled: false, all: false, modules: false },
+      cause: { view: true, stack: false },
+      uncaught: { exit: true, timeout: 100, code: 2 } }
+
+Error message:
+
+    Error: Something went wrong
+      Caused by Error: root fault 1 (somethere)
+      Caused by Error: root fault 2 (somethere)
+
+### Show error with cause hash
+
+Configuration:
+
+    { colors: false,
+      stack: { view: false, modules: false, system: false },
+      code: { view: false, before: 0, after: 0, compiled: false, all: false, modules: false },
+      cause: { view: true, stack: false },
+      uncaught: { exit: true, timeout: 100, code: 2 } }
+
+Error message:
+
+    Error: Something went wrong
+      Caused by Error: root fault 1 (here)
+      Caused by Error: root fault 2 (there)
+
+### Show stack with error cause
+
+Configuration:
+
+    { colors: false,
+      stack: { view: true, modules: false, system: false },
+      code: { view: false, before: 0, after: 0, compiled: false, all: false, modules: false },
+      cause: { view: true, stack: true },
+      uncaught: { exit: true, timeout: 100, code: 2 } }
+
+Error message:
+
+    Error: Something went wrong
+      at Object.module.exports.returnCause (/home/alex/a3/node-error/test/data/object.js:13:11)
+         Object.module.exports.returnCause (/home/alex/a3/node-error/test/data/object.coffee:11:12)
+      at Context.<anonymous> (/home/alex/a3/node-error/test/run/cause.coffee:105:22)
+      Caused by Error: root fault (somethere)
+        at Object.module.exports.returnCause (/home/alex/a3/node-error/test/data/object.js:14:17)
+           Object.module.exports.returnCause (/home/alex/a3/node-error/test/data/object.coffee:12:18)
+        at Context.<anonymous> (/home/alex/a3/node-error/test/run/cause.coffee:105:22)
+
 
 Installation
 -------------------------------------------------
@@ -127,8 +434,9 @@ structure:
         view: true          # view code sources or not
         before: 2           # number of lines to show before the referenced one
         after: 2            # number of lines to show after the referenced one
+        compiled: false     # show also code of compiled code
+        all: false          # show code of all lines or only the first
         modules: false      # show code within node_modules
-        all: false          # show all code or only from origin
 
       # Display of the errors cause if there is one
       cause:

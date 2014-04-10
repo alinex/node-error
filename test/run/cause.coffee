@@ -1,5 +1,6 @@
 chai = require 'chai'
 expect = chai.expect
+util = require 'util'
 
 describe "Error with cause reporting", ->
 
@@ -7,6 +8,20 @@ describe "Error with cause reporting", ->
   errorHandler = require '../../lib/index.js'
   errorHandler.install()
   config = errorHandler.config
+
+  makedoc = (msg) ->
+    msg = msg.split(/\n/).map (l) ->
+      l = "    #{l}"
+    .join "\n"
+    params = util.inspect(errorHandler.config).split(/\n/).map (l) ->
+      l = "    #{l}"
+    .join "\n"
+    console.log '=========================================================='
+    console.log 'Configuration:\n'
+    console.log params
+    console.log '\nError message:\n'
+    console.log msg
+    console.log '=========================================================='
 
   beforeEach ->
     config = errorHandler.config =

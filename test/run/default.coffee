@@ -1,5 +1,6 @@
 chai = require 'chai'
 expect = chai.expect
+util = require 'util'
 
 describe "Default Error reporting", ->
 
@@ -7,6 +8,20 @@ describe "Default Error reporting", ->
   errorHandler = require '../../lib/index.js'
   errorHandler.install()
   config = errorHandler.config
+
+  makedoc = (msg) ->
+    msg = msg.split(/\n/).map (l) ->
+      l = "    #{l}"
+    .join "\n"
+    params = util.inspect(errorHandler.config).split(/\n/).map (l) ->
+      l = "    #{l}"
+    .join "\n"
+    console.log '=========================================================='
+    console.log 'Configuration:\n'
+    console.log params
+    console.log '\nError message:\n'
+    console.log msg
+    console.log '=========================================================='
 
   beforeEach ->
     config = errorHandler.config =
@@ -21,7 +36,7 @@ describe "Default Error reporting", ->
         view: false
         before: 0
         after: 0
-        all: false
+        compiled: false
         modules: false
       # Display of the errors cause if there is one
       cause:
@@ -100,12 +115,11 @@ describe "Default Error reporting", ->
     it "for all lines", ->
       err = object.returnError()
       config.stack.view = true
-      config.stack.modules = true
       config.code.view = true
       config.code.all = true
       msg = errorHandler.format err
       expect(msg).to.have.string '08:   new Error "Something went wrong"'
-      expect(msg.split(/\n/).length).is.equal 14
+      expect(msg.split(/\n/).length).is.equal 6
     it "for node_modules stack, too", ->
       err = object.returnError()
       config.stack.view = true
@@ -116,3 +130,13 @@ describe "Default Error reporting", ->
       msg = errorHandler.format err
       expect(msg).to.have.string '08:   new Error "Something went wrong"'
       expect(msg.split(/\n/).length).is.equal 22
+
+  describe "show with compiled code", ->
+    it "line", ->
+      err = object.returnError()
+      config.stack.view = true
+      config.code.view = true
+      config.code.compiled = true
+      msg = errorHandler.format err
+      expect(msg).to.have.string '08:   new Error "Something went wrong"'
+      expect(msg.split(/\n/).length).is.equal 6
