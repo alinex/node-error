@@ -1,19 +1,26 @@
 Package: alinex-error
 =================================================
 
-[![Build Status](https://travis-ci.org/alinex/node-error.svg?branch=master)](https://travis-ci.org/alinex/node-error)
-[![Coverage Status](https://coveralls.io/repos/alinex/node-error/badge.png?branch=master)](https://coveralls.io/r/alinex/node-error?branch=master)
-[![Dependency Status](https://gemnasium.com/alinex/node-error.png)](https://gemnasium.com/alinex/node-error)
+[![Build Status](https://travis-ci.org/alinex/node-error.svg?branch=master)]\
+(https://travis-ci.org/alinex/node-error)
+[![Coverage Status](https://coveralls.io/repos/alinex/node-error/badge.png?branch=master)]\
+(https://coveralls.io/r/alinex/node-error?branch=master)
+[![Dependency Status](https://gemnasium.com/alinex/node-error.png)]\
+(https://gemnasium.com/alinex/node-error)
 
 This will replace the standard error handler with one which will
 
+* report of Error or other object
+* display code with context
 * use source-maps
-* colorize and highlight the output
-* display code area
 * support error nesting (multi level)
+* support individual loggers like winston...
+* colorize and highlight the output
 
+For the normal use it is really simple and only have to be loaded and installed 
+once in your application.
 
-Example Output
+Default Output
 -------------------------------------------------
 
 Keep in mind that the colors here won't match the ones really displayed on your
