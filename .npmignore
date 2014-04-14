@@ -2,6 +2,12 @@
 .settings
 .DS_Store
 *.sublime-*
-src
-doc
+bin/develop
 coverage
+data
+doc
+log
+src
+test
+var/local
+var/lib
