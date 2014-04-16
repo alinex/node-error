@@ -8,9 +8,10 @@ body {
 p, h1, h2, h3, h4, h5, h6 {
   margin: 0 0 15px 0;}
 h1, h2, h3, h4, h5, h6 {
+  font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
   color: #b5e853;
 }
-
+a { text-decoration: none; }
 h1 {
   margin-top: 40px; }
 
@@ -88,34 +89,44 @@ h1 {
   padding-left: 10px;
   display: block; }
 #headings .h1 {
-  padding-left: 0;
   margin-top: 10px;
   font-size: 1.3em; }
 #headings .h2 {
-  padding-left: 10px;
   margin-top: 8px;
   font-size: 1.1em; }
+#headings .h2 a {
+  padding-left: 20px; }
 #headings .h3 {
-  padding-left: 20px;
   margin-top: 5px;
   font-size: 1em; }
+#headings .h3 a {
+  padding-left: 30px; }
 #headings .h4 {
-  padding-left: 30px;
   margin-top: 3px;
   font-size: 0.9em; }
+#headings .h4 a {
+  padding-left: 40px; }
 #headings .h5 {
-  padding-left: 40px;
   margin-top: 1px;
   font-size: 0.8em; }
+#headings .h5 a {
+  padding-left: 50px; }
 #headings .h6 {
-  padding-left: 50px;
   font-size: 0.75em; }
+#headings .h6 a {
+  padding-left: 60px; }
+#headings .heading a {
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000; }
+#headings .heading a:hover {
+  border-top: 1px dotted #63c0f5;
+  border-bottom: 1px dotted #63c0f5; }
 
 #sidebar-toggle {
   position: fixed;
   top: 0;
   left: 0;
-  width: 5px;
+  width: 3px;
   bottom: 0;
   z-index: 2;
   cursor: pointer; }
@@ -257,12 +268,12 @@ body {
   color: #eeeeee; }
 
 a {
-  color: #aaeeff; }
+  color: #63C0F5; }
   a:visited {
-    color: #aaeeff; }
+    color: #63C0F5; }
 
 #sidebar_wrapper {
-  background: #151515; }
+  background: #000; }
 
 #sidebar_switch {
   background: #555555;
@@ -275,19 +286,23 @@ a {
     background: #666666;
     color: #eeeeee; }
 
-#tree .file {
+#tree {
+  font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;  
   color: #dddddd; }
 
 #headings .heading a {
+  font-weight: bold;
  color: #dddddd; }
+#headings .heading a:hover {
+ color: #63C0F5; }
 
 #sidebar-toggle {
-  background: #555555; }
+  background: #b5e853; }
   #sidebar-toggle:hover {
-    background: #aaaaff; }
+    background: #63C0F5; }
 
 .docs.markdown {
-  background: #333333; }
+  background: #151515; }
 .docs pre {
   border-color: #999999; }
 .docs p tt, .docs p code, .docs li tt, .docs li code {
@@ -314,7 +329,7 @@ td.linenos { background-color: #f0f0f0; padding-right: 10px; }
 span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
 pre { line-height: 125%; }
 body .highlight .hll { background-color: #ffffcc }
-body .highlight  { background: #151515; }
+body .highlight  { background: #333333; }
 body .highlight .c { color: #aaaaaa; font-style: italic } /* Comment */
 body .highlight .err { color: #FF0000; background-color: #FFAAAA } /* Error */
 body .highlight .k { color: #aaaaff } /* Keyword */

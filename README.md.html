@@ -6,7 +6,7 @@
   <link rel="stylesheet" media="all" href="doc-style.css" />
   <script src="doc-filelist.js"></script>
   <script>
-    var relativeDir = "", thisFile = "home/alex/a3/node-error/README.md", defaultSidebar = true;
+    var relativeDir = "", thisFile = "Users/alex/a3/node-error/README.md", defaultSidebar = true;
   </script>
   <script src="doc-script.js"></script>
   <script src="fileSearch.js"></script>
@@ -118,8 +118,11 @@
 <li>colorize and highlight the output</li>
 </ul>
 
-<p>For the normal use it is really simple and only have to be loaded and installed 
+<p>For the normal use it is really simple and only have to be loaded and installed
 once in your application.</p>
+
+<p>It is one of the modules of the <a href="http://alinex.github.io/node-alinex">Alinex Universe</a>
+following the code standards defined there.</p>
 
 
 <div class="pilwrap" id="default%20output">
@@ -147,7 +150,7 @@ output:</p>
 
 
 
-<p>You may change the output in different ways using the configuration. Below are 
+<p>You may change the output in different ways using the configuration. Below are
 some output examples for different configurations (keep in mind the colors
 displayed here won't match).</p>
 
@@ -340,7 +343,7 @@ displayed here won't match).</p>
 
 <div class="highlight"><pre><code><span class="p">{</span> <span class="nx">colors</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
   <span class="nx">stack</span><span class="o">:</span> <span class="p">{</span> <span class="nx">view</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">modules</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">system</span><span class="o">:</span> <span class="kc">false</span> <span class="p">},</span>
-  <span class="nx">code</span><span class="o">:</span> 
+  <span class="nx">code</span><span class="o">:</span>
    <span class="p">{</span> <span class="nx">view</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
      <span class="nx">before</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
      <span class="nx">after</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
@@ -378,7 +381,7 @@ displayed here won't match).</p>
 
 <div class="highlight"><pre><code><span class="p">{</span> <span class="nx">colors</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
   <span class="nx">stack</span><span class="o">:</span> <span class="p">{</span> <span class="nx">view</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">modules</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">system</span><span class="o">:</span> <span class="kc">false</span> <span class="p">},</span>
-  <span class="nx">code</span><span class="o">:</span> 
+  <span class="nx">code</span><span class="o">:</span>
    <span class="p">{</span> <span class="nx">view</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
      <span class="nx">before</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
      <span class="nx">after</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
@@ -396,10 +399,10 @@ displayed here won't match).</p>
 <div class="highlight"><pre><code><span class="nb">Error</span><span class="o">:</span> <span class="nx">Something</span> <span class="nx">went</span> <span class="nx">wrong</span>
   <span class="nx">at</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">returnError</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/test/data/object.js:8:12)</span>
      <span class="nb">Object</span><span class="p">.</span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">returnError</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/test/data/object.coffee:8:6)</span>
-     <span class="mi">06</span><span class="o">:</span> 
+     <span class="mi">06</span><span class="o">:</span>
      <span class="mi">07</span><span class="o">:</span> <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">returnError</span> <span class="o">=</span> <span class="o">-&gt;</span>
      <span class="mi">08</span><span class="o">:</span>   <span class="k">new</span> <span class="nb">Error</span> <span class="s2">&quot;Something went wrong&quot;</span>
-     <span class="mi">09</span><span class="o">:</span> 
+     <span class="mi">09</span><span class="o">:</span>
      <span class="mi">10</span><span class="o">:</span> <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">returnCause</span> <span class="o">=</span> <span class="o">-&gt;</span>
   <span class="nx">at</span> <span class="nx">Context</span><span class="p">.</span><span class="o">&lt;</span><span class="nx">anonymous</span><span class="o">&gt;</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/test/run/default.coffee:131:22)</span>
 </code></pre></div>
@@ -420,7 +423,7 @@ displayed here won't match).</p>
 
 <div class="highlight"><pre><code><span class="p">{</span> <span class="nx">colors</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
   <span class="nx">stack</span><span class="o">:</span> <span class="p">{</span> <span class="nx">view</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">modules</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">system</span><span class="o">:</span> <span class="kc">false</span> <span class="p">},</span>
-  <span class="nx">code</span><span class="o">:</span> 
+  <span class="nx">code</span><span class="o">:</span>
    <span class="p">{</span> <span class="nx">view</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
      <span class="nx">before</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
      <span class="nx">after</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
@@ -460,7 +463,7 @@ displayed here won't match).</p>
 
 <div class="highlight"><pre><code><span class="p">{</span> <span class="nx">colors</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
   <span class="nx">stack</span><span class="o">:</span> <span class="p">{</span> <span class="nx">view</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">modules</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">system</span><span class="o">:</span> <span class="kc">false</span> <span class="p">},</span>
-  <span class="nx">code</span><span class="o">:</span> 
+  <span class="nx">code</span><span class="o">:</span>
    <span class="p">{</span> <span class="nx">view</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
      <span class="nx">before</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
      <span class="nx">after</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
