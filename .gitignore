@@ -2,7 +2,11 @@
 .settings
 .DS_Store
 *.sublime-*
-/node_modules/
-/doc/
-/coverage/
-/lib/
+coverage/
+data/
+doc/
+lib/
+log/
+node_modules/
+var/lib/
+var/local/
