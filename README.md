@@ -14,8 +14,12 @@ This will replace the standard error handler with one which will
 * support individual loggers like winston...
 * colorize and highlight the output
 
-For the normal use it is really simple and only have to be loaded and installed 
+For the normal use it is really simple and only have to be loaded and installed
 once in your application.
+
+It is one of the modules of the [Alinex Universe](http://alinex.github.io/node-alinex)
+following the code standards defined there.
+
 
 Default Output
 -------------------------------------------------
@@ -33,7 +37,7 @@ output:
          097:       console.log stdout.trim().grey if stdout and commander.verbose
     Exiting after error logging timeout.
 
-You may change the output in different ways using the configuration. Below are 
+You may change the output in different ways using the configuration. Below are
 some output examples for different configurations (keep in mind the colors
 displayed here won't match).
 
@@ -143,7 +147,7 @@ Configuration:
 
     { colors: false,
       stack: { view: true, modules: false, system: false },
-      code: 
+      code:
        { view: true,
          before: 0,
          after: 0,
@@ -166,7 +170,7 @@ Configuration:
 
     { colors: false,
       stack: { view: true, modules: false, system: false },
-      code: 
+      code:
        { view: true,
          before: 2,
          after: 2,
@@ -180,10 +184,10 @@ Error message:
     Error: Something went wrong
       at Object.module.exports.returnError (/home/alex/a3/node-error/test/data/object.js:8:12)
          Object.module.exports.returnError (/home/alex/a3/node-error/test/data/object.coffee:8:6)
-         06: 
+         06:
          07: module.exports.returnError = ->
          08:   new Error "Something went wrong"
-         09: 
+         09:
          10: module.exports.returnCause = ->
       at Context.<anonymous> (/home/alex/a3/node-error/test/run/default.coffee:131:22)
 
@@ -193,7 +197,7 @@ Configuration:
 
     { colors: false,
       stack: { view: true, modules: false, system: false },
-      code: 
+      code:
        { view: true,
          before: 0,
          after: 0,
@@ -218,7 +222,7 @@ Configuration:
 
     { colors: false,
       stack: { view: true, modules: true, system: false },
-      code: 
+      code:
        { view: true,
          before: 0,
          after: 0,
