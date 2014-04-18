@@ -172,7 +172,7 @@ prepareStackTrace = (err, stack) ->
     map = mapFrame frame
     out = "\n  at #{frame}"
     if (config.code.all or stackline is 1) and (not map or config.code.compiled is true)
-      out += getCodeview frame 
+      out += getCodeview frame
     if map
       out += "\n     #{map}"
       out += getCodeview map
