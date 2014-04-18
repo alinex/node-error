@@ -74,7 +74,7 @@ uncaughtError = (err) ->
   if config.uncaught.exit
     setTimeout ->
       console.error "Exiting after error logging timeout."
-      process.exit config.uncaught.code
+      process.exit err.code ? config.uncaught.code
     , config.uncaught.timeout
 
 

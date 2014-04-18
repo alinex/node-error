@@ -422,6 +422,15 @@ enabled in configuration. The cause-list may be an array or an associative
 array.
 
 
+Exit process
+-------------------------------------------------
+
+If `uncaught.exit` is set the process is stopped after an uncaught error is
+reported. The process will wait the defined `timeout` to finish the last write
+operations and exit with the code from `err.code` or the specified default error
+code.
+
+
 Configuration
 -------------------------------------------------
 
