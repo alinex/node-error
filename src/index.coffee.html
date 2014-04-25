@@ -76,7 +76,7 @@
     </div>
   </div>
   <div id="sidebar-toggle"></div>
-  <div id="container"><div class="background highlight"></div>
+  <div id="container"><a id="fork" href="https://github.com/alinex/node-error.git" title="Form me on GitHub"></a><div class="background highlight"></div>
 <table cellpadding="0" cellspacing="0">
   <tbody>
       <tr>
@@ -293,7 +293,7 @@ Error object instance to report.</li>
   <span class="k">if</span> <span class="nx">config</span><span class="p">.</span><span class="nx">uncaught</span><span class="p">.</span><span class="nx">exit</span>
     <span class="nx">setTimeout</span> <span class="nf">-&gt;</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">error</span> <span class="s">&quot;Exiting after error logging timeout.&quot;</span>
-      <span class="nx">process</span><span class="p">.</span><span class="nx">exit</span> <span class="nx">config</span><span class="p">.</span><span class="nx">uncaught</span><span class="p">.</span><span class="nx">code</span>
+      <span class="nx">process</span><span class="p">.</span><span class="nx">exit</span> <span class="nx">err</span><span class="p">.</span><span class="nx">code</span> <span class="o">?</span> <span class="nx">config</span><span class="p">.</span><span class="nx">uncaught</span><span class="p">.</span><span class="nx">code</span>
     <span class="p">,</span> <span class="nx">config</span><span class="p">.</span><span class="nx">uncaught</span><span class="p">.</span><span class="nx">timeout</span>
 
 
@@ -464,7 +464,7 @@ Error object instance to report.</li>
     <span class="nv">map = </span><span class="nx">mapFrame</span> <span class="nx">frame</span>
     <span class="nv">out = </span><span class="s">&quot;\n  at </span><span class="si">#{</span><span class="nx">frame</span><span class="si">}</span><span class="s">&quot;</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">config</span><span class="p">.</span><span class="nx">code</span><span class="p">.</span><span class="nx">all</span> <span class="o">or</span> <span class="nx">stackline</span> <span class="o">is</span> <span class="mi">1</span><span class="p">)</span> <span class="o">and</span> <span class="p">(</span><span class="o">not</span> <span class="nx">map</span> <span class="o">or</span> <span class="nx">config</span><span class="p">.</span><span class="nx">code</span><span class="p">.</span><span class="nx">compiled</span> <span class="o">is</span> <span class="kc">true</span><span class="p">)</span>
-      <span class="nx">out</span> <span class="o">+=</span> <span class="nx">getCodeview</span> <span class="nx">frame</span> 
+      <span class="nx">out</span> <span class="o">+=</span> <span class="nx">getCodeview</span> <span class="nx">frame</span>
     <span class="k">if</span> <span class="nx">map</span>
       <span class="nx">out</span> <span class="o">+=</span> <span class="s">&quot;\n     </span><span class="si">#{</span><span class="nx">map</span><span class="si">}</span><span class="s">&quot;</span>
       <span class="nx">out</span> <span class="o">+=</span> <span class="nx">getCodeview</span> <span class="nx">map</span>

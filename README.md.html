@@ -86,6 +86,9 @@
         <a href="#send%20multiple%20errors">Send multiple errors</a>
       </div>
       <div class="heading h2">
+        <a href="#exit%20process">Exit process</a>
+      </div>
+      <div class="heading h2">
         <a href="#configuration">Configuration</a>
       </div>
       <div class="heading h2">
@@ -94,7 +97,7 @@
     </div>
   </div>
   <div id="sidebar-toggle"></div>
-  <div id="container"><div class="docs markdown">
+  <div id="container"><a id="fork" href="https://github.com/alinex/node-error.git" title="Form me on GitHub"></a><div class="docs markdown">
 <div class="pilwrap" id="package%3A%20alinex-error">
   <h1>
     <a href="#package%3A%20alinex-error" name="package%3A%20alinex-error" class="pilcrow">&#182;</a>
@@ -810,6 +813,20 @@ new error instance and add all your different real errors as the <code>cause</co
 <p>If this resulting error will be reported it is done with all the causes if
 enabled in configuration. The cause-list may be an array or an associative
 array.</p>
+
+
+<div class="pilwrap" id="exit%20process">
+  <h2>
+    <a href="#exit%20process" name="exit%20process" class="pilcrow">&#182;</a>
+    Exit process
+  </h2>
+</div>
+
+
+<p>If <code>uncaught.exit</code> is set the process is stopped after an uncaught error is
+reported. The process will wait the defined <code>timeout</code> to finish the last write
+operations and exit with the code from <code>err.code</code> or the specified default error
+code.</p>
 
 
 <div class="pilwrap" id="configuration">
