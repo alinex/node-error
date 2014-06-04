@@ -120,7 +120,7 @@ format = (err, level, codePart) ->
     msg += " (#{codePart})" if codePart
     if config.colors
       msg = msg.bold[if level? then 'magenta' else 'red']
-    if config.stack.view
+    if config.stack.view and err.stack?
       msg += err.stack.replace /.*?\n/, '\n'
     if not config.cause.stack and level
       return msg
