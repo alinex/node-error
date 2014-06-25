@@ -187,7 +187,7 @@ getCodeview = (frame) ->
     return '' if ~frame.getFileName()?.indexOf '/node_modules/'
   contents = retrieveFile frame.getFileName()
   return '' unless contents
-  lines = contents?.split /(?:\r\n|\r|\n)/
+  lines = contents?.split /(?:\r\n|\n)/
   out = ''
   max = lines.length.toString().length
   num = frame.getLineNumber() - 1
