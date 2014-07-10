@@ -6,7 +6,7 @@
   <link rel="stylesheet" media="all" href="../doc-style.css" />
   <script src="../doc-filelist.js"></script>
   <script>
-    var relativeDir = "../", thisFile = "Users/alex/a3/node-error/src/index.coffee", defaultSidebar = true;
+    var relativeDir = "../", thisFile = "home/alex/a3/node-error/src/index.coffee", defaultSidebar = true;
   </script>
   <script src="../doc-script.js"></script>
   <script src="../fileSearch.js"></script>
@@ -385,7 +385,7 @@ Error object instance to report.</li>
     <span class="nx">msg</span> <span class="o">+=</span> <span class="s">&quot; (</span><span class="si">#{</span><span class="nx">codePart</span><span class="si">}</span><span class="s">)&quot;</span> <span class="k">if</span> <span class="nx">codePart</span>
     <span class="k">if</span> <span class="nx">config</span><span class="p">.</span><span class="nx">colors</span>
       <span class="nv">msg = </span><span class="nx">msg</span><span class="p">.</span><span class="nx">bold</span><span class="p">[</span><span class="k">if</span> <span class="nx">level</span><span class="o">?</span> <span class="k">then</span> <span class="s">&#39;magenta&#39;</span> <span class="k">else</span> <span class="s">&#39;red&#39;</span><span class="p">]</span>
-    <span class="k">if</span> <span class="nx">config</span><span class="p">.</span><span class="nx">stack</span><span class="p">.</span><span class="nx">view</span>
+    <span class="k">if</span> <span class="nx">config</span><span class="p">.</span><span class="nx">stack</span><span class="p">.</span><span class="nx">view</span> <span class="o">and</span> <span class="nx">err</span><span class="p">.</span><span class="nx">stack</span><span class="o">?</span>
       <span class="nx">msg</span> <span class="o">+=</span> <span class="nx">err</span><span class="p">.</span><span class="nx">stack</span><span class="p">.</span><span class="nx">replace</span> <span class="sr">/.*?\n/</span><span class="p">,</span> <span class="s">&#39;\n&#39;</span>
     <span class="k">if</span> <span class="o">not</span> <span class="nx">config</span><span class="p">.</span><span class="nx">cause</span><span class="p">.</span><span class="nx">stack</span> <span class="o">and</span> <span class="nx">level</span>
       <span class="k">return</span> <span class="nx">msg</span>
