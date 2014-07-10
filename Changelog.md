@@ -12,7 +12,6 @@ Version 0.2.2 (2014-07-10)
 - Make keywords in package.json an array.
 - Use alinex-make for test and coverage.
 - Change prepublish to use alinex-make.
-- Merge branch 'master' of https://github.com/alinex/node-error
 - Added link to alinex documentation.
 - Updated gitignore and npmignor for new file structure.
 - Small documentation fixes.
