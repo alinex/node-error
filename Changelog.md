@@ -4,6 +4,18 @@ Version changes
 The following list gives a short overview about what is changed between
 individual versions:
 
+Version 0.2.2 (2014-07-10)
+-------------------------------------------------
+- Fixed TypeError on empty stack trace.
+- Fix coveralls call.
+- Exit with return code from error object if present.
+- Make keywords in package.json an array.
+- Use alinex-make for test and coverage.
+- Change prepublish to use alinex-make.
+- Added link to alinex documentation.
+- Updated gitignore and npmignor for new file structure.
+- Small documentation fixes.
+
 Version 0.2.1 (2014-04-10)
 -------------------------------------------------
 - Small documentation updates.
