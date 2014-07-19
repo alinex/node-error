@@ -7,7 +7,6 @@ Package: alinex-error
 
 This will replace the standard error handler with one which will
 
-* report of Error or other object
 * display code with context
 * use source-maps
 * support error nesting (multi level)
@@ -21,7 +20,7 @@ It is one of the modules of the [Alinex Universe](http://alinex.github.io/node-a
 following the code standards defined there.
 
 
-Default Output
+Possible Output
 -------------------------------------------------
 
 Keep in mind that the colors here won't match the ones really displayed on your
