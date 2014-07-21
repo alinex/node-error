@@ -493,7 +493,7 @@ Error object instance to report.</li>
     <span class="k">return</span> <span class="s">&#39;&#39;</span> <span class="k">if</span> <span class="o">~</span><span class="nx">frame</span><span class="p">.</span><span class="nx">getFileName</span><span class="p">()</span><span class="o">?</span><span class="p">.</span><span class="nx">indexOf</span> <span class="s">&#39;/node_modules/&#39;</span>
   <span class="nv">contents = </span><span class="nx">retrieveFile</span> <span class="nx">frame</span><span class="p">.</span><span class="nx">getFileName</span><span class="p">()</span>
   <span class="k">return</span> <span class="s">&#39;&#39;</span> <span class="k">unless</span> <span class="nx">contents</span>
-  <span class="nv">lines = </span><span class="nx">contents</span><span class="o">?</span><span class="p">.</span><span class="nx">split</span> <span class="sr">/(?:\r\n|\r|\n)/</span>
+  <span class="nv">lines = </span><span class="nx">contents</span><span class="o">?</span><span class="p">.</span><span class="nx">split</span> <span class="sr">/(?:\r\n|\n)/</span>
   <span class="nv">out = </span><span class="s">&#39;&#39;</span>
   <span class="nv">max = </span><span class="nx">lines</span><span class="p">.</span><span class="nx">length</span><span class="p">.</span><span class="nx">toString</span><span class="p">().</span><span class="nx">length</span>
   <span class="nv">num = </span><span class="nx">frame</span><span class="p">.</span><span class="nx">getLineNumber</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span>
