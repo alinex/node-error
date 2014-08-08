@@ -6,18 +6,14 @@ individual versions:
 
 Version 0.2.3 (2014-08-08)
 -------------------------------------------------
-- Typo error in package.json
 - Excluded source-map version 0.1.38 because problem in package.json.
-- Merge branch 'master' of https://github.com/alinex/node-error
 - Documentation optimization.
-- Merge branch 'master' of https://github.com/alinex/node-error
-- Small changelog fixes.
 - Fixed line splitting to only use correct \n and \r\n
 
 Version 0.2.2 (2014-07-10)
 -------------------------------------------------
 - Fixed TypeError on empty stack trace.
-- Fix coveralls call.
+- Fix coverall call.
 - Exit with return code from error object if present.
 - Make keywords in package.json an array.
 - Use alinex-make for test and coverage.
