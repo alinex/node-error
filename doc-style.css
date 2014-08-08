@@ -383,9 +383,9 @@ body .highlight .sr { color: #009999 } /* Literal.String.Regex */
 body .highlight .s1 { color: #aa5500 } /* Literal.String.Single */
 body .highlight .ss { color: #0000aa } /* Literal.String.Symbol */
 body .highlight .bp { color: #00aaaa } /* Name.Builtin.Pseudo */
-body .highlight .vc { color: #aa0000 } /* Name.Variable.Class */
-body .highlight .vg { color: #aa0000 } /* Name.Variable.Global */
-body .highlight .vi { color: #aa0000 } /* Name.Variable.Instance */
+body .highlight .vc { color: #ff44aa } /* Name.Variable.Class */
+body .highlight .vg { color: #ff44aa } /* Name.Variable.Global */
+body .highlight .vi { color: #ff44aa } /* Name.Variable.Instance */
 body .highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
 
 @media print {
