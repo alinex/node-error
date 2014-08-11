@@ -462,7 +462,7 @@ structure:
       # Should command exit after an uncaught error is reported
       uncaught:
         exit: true          # should process be exited after uncaught error
-        timeout: 100        # timeout to wait before exit to write logs
+        timeout: 1000       # timeout to wait before exit to write logs
         code: 2             # exit code to use
 
       # define a specific logger

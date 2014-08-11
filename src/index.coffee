@@ -42,7 +42,7 @@ module.exports.config =
   # Should command exit after an uncaught error is reported
   uncaught:
     exit: true
-    timeout: 100
+    timeout: 1000
     code: 2
   # define a specific logger
   logger: console
