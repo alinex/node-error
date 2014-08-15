@@ -36,7 +36,7 @@
     "colors": "0.x"
   },
   "devDependencies": {
-    "alinex-make": "0.2.x",
+    "alinex-make": "0.3.x",
     "winston": "0.x",
     "chai": "1.x"
   },
