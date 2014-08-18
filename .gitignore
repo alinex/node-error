@@ -10,3 +10,4 @@ log/
 node_modules/
 var/lib/
 var/local/
+npm-debug.log
