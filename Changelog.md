@@ -4,6 +4,14 @@ Version changes
 The following list gives a short overview about what is changed between
 individual versions:
 
+Version 0.2.4 (2014-09-17)
+-------------------------------------------------
+- Changed .gitignore rules.
+- Fixed calls to new make tool.
+- Updated to alinex-make 0.3.
+- Set timeout to a default of 1000ms.
+- CHangelog optimization.
+
 Version 0.2.3 (2014-08-08)
 -------------------------------------------------
 - Excluded source-map version 0.1.38 because problem in package.json.
