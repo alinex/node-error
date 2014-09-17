@@ -6,7 +6,7 @@
   <link rel="stylesheet" media="all" href="doc-style.css" />
   <script src="doc-filelist.js"></script>
   <script>
-    var relativeDir = "", thisFile = "home/alex/a3/node-error/Changelog.md", defaultSidebar = true;
+    var relativeDir = "", thisFile = "home/alex/a3/node-error/Changelogmd", defaultSidebar = true;
   </script>
   <script src="doc-script.js"></script>
   <script src="fileSearch.js"></script>
@@ -24,6 +24,9 @@
     <div id="headings">
       <div class="heading h1">
         <a href="#version%20changes">Version changes</a>
+      </div>
+      <div class="heading h2">
+        <a href="#version%200.2.4%20(2014-09-17)">Version 0.2.4 (2014-09-17)</a>
       </div>
       <div class="heading h2">
         <a href="#version%200.2.3%20(2014-08-08)">Version 0.2.3 (2014-08-08)</a>
@@ -74,6 +77,23 @@
 individual versions:</p>
 
 
+<div class="pilwrap" id="version%200.2.4%20(2014-09-17)">
+  <h2>
+    <a href="#version%200.2.4%20(2014-09-17)" name="version%200.2.4%20(2014-09-17)" class="pilcrow">&#182;</a>
+    Version 0.2.4 (2014-09-17)
+  </h2>
+</div>
+
+
+<ul>
+<li>Changed .gitignore rules.</li>
+<li>Fixed calls to new make tool.</li>
+<li>Updated to alinex-make 0.3.</li>
+<li>Set timeout to a default of 1000ms.</li>
+<li>CHangelog optimization.</li>
+</ul>
+
+
 <div class="pilwrap" id="version%200.2.3%20(2014-08-08)">
   <h2>
     <a href="#version%200.2.3%20(2014-08-08)" name="version%200.2.3%20(2014-08-08)" class="pilcrow">&#182;</a>
@@ -83,12 +103,8 @@ individual versions:</p>
 
 
 <ul>
-<li>Typo error in package.json</li>
 <li>Excluded source-map version 0.1.38 because problem in package.json.</li>
-<li>Merge branch 'master' of <a href='https://github.com/alinex/node-error'>https://github.com/alinex/node-error</a></li>
 <li>Documentation optimization.</li>
-<li>Merge branch 'master' of <a href='https://github.com/alinex/node-error'>https://github.com/alinex/node-error</a></li>
-<li>Small changelog fixes.</li>
 <li>Fixed line splitting to only use correct \n and \r\n</li>
 </ul>
 
@@ -103,7 +119,7 @@ individual versions:</p>
 
 <ul>
 <li>Fixed TypeError on empty stack trace.</li>
-<li>Fix coveralls call.</li>
+<li>Fix coverall call.</li>
 <li>Exit with return code from error object if present.</li>
 <li>Make keywords in package.json an array.</li>
 <li>Use alinex-make for test and coverage.</li>
