@@ -13,9 +13,9 @@
 # include base modules
 fs = require 'fs'
 path = require 'path'
-colors = require 'colors'
 sourcemap = require 'source-map'
 sprintf = require("sprintf-js").sprintf
+chalk = require 'chalk'
 
 
 # Configuration
@@ -119,7 +119,7 @@ format = (err, level, codePart) ->
     msg = "Caused by #{msg}" if level
     msg += " (#{codePart})" if codePart
     if config.colors
-      msg = msg.bold[if level? then 'magenta' else 'red']
+      msg = chalk.bold[if level? then 'magenta' else 'red'] msg
     if config.stack.view and err.stack?
       msg += err.stack.replace /.*?\n/, '\n'
     if not config.cause.stack and level
@@ -146,7 +146,7 @@ format = (err, level, codePart) ->
         .join "\n"
   else
     msg = "Error: #{err?.toString()}"
-    msg = msg.bold.red if config.colors
+    msg = chalk.bold.red msg if config.colors
   return msg
 
 
@@ -162,7 +162,7 @@ prepareStackTrace = (err, stack) ->
   unless config.stack.view
     stack = stack[..1]
   message = err.toString()
-  message = message.bold.red if config.colors
+  message = chalk.bold.red message if config.colors
   stackline = 0
   return message + stack.map (frame) ->
     stackline++
@@ -196,21 +196,21 @@ getCodeview = (frame) ->
     num = num - config.code.before
     for i in [1..config.code.before]
       line = sprintf "\n     %0#{max}d: #{lines[num++]}", num
-      out += if config.colors then line.grey else line
+      out += if config.colors then chalk.grey line else line
   # highlight line
   line = sprintf "\n     %0#{max}d: #{lines[num++]}", num
   if config.colors
     pos = frame.getColumnNumber() + max + 8
-    out += line.slice(0, pos-1).yellow
-    out += line.slice(pos-1, pos+2).yellow.underline
-    out += line.slice(pos+2).yellow
+    out += chalk.yellow line.slice(0, pos-1)
+    out += chalk.yellow.underline line.slice(pos-1, pos+2)
+    out += chalk.yellow line.slice(pos+2)
   else
     out += line
   # lines after
   if config.code.after
     for i in [1..config.code.after]
       line = sprintf "\n     %0#{max}d: #{lines[num++]}", num
-      out += if config.colors then line.grey else line
+      out += if config.colors then chalk.grey line else line
   out
 
 # ### Get the mapped frame

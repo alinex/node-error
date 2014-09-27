@@ -31,9 +31,9 @@
     "lib": "./lib"
   },
   "dependencies": {
+    "chalk": "0.5.x",
     "source-map": "0.1.0 - 0.1.37",
-    "sprintf-js": "0.x",
-    "colors": "0.x"
+    "sprintf-js": "0.x"
   },
   "devDependencies": {
     "alinex-make": "0.3.x",
