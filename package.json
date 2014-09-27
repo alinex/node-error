@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "chalk": "0.5.x",
-    "source-map": "0.1.0 - 0.1.37",
+    "source-map": "0.1.x",
     "sprintf-js": "0.x"
   },
   "devDependencies": {
