@@ -124,9 +124,9 @@ then the default behavior will be used.</p>
         <td class="code highlight"><div class="highlight"><pre>
 <span class="nv">fs = </span><span class="nx">require</span> <span class="s">&#39;fs&#39;</span>
 <span class="nv">path = </span><span class="nx">require</span> <span class="s">&#39;path&#39;</span>
-<span class="nv">colors = </span><span class="nx">require</span> <span class="s">&#39;colors&#39;</span>
 <span class="nv">sourcemap = </span><span class="nx">require</span> <span class="s">&#39;source-map&#39;</span>
 <span class="nv">sprintf = </span><span class="nx">require</span><span class="p">(</span><span class="s">&quot;sprintf-js&quot;</span><span class="p">).</span><span class="nx">sprintf</span>
+<span class="nv">chalk = </span><span class="nx">require</span> <span class="s">&#39;chalk&#39;</span>
 
 
 
@@ -384,7 +384,7 @@ Error object instance to report.</li>
     <span class="nv">msg = </span><span class="s">&quot;Caused by </span><span class="si">#{</span><span class="nx">msg</span><span class="si">}</span><span class="s">&quot;</span> <span class="k">if</span> <span class="nx">level</span>
     <span class="nx">msg</span> <span class="o">+=</span> <span class="s">&quot; (</span><span class="si">#{</span><span class="nx">codePart</span><span class="si">}</span><span class="s">)&quot;</span> <span class="k">if</span> <span class="nx">codePart</span>
     <span class="k">if</span> <span class="nx">config</span><span class="p">.</span><span class="nx">colors</span>
-      <span class="nv">msg = </span><span class="nx">msg</span><span class="p">.</span><span class="nx">bold</span><span class="p">[</span><span class="k">if</span> <span class="nx">level</span><span class="o">?</span> <span class="k">then</span> <span class="s">&#39;magenta&#39;</span> <span class="k">else</span> <span class="s">&#39;red&#39;</span><span class="p">]</span>
+      <span class="nv">msg = </span><span class="nx">chalk</span><span class="p">.</span><span class="nx">bold</span><span class="p">[</span><span class="k">if</span> <span class="nx">level</span><span class="o">?</span> <span class="k">then</span> <span class="s">&#39;magenta&#39;</span> <span class="k">else</span> <span class="s">&#39;red&#39;</span><span class="p">]</span> <span class="nx">msg</span>
     <span class="k">if</span> <span class="nx">config</span><span class="p">.</span><span class="nx">stack</span><span class="p">.</span><span class="nx">view</span> <span class="o">and</span> <span class="nx">err</span><span class="p">.</span><span class="nx">stack</span><span class="o">?</span>
       <span class="nx">msg</span> <span class="o">+=</span> <span class="nx">err</span><span class="p">.</span><span class="nx">stack</span><span class="p">.</span><span class="nx">replace</span> <span class="sr">/.*?\n/</span><span class="p">,</span> <span class="s">&#39;\n&#39;</span>
     <span class="k">if</span> <span class="o">not</span> <span class="nx">config</span><span class="p">.</span><span class="nx">cause</span><span class="p">.</span><span class="nx">stack</span> <span class="o">and</span> <span class="nx">level</span>
@@ -411,7 +411,7 @@ Error object instance to report.</li>
         <span class="p">.</span><span class="nx">join</span> <span class="s">&quot;\n&quot;</span>
   <span class="k">else</span>
     <span class="nv">msg = </span><span class="s">&quot;Error: </span><span class="si">#{</span><span class="nx">err</span><span class="o">?</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span><span class="si">}</span><span class="s">&quot;</span>
-    <span class="nv">msg = </span><span class="nx">msg</span><span class="p">.</span><span class="nx">bold</span><span class="p">.</span><span class="nx">red</span> <span class="k">if</span> <span class="nx">config</span><span class="p">.</span><span class="nx">colors</span>
+    <span class="nv">msg = </span><span class="nx">chalk</span><span class="p">.</span><span class="nx">bold</span><span class="p">.</span><span class="nx">red</span> <span class="nx">msg</span> <span class="k">if</span> <span class="nx">config</span><span class="p">.</span><span class="nx">colors</span>
   <span class="k">return</span> <span class="nx">msg</span>
 
 
@@ -454,7 +454,7 @@ Error object instance to report.</li>
   <span class="k">unless</span> <span class="nx">config</span><span class="p">.</span><span class="nx">stack</span><span class="p">.</span><span class="nx">view</span>
     <span class="nv">stack = </span><span class="nx">stack</span><span class="p">[..</span><span class="mi">1</span><span class="p">]</span>
   <span class="nv">message = </span><span class="nx">err</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span>
-  <span class="nv">message = </span><span class="nx">message</span><span class="p">.</span><span class="nx">bold</span><span class="p">.</span><span class="nx">red</span> <span class="k">if</span> <span class="nx">config</span><span class="p">.</span><span class="nx">colors</span>
+  <span class="nv">message = </span><span class="nx">chalk</span><span class="p">.</span><span class="nx">bold</span><span class="p">.</span><span class="nx">red</span> <span class="nx">message</span> <span class="k">if</span> <span class="nx">config</span><span class="p">.</span><span class="nx">colors</span>
   <span class="nv">stackline = </span><span class="mi">0</span>
   <span class="k">return</span> <span class="nx">message</span> <span class="o">+</span> <span class="nx">stack</span><span class="p">.</span><span class="nx">map</span> <span class="nf">(frame) -&gt;</span>
     <span class="nx">stackline</span><span class="o">++</span>
@@ -513,7 +513,7 @@ Error object instance to report.</li>
     <span class="nv">num = </span><span class="nx">num</span> <span class="o">-</span> <span class="nx">config</span><span class="p">.</span><span class="nx">code</span><span class="p">.</span><span class="nx">before</span>
     <span class="k">for</span> <span class="nx">i</span> <span class="k">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">..</span><span class="nx">config</span><span class="p">.</span><span class="nx">code</span><span class="p">.</span><span class="nx">before</span><span class="p">]</span>
       <span class="nv">line = </span><span class="nx">sprintf</span> <span class="s">&quot;\n     %0</span><span class="si">#{</span><span class="nx">max</span><span class="si">}</span><span class="s">d: </span><span class="si">#{</span><span class="nx">lines</span><span class="p">[</span><span class="nx">num</span><span class="o">++</span><span class="p">]</span><span class="si">}</span><span class="s">&quot;</span><span class="p">,</span> <span class="nx">num</span>
-      <span class="nx">out</span> <span class="o">+=</span> <span class="k">if</span> <span class="nx">config</span><span class="p">.</span><span class="nx">colors</span> <span class="k">then</span> <span class="nx">line</span><span class="p">.</span><span class="nx">grey</span> <span class="k">else</span> <span class="nx">line</span>
+      <span class="nx">out</span> <span class="o">+=</span> <span class="k">if</span> <span class="nx">config</span><span class="p">.</span><span class="nx">colors</span> <span class="k">then</span> <span class="nx">chalk</span><span class="p">.</span><span class="nx">grey</span> <span class="nx">line</span> <span class="k">else</span> <span class="nx">line</span>
 
 </pre></div>
         </td>
@@ -529,9 +529,9 @@ Error object instance to report.</li>
   <span class="nv">line = </span><span class="nx">sprintf</span> <span class="s">&quot;\n     %0</span><span class="si">#{</span><span class="nx">max</span><span class="si">}</span><span class="s">d: </span><span class="si">#{</span><span class="nx">lines</span><span class="p">[</span><span class="nx">num</span><span class="o">++</span><span class="p">]</span><span class="si">}</span><span class="s">&quot;</span><span class="p">,</span> <span class="nx">num</span>
   <span class="k">if</span> <span class="nx">config</span><span class="p">.</span><span class="nx">colors</span>
     <span class="nv">pos = </span><span class="nx">frame</span><span class="p">.</span><span class="nx">getColumnNumber</span><span class="p">()</span> <span class="o">+</span> <span class="nx">max</span> <span class="o">+</span> <span class="mi">8</span>
-    <span class="nx">out</span> <span class="o">+=</span> <span class="nx">line</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">pos</span><span class="o">-</span><span class="mi">1</span><span class="p">).</span><span class="nx">yellow</span>
-    <span class="nx">out</span> <span class="o">+=</span> <span class="nx">line</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="nx">pos</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="nx">pos</span><span class="o">+</span><span class="mi">2</span><span class="p">).</span><span class="nx">yellow</span><span class="p">.</span><span class="nx">underline</span>
-    <span class="nx">out</span> <span class="o">+=</span> <span class="nx">line</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="nx">pos</span><span class="o">+</span><span class="mi">2</span><span class="p">).</span><span class="nx">yellow</span>
+    <span class="nx">out</span> <span class="o">+=</span> <span class="nx">chalk</span><span class="p">.</span><span class="nx">yellow</span> <span class="nx">line</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">pos</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="nx">out</span> <span class="o">+=</span> <span class="nx">chalk</span><span class="p">.</span><span class="nx">yellow</span><span class="p">.</span><span class="nx">underline</span> <span class="nx">line</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="nx">pos</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="nx">pos</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span>
+    <span class="nx">out</span> <span class="o">+=</span> <span class="nx">chalk</span><span class="p">.</span><span class="nx">yellow</span> <span class="nx">line</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="nx">pos</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span>
   <span class="k">else</span>
     <span class="nx">out</span> <span class="o">+=</span> <span class="nx">line</span>
 
@@ -549,7 +549,7 @@ Error object instance to report.</li>
   <span class="k">if</span> <span class="nx">config</span><span class="p">.</span><span class="nx">code</span><span class="p">.</span><span class="nx">after</span>
     <span class="k">for</span> <span class="nx">i</span> <span class="k">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">..</span><span class="nx">config</span><span class="p">.</span><span class="nx">code</span><span class="p">.</span><span class="nx">after</span><span class="p">]</span>
       <span class="nv">line = </span><span class="nx">sprintf</span> <span class="s">&quot;\n     %0</span><span class="si">#{</span><span class="nx">max</span><span class="si">}</span><span class="s">d: </span><span class="si">#{</span><span class="nx">lines</span><span class="p">[</span><span class="nx">num</span><span class="o">++</span><span class="p">]</span><span class="si">}</span><span class="s">&quot;</span><span class="p">,</span> <span class="nx">num</span>
-      <span class="nx">out</span> <span class="o">+=</span> <span class="k">if</span> <span class="nx">config</span><span class="p">.</span><span class="nx">colors</span> <span class="k">then</span> <span class="nx">line</span><span class="p">.</span><span class="nx">grey</span> <span class="k">else</span> <span class="nx">line</span>
+      <span class="nx">out</span> <span class="o">+=</span> <span class="k">if</span> <span class="nx">config</span><span class="p">.</span><span class="nx">colors</span> <span class="k">then</span> <span class="nx">chalk</span><span class="p">.</span><span class="nx">grey</span> <span class="nx">line</span> <span class="k">else</span> <span class="nx">line</span>
   <span class="nx">out</span>
 
 
