@@ -4,6 +4,13 @@ Version changes
 The following list gives a short overview about what is changed between
 individual versions:
 
+Version 0.2.5 (2014-10-08)
+-------------------------------------------------
+- Fixed npm ignore file.
+- Updated to now again functioning source-map package.
+- Updated to newest alinex-make package.
+- Replace colors with chalk.
+
 Version 0.2.4 (2014-09-17)
 -------------------------------------------------
 - Changed .gitignore rules.
