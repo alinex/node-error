@@ -45,7 +45,7 @@ module.exports.config =
   uncaught:
     exit: true
     timeout: 1000
-    code: 2
+    code: -1
   # define a specific logger
   logger: console
 
