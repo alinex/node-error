@@ -32,6 +32,9 @@
         <a href="#only%20the%20real%20error%20message">Only the real error message</a>
       </div>
       <div class="heading h3">
+        <a href="#show%20error%20message%20with%20possible%20details">Show error message with possible details</a>
+      </div>
+      <div class="heading h3">
         <a href="#default%20stack%20trace">Default stack trace</a>
       </div>
       <div class="heading h3">
@@ -168,7 +171,7 @@ displayed here won't match).</p>
 <p>Configuration:</p>
 
 
-<div class="highlight"><pre><code><span class="p">{</span> <span class="nx">colors</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+<div class="highlight"><pre><code><span class="p">{</span> <span class="nx">colors</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">properties</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
   <span class="nx">stack</span><span class="o">:</span> <span class="p">{</span> <span class="nx">view</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">modules</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">system</span><span class="o">:</span> <span class="kc">false</span> <span class="p">},</span>
   <span class="nx">code</span><span class="o">:</span> <span class="p">{</span> <span class="nx">view</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">before</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">after</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">compiled</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">all</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">modules</span><span class="o">:</span> <span class="kc">false</span> <span class="p">},</span>
   <span class="nx">cause</span><span class="o">:</span> <span class="p">{</span> <span class="nx">view</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">stack</span><span class="o">:</span> <span class="kc">false</span> <span class="p">},</span>
@@ -184,6 +187,38 @@ displayed here won't match).</p>
 </code></pre></div>
 
 
+
+
+<div class="pilwrap" id="show%20error%20message%20with%20possible%20details">
+  <h3>
+    <a href="#show%20error%20message%20with%20possible%20details" name="show%20error%20message%20with%20possible%20details" class="pilcrow">&#182;</a>
+    Show error message with possible details
+  </h3>
+</div>
+
+
+<p>Configuration:</p>
+
+
+<div class="highlight"><pre><code><span class="p">{</span> <span class="nx">colors</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">properties</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nx">stack</span><span class="o">:</span> <span class="p">{</span> <span class="nx">view</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">modules</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">system</span><span class="o">:</span> <span class="kc">false</span> <span class="p">},</span>
+  <span class="nx">code</span><span class="o">:</span> <span class="p">{</span> <span class="nx">view</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">before</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">after</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">compiled</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">all</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">modules</span><span class="o">:</span> <span class="kc">false</span> <span class="p">},</span>
+  <span class="nx">cause</span><span class="o">:</span> <span class="p">{</span> <span class="nx">view</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">stack</span><span class="o">:</span> <span class="kc">false</span> <span class="p">},</span>
+  <span class="nx">uncaught</span><span class="o">:</span> <span class="p">{</span> <span class="nx">exit</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">timeout</span><span class="o">:</span> <span class="mi">100</span><span class="p">,</span> <span class="nx">code</span><span class="o">:</span> <span class="mi">2</span> <span class="p">}</span> <span class="p">}</span>
+</code></pre></div>
+
+
+
+<p>Error message:</p>
+
+
+<div class="highlight"><pre><code><span class="nb">Error</span><span class="o">:</span> <span class="nx">Something</span> <span class="nx">went</span> <span class="nx">wrong</span>
+<span class="nx">Detail</span><span class="o">:</span> <span class="nx">The</span> <span class="nx">database</span> <span class="nx">is</span> <span class="nx">not</span> <span class="nx">working</span> <span class="nx">properly</span><span class="p">.</span>
+</code></pre></div>
+
+
+
+<p>The additional information has to be added as properties of the error object.</p>
 
 
 <div class="pilwrap" id="default%20stack%20trace">

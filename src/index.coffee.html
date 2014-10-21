@@ -123,6 +123,7 @@ then the default behavior will be used.</p>
         </td>
         <td class="code highlight"><div class="highlight"><pre>
 <span class="nv">fs = </span><span class="nx">require</span> <span class="s">&#39;fs&#39;</span>
+<span class="nv">util = </span><span class="nx">require</span> <span class="s">&#39;util&#39;</span>
 <span class="nv">path = </span><span class="nx">require</span> <span class="s">&#39;path&#39;</span>
 <span class="nv">sourcemap = </span><span class="nx">require</span> <span class="s">&#39;source-map&#39;</span>
 <span class="nv">sprintf = </span><span class="nx">require</span><span class="p">(</span><span class="s">&quot;sprintf-js&quot;</span><span class="p">).</span><span class="nx">sprintf</span>
@@ -146,6 +147,7 @@ then the default behavior will be used.</p>
         <td class="code highlight"><div class="highlight"><pre>
 <span class="nv">module.exports.config =</span>
   <span class="nv">colors: </span><span class="kc">true</span>
+  <span class="nv">properties: </span><span class="kc">true</span>
 
 </pre></div>
         </td>
@@ -211,7 +213,7 @@ then the default behavior will be used.</p>
   <span class="nv">uncaught:</span>
     <span class="nv">exit: </span><span class="kc">true</span>
     <span class="nv">timeout: </span><span class="mi">1000</span>
-    <span class="nv">code: </span><span class="mi">2</span>
+    <span class="nv">code: </span><span class="o">-</span><span class="mi">1</span>
 
 </pre></div>
         </td>
@@ -292,7 +294,7 @@ Error object instance to report.</li>
         <td class="code highlight"><div class="highlight"><pre>
   <span class="k">if</span> <span class="nx">config</span><span class="p">.</span><span class="nx">uncaught</span><span class="p">.</span><span class="nx">exit</span>
     <span class="nx">setTimeout</span> <span class="nf">-&gt;</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">error</span> <span class="s">&quot;Exiting after error logging timeout.&quot;</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">error</span> <span class="nx">chalk</span><span class="p">.</span><span class="nx">yellow</span> <span class="s">&quot;Exiting after error logging timeout.&quot;</span>
       <span class="nx">process</span><span class="p">.</span><span class="nx">exit</span> <span class="nx">err</span><span class="p">.</span><span class="nx">code</span> <span class="o">?</span> <span class="nx">config</span><span class="p">.</span><span class="nx">uncaught</span><span class="p">.</span><span class="nx">code</span>
     <span class="p">,</span> <span class="nx">config</span><span class="p">.</span><span class="nx">uncaught</span><span class="p">.</span><span class="nx">timeout</span>
 
@@ -385,6 +387,12 @@ Error object instance to report.</li>
     <span class="nx">msg</span> <span class="o">+=</span> <span class="s">&quot; (</span><span class="si">#{</span><span class="nx">codePart</span><span class="si">}</span><span class="s">)&quot;</span> <span class="k">if</span> <span class="nx">codePart</span>
     <span class="k">if</span> <span class="nx">config</span><span class="p">.</span><span class="nx">colors</span>
       <span class="nv">msg = </span><span class="nx">chalk</span><span class="p">.</span><span class="nx">bold</span><span class="p">[</span><span class="k">if</span> <span class="nx">level</span><span class="o">?</span> <span class="k">then</span> <span class="s">&#39;magenta&#39;</span> <span class="k">else</span> <span class="s">&#39;red&#39;</span><span class="p">]</span> <span class="nx">msg</span>
+    <span class="k">if</span> <span class="nx">config</span><span class="p">.</span><span class="nx">properties</span>
+      <span class="k">for</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">value</span> <span class="k">of</span> <span class="nx">err</span>
+        <span class="k">continue</span> <span class="k">if</span> <span class="nx">name</span> <span class="k">in</span> <span class="p">[</span><span class="s">&#39;cause&#39;</span><span class="p">,</span> <span class="s">&#39;codePart&#39;</span><span class="p">]</span>
+        <span class="nv">name = </span><span class="nx">name</span><span class="p">.</span><span class="nx">charAt</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="nx">toUpperCase</span><span class="p">()</span> <span class="o">+</span> <span class="nx">name</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="nv">value = </span><span class="nx">util</span><span class="p">.</span><span class="nx">inspect</span> <span class="nx">value</span> <span class="k">if</span> <span class="k">typeof</span> <span class="nx">value</span> <span class="o">isnt</span> <span class="s">&#39;string&#39;</span>
+        <span class="nx">msg</span> <span class="o">+=</span> <span class="s">&quot;\n</span><span class="si">#{</span><span class="nx">name</span><span class="si">}</span><span class="s">: </span><span class="si">#{</span><span class="nx">value</span><span class="p">.</span><span class="nx">replace</span> <span class="sr">/\n/g</span><span class="p">,</span> <span class="s">&#39;\n  &#39;</span><span class="si">}</span><span class="s">&quot;</span>
     <span class="k">if</span> <span class="nx">config</span><span class="p">.</span><span class="nx">stack</span><span class="p">.</span><span class="nx">view</span> <span class="o">and</span> <span class="nx">err</span><span class="p">.</span><span class="nx">stack</span><span class="o">?</span>
       <span class="nx">msg</span> <span class="o">+=</span> <span class="nx">err</span><span class="p">.</span><span class="nx">stack</span><span class="p">.</span><span class="nx">replace</span> <span class="sr">/.*?\n/</span><span class="p">,</span> <span class="s">&#39;\n&#39;</span>
     <span class="k">if</span> <span class="o">not</span> <span class="nx">config</span><span class="p">.</span><span class="nx">cause</span><span class="p">.</span><span class="nx">stack</span> <span class="o">and</span> <span class="nx">level</span>
