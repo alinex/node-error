@@ -44,7 +44,7 @@ displayed here won't match).
 
 Configuration:
 
-    { colors: false,
+    { colors: false, properties: false,
       stack: { view: false, modules: false, system: false },
       code: { view: false, before: 0, after: 0, compiled: false, all: false, modules: false },
       cause: { view: false, stack: false },
@@ -53,6 +53,23 @@ Configuration:
 Error message:
 
     Error: Something went wrong
+
+### Show error message with possible details
+
+Configuration:
+
+    { colors: false, properties: true,
+      stack: { view: false, modules: false, system: false },
+      code: { view: false, before: 0, after: 0, compiled: false, all: false, modules: false },
+      cause: { view: false, stack: false },
+      uncaught: { exit: true, timeout: 100, code: 2 } }
+
+Error message:
+
+    Error: Something went wrong
+    Detail: The database is not working properly.
+
+The additional information has to be added as properties of the error object.
 
 ### Default stack trace
 

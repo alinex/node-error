@@ -12,6 +12,7 @@
 
 # include base modules
 fs = require 'fs'
+util = require 'util'
 path = require 'path'
 sourcemap = require 'source-map'
 sprintf = require("sprintf-js").sprintf
@@ -22,6 +23,7 @@ chalk = require 'chalk'
 # -------------------------------------------------
 module.exports.config =
   colors: true
+  properties: true
   # Define whether and which stack lines to show
   stack:
     view: true
@@ -120,6 +122,12 @@ format = (err, level, codePart) ->
     msg += " (#{codePart})" if codePart
     if config.colors
       msg = chalk.bold[if level? then 'magenta' else 'red'] msg
+    if config.properties
+      for name, value of err
+        continue if name in ['cause', 'codePart']
+        name = name.charAt(0).toUpperCase() + name.slice(1)
+        value = util.inspect value if typeof value isnt 'string'
+        msg += "\n#{name}: #{value.replace /\n/g, '\n  '}"
     if config.stack.view and err.stack?
       msg += err.stack.replace /.*?\n/, '\n'
     if not config.cause.stack and level
