@@ -4,6 +4,12 @@ Version changes
 The following list gives a short overview about what is changed between
 individual versions:
 
+Version 0.2.6 (2014-10-21)
+-------------------------------------------------
+- Changed default exit code to -1.
+- Changed color eof exit message.
+- Added support to display error properties, too.
+
 Version 0.2.5 (2014-10-08)
 -------------------------------------------------
 - Fixed npm ignore file.
