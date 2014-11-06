@@ -128,7 +128,7 @@ format = (err, level, codePart) ->
         name = name.charAt(0).toUpperCase() + name.slice(1)
         value = util.inspect value if typeof value isnt 'string'
         msg += "\n#{name}: #{value.replace /\n/g, '\n  '}"
-    if config.stack.view and err.stack?
+    if config.stack.view and 'stack' in err
       msg += err.stack.replace /.*?\n/, '\n'
     if not config.cause.stack and level
       return msg
