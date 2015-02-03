@@ -2,7 +2,7 @@
   "name": "alinex-error",
   "version": "0.2.6",
   "description": "Configurable error handler with source-map support.",
-  "copyright": "Alexander Schilling 2013-2014",
+  "copyright": "Alexander Schilling 2014-2015",
   "keywords": [
     "error",
     "exception",
@@ -32,8 +32,8 @@
   },
   "dependencies": {
     "chalk": "0.5.x",
-    "source-map": "0.1.x",
-    "sprintf-js": "0.x"
+    "source-map": "0.1.x || 0.2.x",
+    "sprintf-js": "1.x"
   },
   "devDependencies": {
     "alinex-make": "0.4.x",
