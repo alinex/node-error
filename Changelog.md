@@ -4,6 +4,13 @@ Version changes
 The following list gives a short overview about what is changed between
 individual versions:
 
+Version 0.2.7 (2015-02-03)
+-------------------------------------------------
+- Updated dependend packages.
+- Fixed bug in which the error message is added multiple times.
+- Redo last change because this prevented complete source display.
+- Strangely the stack access is not possible on some errors.
+
 Version 0.2.6 (2014-10-21)
 -------------------------------------------------
 - Changed default exit code to -1.
