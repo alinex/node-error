@@ -4,6 +4,10 @@ Version changes
 The following list gives a short overview about what is changed between
 individual versions:
 
+Version 1.0.2 (2015-03-03)
+-------------------------------------------------
+- update to use builder
+
 Version 1.0.1 (2015-03-03)
 -------------------------------------------------
 - Disable io.js in testing.
