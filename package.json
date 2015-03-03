@@ -31,14 +31,14 @@
     "lib": "./lib"
   },
   "dependencies": {
-    "chalk": "0.5.x",
-    "source-map": "0.1.x || 0.2.x",
+    "chalk": "1.x",
+    "source-map": "0.1.x || 0.2.x || 0.4.x",
     "sprintf-js": "1.x"
   },
   "devDependencies": {
     "alinex-make": "0.4.x",
     "winston": "0.x",
-    "chai": "1.x"
+    "chai": "2.x"
   },
   "optionalDependencies": {},
   "engines": {

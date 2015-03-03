@@ -59,7 +59,7 @@ describe "Default Error reporting", ->
     it "yes", ->
       err = object.returnError()
       config.colors = true
-      expect(errorHandler.format err).is.equal '\u001b[31m\u001b[1mError: Something went wrong\u001b[22m\u001b[39m'
+      expect(errorHandler.format err).is.equal '\u001b[1m\u001b[31mError: Something went wrong\u001b[39m\u001b[22m'
 
   describe "with stack trace", ->
     it "default", ->
@@ -101,7 +101,7 @@ describe "Default Error reporting", ->
       config.stack.view = true
       config.code.view = true
       msg = errorHandler.format err
-      expect(msg).to.have.string '08:   new\u001b[39m\u001b[4m\u001b[33m Er\u001b[39m\u001b[24m\u001b[33mror "Something went wrong"\u001b[39m'
+      expect(msg).to.have.string '08:   new\u001b[39m\u001b[33m\u001b[4m Er\u001b[24m\u001b[39m\u001b[33mror "Something went wrong"\u001b[39m'
       expect(msg.split(/\n/).length).is.equal 5
     it "with context", ->
       err = object.returnError()

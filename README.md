@@ -2,7 +2,6 @@ Package: alinex-error
 =================================================
 
 [![Build Status](https://travis-ci.org/alinex/node-error.svg?branch=master)](https://travis-ci.org/alinex/node-error)
-[![Coverage Status](https://coveralls.io/repos/alinex/node-error/badge.png?branch=master)](https://coveralls.io/r/alinex/node-error?branch=master)
 [![Dependency Status](https://gemnasium.com/alinex/node-error.png)](https://gemnasium.com/alinex/node-error)
 
 This will replace the standard error handler with one which will
@@ -493,7 +492,7 @@ any other which have an `error()` method to call.
 License
 -------------------------------------------------
 
-Copyright 2013-2014 Alexander Schilling
+Copyright 2013-2015 Alexander Schilling
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

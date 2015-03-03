@@ -61,7 +61,7 @@ describe "Error with cause reporting", ->
     it "yes", ->
       err = object.returnError()
       config.colors = true
-      expect(errorHandler.format err).is.equal '\u001b[31m\u001b[1mError: Something went wrong\u001b[22m\u001b[39m'
+      expect(errorHandler.format err).is.equal '\u001b[1m\u001b[31mError: Something went wrong\u001b[39m\u001b[22m'
 
   describe "show cause", ->
     it "default", ->
