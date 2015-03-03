@@ -4,6 +4,10 @@ Version changes
 The following list gives a short overview about what is changed between
 individual versions:
 
+Version 1.0.0 (2015-03-03)
+-------------------------------------------------
+- Upgraded dependent modules and updated checks to new chalk color order.
+
 Version 0.2.7 (2015-02-03)
 -------------------------------------------------
 - Updated dependend packages.
