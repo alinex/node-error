@@ -24,8 +24,8 @@
   "license": "Apache-2.0",
   "main": "./lib/index.js",
   "scripts": {
-    "prepublish": "node_modules/.bin/alinex-make -c compile",
-    "test": "node_modules/.bin/alinex-make -c test"
+    "prepublish": "node_modules/.bin/builder -c compile",
+    "test": "node_modules/.bin/builder -c test"
   },
   "directories": {
     "lib": "./lib"
@@ -36,7 +36,7 @@
     "sprintf-js": "1.x"
   },
   "devDependencies": {
-    "alinex-make": "0.4.x",
+    "alinex-builder": "1.x",
     "winston": "0.x",
     "chai": "2.x"
   },
