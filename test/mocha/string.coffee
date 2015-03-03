@@ -5,7 +5,6 @@ describe "String reporting", ->
 
   object = require '../data/object.js'
   errorHandler = require '../../lib/index.js'
-  errorHandler.install()
   config = errorHandler.config
 
   beforeEach ->

@@ -53,7 +53,7 @@ module.exports.config =
 # Install error handler
 # -------------------------------------------------
 # Install the error handler for uncaught Errors
-module.exports.install = ->
+install = ->
   Error.prepareStackTrace = prepareStackTrace
   process.on 'uncaughtException', uncaughtError
   module.exports
@@ -352,3 +352,8 @@ mapEvalOrigin = (origin) ->
   return "eval at " + match[1] + " (" + mapEvalOrigin(match[2]) + ")"  if match
   # Make sure we still return useful information if we didn't find anything
   origin
+
+install()
+
+module.exports.install = ->
+  console.warn "DEPRECATED call to alinex-error.install() no longer needed"

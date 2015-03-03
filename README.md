@@ -379,7 +379,6 @@ To use the error handler it should be added for uncaught exceptions in the
 main routine using:
 
     errorHandler = require('alinex-error');
-    errorHandler.install()
 
 Or the same in one statement:
 
