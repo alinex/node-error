@@ -6,7 +6,7 @@
   <link rel="stylesheet" media="all" href="doc-style.css" />
   <script src="doc-filelist.js"></script>
   <script>
-    var relativeDir = "", thisFile = "home/alex/a3/node-error/READMEmd", defaultSidebar = true;
+    var relativeDir = "", thisFile = "home/alex/a3//README.md", defaultSidebar = true;
   </script>
   <script src="doc-script.js"></script>
   <script src="fileSearch.js"></script>
@@ -141,15 +141,15 @@ following the code standards defined there.</p>
 output:</p>
 
 
-<div class="highlight"><pre><code><span class="nx">ReferenceError</span><span class="o">:</span> <span class="nx">comand</span> <span class="nx">is</span> <span class="nx">not</span> <span class="nx">defined</span>
-  <span class="nx">at</span> <span class="o">/</span><span class="nx">home</span><span class="o">/</span><span class="nx">alex</span><span class="o">/</span><span class="nx">a3</span><span class="o">/</span><span class="nx">node</span><span class="o">-</span><span class="nx">make</span><span class="o">/</span><span class="nx">lib</span><span class="o">/</span><span class="nx">pushTask</span><span class="p">.</span><span class="nx">js</span><span class="o">:</span><span class="mi">111</span><span class="o">:</span><span class="mi">82</span>
-     <span class="o">/</span><span class="nx">home</span><span class="o">/</span><span class="nx">alex</span><span class="o">/</span><span class="nx">a3</span><span class="o">/</span><span class="nx">node</span><span class="o">-</span><span class="nx">make</span><span class="o">/</span><span class="nx">src</span><span class="o">/</span><span class="nx">pushTask</span><span class="p">.</span><span class="nx">coffee</span><span class="o">:</span><span class="mi">95</span><span class="o">:</span><span class="mi">44</span>
-     <span class="mi">093</span><span class="o">:</span>     <span class="nx">execFile</span> <span class="s2">&quot;git&quot;</span><span class="p">,</span> <span class="p">[</span>
-     <span class="mi">094</span><span class="o">:</span>       <span class="s1">&#39;commit&#39;</span>
-     <span class="mi">095</span><span class="o">:</span>       <span class="s1">&#39;-m&#39;</span><span class="p">,</span> <span class="s2">&quot;Added information for version #{comand.newVersion}&quot;</span>
-     <span class="mi">096</span><span class="o">:</span>     <span class="p">],</span> <span class="p">{</span> <span class="nx">cwd</span><span class="o">:</span> <span class="nx">command</span><span class="p">.</span><span class="nx">dir</span> <span class="p">},</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">stdout</span><span class="p">,</span> <span class="nx">stderr</span><span class="p">)</span> <span class="o">-&gt;</span>
-     <span class="mi">097</span><span class="o">:</span>       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span> <span class="nx">stdout</span><span class="p">.</span><span class="nx">trim</span><span class="p">().</span><span class="nx">grey</span> <span class="k">if</span> <span class="nx">stdout</span> <span class="nx">and</span> <span class="nx">commander</span><span class="p">.</span><span class="nx">verbose</span>
-<span class="nx">Exiting</span> <span class="nx">after</span> <span class="nx">error</span> <span class="nx">logging</span> <span class="nx">timeout</span><span class="p">.</span>
+<div class="highlight"><pre><code>ReferenceError: comand is not defined
+  at /home/alex/a3/node-make/lib/pushTask.js:111:82
+     /home/alex/a3/node-make/src/pushTask.coffee:95:44
+     093:     execFile &quot;git&quot;, [
+     094:       &#39;commit&#39;
+     095:       &#39;-m&#39;, &quot;Added information for version #{comand.newVersion}&quot;
+     096:     ], { cwd: command.dir }, (err, stdout, stderr) -&gt;
+     097:       console.log stdout.trim().grey if stdout and commander.verbose
+Exiting after error logging timeout.
 </code></pre></div>
 
 
@@ -182,7 +182,7 @@ displayed here won't match).</p>
 <p>Error message:</p>
 
 
-<div class="highlight"><pre><code><span class="nb">Error</span><span class="o">:</span> <span class="nx">Something</span> <span class="nx">went</span> <span class="nx">wrong</span>
+<div class="highlight"><pre><code>Error: Something went wrong
 </code></pre></div>
 
 
@@ -211,8 +211,8 @@ displayed here won't match).</p>
 <p>Error message:</p>
 
 
-<div class="highlight"><pre><code><span class="nb">Error</span><span class="o">:</span> <span class="nx">Something</span> <span class="nx">went</span> <span class="nx">wrong</span>
-<span class="nx">Detail</span><span class="o">:</span> <span class="nx">The</span> <span class="nx">database</span> <span class="nx">is</span> <span class="nx">not</span> <span class="nx">working</span> <span class="nx">properly</span><span class="p">.</span>
+<div class="highlight"><pre><code>Error: Something went wrong
+Detail: The database is not working properly.
 </code></pre></div>
 
 
@@ -243,10 +243,10 @@ displayed here won't match).</p>
 <p>Error message:</p>
 
 
-<div class="highlight"><pre><code><span class="nb">Error</span><span class="o">:</span> <span class="nx">Something</span> <span class="nx">went</span> <span class="nx">wrong</span>
-  <span class="nx">at</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">returnError</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/test/data/object.js:8:12)</span>
-     <span class="nb">Object</span><span class="p">.</span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">returnError</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/test/data/object.coffee:8:6)</span>
-  <span class="nx">at</span> <span class="nx">Context</span><span class="p">.</span><span class="o">&lt;</span><span class="nx">anonymous</span><span class="o">&gt;</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/test/run/default.coffee:78:22)</span>
+<div class="highlight"><pre><code>Error: Something went wrong
+  at Object.module.exports.returnError (/home/alex/a3/node-error/test/data/object.js:8:12)
+     Object.module.exports.returnError (/home/alex/a3/node-error/test/data/object.coffee:8:6)
+  at Context.&lt;anonymous&gt; (/home/alex/a3/node-error/test/run/default.coffee:78:22)
 </code></pre></div>
 
 
@@ -275,18 +275,18 @@ displayed here won't match).</p>
 <p>Error message:</p>
 
 
-<div class="highlight"><pre><code><span class="nb">Error</span><span class="o">:</span> <span class="nx">Something</span> <span class="nx">went</span> <span class="nx">wrong</span>
-  <span class="nx">at</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">returnError</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/test/data/object.js:8:12)</span>
-     <span class="nb">Object</span><span class="p">.</span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">returnError</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/test/data/object.coffee:8:6)</span>
-  <span class="nx">at</span> <span class="nx">Context</span><span class="p">.</span><span class="o">&lt;</span><span class="nx">anonymous</span><span class="o">&gt;</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/test/run/default.coffee:85:22)</span>
-  <span class="nx">at</span> <span class="nx">callFn</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/node_modules/mocha/lib/runnable.js:223:21)</span>
-  <span class="nx">at</span> <span class="nx">Test</span><span class="p">.</span><span class="nx">Runnable</span><span class="p">.</span><span class="nx">run</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/node_modules/mocha/lib/runnable.js:216:7)</span>
-  <span class="nx">at</span> <span class="nx">Runner</span><span class="p">.</span><span class="nx">runTest</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/node_modules/mocha/lib/runner.js:374:10)</span>
-  <span class="nx">at</span> <span class="o">/</span><span class="nx">home</span><span class="o">/</span><span class="nx">alex</span><span class="o">/</span><span class="nx">a3</span><span class="o">/</span><span class="nx">node</span><span class="o">-</span><span class="nx">error</span><span class="o">/</span><span class="nx">node_modules</span><span class="o">/</span><span class="nx">mocha</span><span class="o">/</span><span class="nx">lib</span><span class="o">/</span><span class="nx">runner</span><span class="p">.</span><span class="nx">js</span><span class="o">:</span><span class="mi">452</span><span class="o">:</span><span class="mi">12</span>
-  <span class="nx">at</span> <span class="nx">next</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/node_modules/mocha/lib/runner.js:299:14)</span>
-  <span class="nx">at</span> <span class="o">/</span><span class="nx">home</span><span class="o">/</span><span class="nx">alex</span><span class="o">/</span><span class="nx">a3</span><span class="o">/</span><span class="nx">node</span><span class="o">-</span><span class="nx">error</span><span class="o">/</span><span class="nx">node_modules</span><span class="o">/</span><span class="nx">mocha</span><span class="o">/</span><span class="nx">lib</span><span class="o">/</span><span class="nx">runner</span><span class="p">.</span><span class="nx">js</span><span class="o">:</span><span class="mi">309</span><span class="o">:</span><span class="mi">7</span>
-  <span class="nx">at</span> <span class="nx">next</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/node_modules/mocha/lib/runner.js:247:23)</span>
-  <span class="nx">at</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">_onImmediate</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/node_modules/mocha/lib/runner.js:276:5)</span>
+<div class="highlight"><pre><code>Error: Something went wrong
+  at Object.module.exports.returnError (/home/alex/a3/node-error/test/data/object.js:8:12)
+     Object.module.exports.returnError (/home/alex/a3/node-error/test/data/object.coffee:8:6)
+  at Context.&lt;anonymous&gt; (/home/alex/a3/node-error/test/run/default.coffee:85:22)
+  at callFn (/home/alex/a3/node-error/node_modules/mocha/lib/runnable.js:223:21)
+  at Test.Runnable.run (/home/alex/a3/node-error/node_modules/mocha/lib/runnable.js:216:7)
+  at Runner.runTest (/home/alex/a3/node-error/node_modules/mocha/lib/runner.js:374:10)
+  at /home/alex/a3/node-error/node_modules/mocha/lib/runner.js:452:12
+  at next (/home/alex/a3/node-error/node_modules/mocha/lib/runner.js:299:14)
+  at /home/alex/a3/node-error/node_modules/mocha/lib/runner.js:309:7
+  at next (/home/alex/a3/node-error/node_modules/mocha/lib/runner.js:247:23)
+  at Object._onImmediate (/home/alex/a3/node-error/node_modules/mocha/lib/runner.js:276:5)
 </code></pre></div>
 
 
@@ -315,11 +315,11 @@ displayed here won't match).</p>
 <p>Error message:</p>
 
 
-<div class="highlight"><pre><code><span class="nb">Error</span><span class="o">:</span> <span class="nx">Something</span> <span class="nx">went</span> <span class="nx">wrong</span>
-  <span class="nx">at</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">returnError</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/test/data/object.js:8:12)</span>
-     <span class="nb">Object</span><span class="p">.</span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">returnError</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/test/data/object.coffee:8:6)</span>
-  <span class="nx">at</span> <span class="nx">Context</span><span class="p">.</span><span class="o">&lt;</span><span class="nx">anonymous</span><span class="o">&gt;</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/test/run/default.coffee:93:22)</span>
-  <span class="nx">at</span> <span class="nx">processImmediate</span> <span class="p">[</span><span class="nx">as</span> <span class="nx">_immediateCallback</span><span class="p">]</span> <span class="p">(</span><span class="nx">timers</span><span class="p">.</span><span class="nx">js</span><span class="o">:</span><span class="mi">330</span><span class="o">:</span><span class="mi">15</span><span class="p">)</span>
+<div class="highlight"><pre><code>Error: Something went wrong
+  at Object.module.exports.returnError (/home/alex/a3/node-error/test/data/object.js:8:12)
+     Object.module.exports.returnError (/home/alex/a3/node-error/test/data/object.coffee:8:6)
+  at Context.&lt;anonymous&gt; (/home/alex/a3/node-error/test/run/default.coffee:93:22)
+  at processImmediate [as _immediateCallback] (timers.js:330:15)
 </code></pre></div>
 
 
@@ -348,19 +348,19 @@ displayed here won't match).</p>
 <p>Error message:</p>
 
 
-<div class="highlight"><pre><code><span class="nb">Error</span><span class="o">:</span> <span class="nx">Something</span> <span class="nx">went</span> <span class="nx">wrong</span>
-  <span class="nx">at</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">returnError</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/test/data/object.js:8:12)</span>
-     <span class="nb">Object</span><span class="p">.</span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">returnError</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/test/data/object.coffee:8:6)</span>
-  <span class="nx">at</span> <span class="nx">Context</span><span class="p">.</span><span class="o">&lt;</span><span class="nx">anonymous</span><span class="o">&gt;</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/test/run/default.coffee:101:22)</span>
-  <span class="nx">at</span> <span class="nx">callFn</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/node_modules/mocha/lib/runnable.js:223:21)</span>
-  <span class="nx">at</span> <span class="nx">Test</span><span class="p">.</span><span class="nx">Runnable</span><span class="p">.</span><span class="nx">run</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/node_modules/mocha/lib/runnable.js:216:7)</span>
-  <span class="nx">at</span> <span class="nx">Runner</span><span class="p">.</span><span class="nx">runTest</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/node_modules/mocha/lib/runner.js:374:10)</span>
-  <span class="nx">at</span> <span class="o">/</span><span class="nx">home</span><span class="o">/</span><span class="nx">alex</span><span class="o">/</span><span class="nx">a3</span><span class="o">/</span><span class="nx">node</span><span class="o">-</span><span class="nx">error</span><span class="o">/</span><span class="nx">node_modules</span><span class="o">/</span><span class="nx">mocha</span><span class="o">/</span><span class="nx">lib</span><span class="o">/</span><span class="nx">runner</span><span class="p">.</span><span class="nx">js</span><span class="o">:</span><span class="mi">452</span><span class="o">:</span><span class="mi">12</span>
-  <span class="nx">at</span> <span class="nx">next</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/node_modules/mocha/lib/runner.js:299:14)</span>
-  <span class="nx">at</span> <span class="o">/</span><span class="nx">home</span><span class="o">/</span><span class="nx">alex</span><span class="o">/</span><span class="nx">a3</span><span class="o">/</span><span class="nx">node</span><span class="o">-</span><span class="nx">error</span><span class="o">/</span><span class="nx">node_modules</span><span class="o">/</span><span class="nx">mocha</span><span class="o">/</span><span class="nx">lib</span><span class="o">/</span><span class="nx">runner</span><span class="p">.</span><span class="nx">js</span><span class="o">:</span><span class="mi">309</span><span class="o">:</span><span class="mi">7</span>
-  <span class="nx">at</span> <span class="nx">next</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/node_modules/mocha/lib/runner.js:247:23)</span>
-  <span class="nx">at</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">_onImmediate</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/node_modules/mocha/lib/runner.js:276:5)</span>
-  <span class="nx">at</span> <span class="nx">processImmediate</span> <span class="p">[</span><span class="nx">as</span> <span class="nx">_immediateCallback</span><span class="p">]</span> <span class="p">(</span><span class="nx">timers</span><span class="p">.</span><span class="nx">js</span><span class="o">:</span><span class="mi">330</span><span class="o">:</span><span class="mi">15</span><span class="p">)</span>
+<div class="highlight"><pre><code>Error: Something went wrong
+  at Object.module.exports.returnError (/home/alex/a3/node-error/test/data/object.js:8:12)
+     Object.module.exports.returnError (/home/alex/a3/node-error/test/data/object.coffee:8:6)
+  at Context.&lt;anonymous&gt; (/home/alex/a3/node-error/test/run/default.coffee:101:22)
+  at callFn (/home/alex/a3/node-error/node_modules/mocha/lib/runnable.js:223:21)
+  at Test.Runnable.run (/home/alex/a3/node-error/node_modules/mocha/lib/runnable.js:216:7)
+  at Runner.runTest (/home/alex/a3/node-error/node_modules/mocha/lib/runner.js:374:10)
+  at /home/alex/a3/node-error/node_modules/mocha/lib/runner.js:452:12
+  at next (/home/alex/a3/node-error/node_modules/mocha/lib/runner.js:299:14)
+  at /home/alex/a3/node-error/node_modules/mocha/lib/runner.js:309:7
+  at next (/home/alex/a3/node-error/node_modules/mocha/lib/runner.js:247:23)
+  at Object._onImmediate (/home/alex/a3/node-error/node_modules/mocha/lib/runner.js:276:5)
+  at processImmediate [as _immediateCallback] (timers.js:330:15)
 </code></pre></div>
 
 
@@ -394,11 +394,11 @@ displayed here won't match).</p>
 <p>Error message:</p>
 
 
-<div class="highlight"><pre><code><span class="nb">Error</span><span class="o">:</span> <span class="nx">Something</span> <span class="nx">went</span> <span class="nx">wrong</span>
-  <span class="nx">at</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">returnError</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/test/data/object.js:8:12)</span>
-     <span class="nb">Object</span><span class="p">.</span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">returnError</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/test/data/object.coffee:8:6)</span>
-     <span class="mi">08</span><span class="o">:</span>   <span class="k">new</span> <span class="nb">Error</span> <span class="s2">&quot;Something went wrong&quot;</span>
-  <span class="nx">at</span> <span class="nx">Context</span><span class="p">.</span><span class="o">&lt;</span><span class="nx">anonymous</span><span class="o">&gt;</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/test/run/default.coffee:112:22)</span>
+<div class="highlight"><pre><code>Error: Something went wrong
+  at Object.module.exports.returnError (/home/alex/a3/node-error/test/data/object.js:8:12)
+     Object.module.exports.returnError (/home/alex/a3/node-error/test/data/object.coffee:8:6)
+     08:   new Error &quot;Something went wrong&quot;
+  at Context.&lt;anonymous&gt; (/home/alex/a3/node-error/test/run/default.coffee:112:22)
 </code></pre></div>
 
 
@@ -432,15 +432,15 @@ displayed here won't match).</p>
 <p>Error message:</p>
 
 
-<div class="highlight"><pre><code><span class="nb">Error</span><span class="o">:</span> <span class="nx">Something</span> <span class="nx">went</span> <span class="nx">wrong</span>
-  <span class="nx">at</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">returnError</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/test/data/object.js:8:12)</span>
-     <span class="nb">Object</span><span class="p">.</span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">returnError</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/test/data/object.coffee:8:6)</span>
-     <span class="mi">06</span><span class="o">:</span>
-     <span class="mi">07</span><span class="o">:</span> <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">returnError</span> <span class="o">=</span> <span class="o">-&gt;</span>
-     <span class="mi">08</span><span class="o">:</span>   <span class="k">new</span> <span class="nb">Error</span> <span class="s2">&quot;Something went wrong&quot;</span>
-     <span class="mi">09</span><span class="o">:</span>
-     <span class="mi">10</span><span class="o">:</span> <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">returnCause</span> <span class="o">=</span> <span class="o">-&gt;</span>
-  <span class="nx">at</span> <span class="nx">Context</span><span class="p">.</span><span class="o">&lt;</span><span class="nx">anonymous</span><span class="o">&gt;</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/test/run/default.coffee:131:22)</span>
+<div class="highlight"><pre><code>Error: Something went wrong
+  at Object.module.exports.returnError (/home/alex/a3/node-error/test/data/object.js:8:12)
+     Object.module.exports.returnError (/home/alex/a3/node-error/test/data/object.coffee:8:6)
+     06:
+     07: module.exports.returnError = -&gt;
+     08:   new Error &quot;Something went wrong&quot;
+     09:
+     10: module.exports.returnCause = -&gt;
+  at Context.&lt;anonymous&gt; (/home/alex/a3/node-error/test/run/default.coffee:131:22)
 </code></pre></div>
 
 
@@ -475,12 +475,12 @@ displayed here won't match).</p>
 <p>Error message:</p>
 
 
-<div class="highlight"><pre><code><span class="nb">Error</span><span class="o">:</span> <span class="nx">Something</span> <span class="nx">went</span> <span class="nx">wrong</span>
-  <span class="nx">at</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">returnError</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/test/data/object.js:8:12)</span>
-     <span class="nb">Object</span><span class="p">.</span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">returnError</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/test/data/object.coffee:8:6)</span>
-     <span class="mi">08</span><span class="o">:</span>   <span class="k">new</span> <span class="nb">Error</span> <span class="s2">&quot;Something went wrong&quot;</span>
-  <span class="nx">at</span> <span class="nx">Context</span><span class="p">.</span><span class="o">&lt;</span><span class="nx">anonymous</span><span class="o">&gt;</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/test/run/default.coffee:142:22)</span>
-     <span class="mi">142</span><span class="o">:</span> <span class="err">#</span>      <span class="nx">makedoc</span> <span class="nx">msg</span>
+<div class="highlight"><pre><code>Error: Something went wrong
+  at Object.module.exports.returnError (/home/alex/a3/node-error/test/data/object.js:8:12)
+     Object.module.exports.returnError (/home/alex/a3/node-error/test/data/object.coffee:8:6)
+     08:   new Error &quot;Something went wrong&quot;
+  at Context.&lt;anonymous&gt; (/home/alex/a3/node-error/test/run/default.coffee:142:22)
+     142: #      makedoc msg
 </code></pre></div>
 
 
@@ -515,28 +515,28 @@ displayed here won't match).</p>
 <p>Error message:</p>
 
 
-<div class="highlight"><pre><code><span class="nb">Error</span><span class="o">:</span> <span class="nx">Something</span> <span class="nx">went</span> <span class="nx">wrong</span>
-  <span class="nx">at</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">returnError</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/test/data/object.js:8:12)</span>
-     <span class="nb">Object</span><span class="p">.</span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">returnError</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/test/data/object.coffee:8:6)</span>
-     <span class="mi">08</span><span class="o">:</span>   <span class="k">new</span> <span class="nb">Error</span> <span class="s2">&quot;Something went wrong&quot;</span>
-  <span class="nx">at</span> <span class="nx">Context</span><span class="p">.</span><span class="o">&lt;</span><span class="nx">anonymous</span><span class="o">&gt;</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/test/run/default.coffee:152:22)</span>
-     <span class="mi">152</span><span class="o">:</span> <span class="kc">undefined</span>
-  <span class="nx">at</span> <span class="nx">callFn</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/node_modules/mocha/lib/runnable.js:223:21)</span>
-     <span class="mi">223</span><span class="o">:</span>     <span class="kd">var</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">fn</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">ctx</span><span class="p">);</span>
-  <span class="nx">at</span> <span class="nx">Test</span><span class="p">.</span><span class="nx">Runnable</span><span class="p">.</span><span class="nx">run</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/node_modules/mocha/lib/runnable.js:216:7)</span>
-     <span class="mi">216</span><span class="o">:</span>       <span class="nx">callFn</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">fn</span><span class="p">);</span>
-  <span class="nx">at</span> <span class="nx">Runner</span><span class="p">.</span><span class="nx">runTest</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/node_modules/mocha/lib/runner.js:374:10)</span>
-     <span class="mi">374</span><span class="o">:</span>     <span class="nx">test</span><span class="p">.</span><span class="nx">run</span><span class="p">(</span><span class="nx">fn</span><span class="p">);</span>
-  <span class="nx">at</span> <span class="o">/</span><span class="nx">home</span><span class="o">/</span><span class="nx">alex</span><span class="o">/</span><span class="nx">a3</span><span class="o">/</span><span class="nx">node</span><span class="o">-</span><span class="nx">error</span><span class="o">/</span><span class="nx">node_modules</span><span class="o">/</span><span class="nx">mocha</span><span class="o">/</span><span class="nx">lib</span><span class="o">/</span><span class="nx">runner</span><span class="p">.</span><span class="nx">js</span><span class="o">:</span><span class="mi">452</span><span class="o">:</span><span class="mi">12</span>
-     <span class="mi">452</span><span class="o">:</span>       <span class="nx">self</span><span class="p">.</span><span class="nx">runTest</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
-  <span class="nx">at</span> <span class="nx">next</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/node_modules/mocha/lib/runner.js:299:14)</span>
-     <span class="mi">299</span><span class="o">:</span>       <span class="k">return</span> <span class="nx">fn</span><span class="p">();</span>
-  <span class="nx">at</span> <span class="o">/</span><span class="nx">home</span><span class="o">/</span><span class="nx">alex</span><span class="o">/</span><span class="nx">a3</span><span class="o">/</span><span class="nx">node</span><span class="o">-</span><span class="nx">error</span><span class="o">/</span><span class="nx">node_modules</span><span class="o">/</span><span class="nx">mocha</span><span class="o">/</span><span class="nx">lib</span><span class="o">/</span><span class="nx">runner</span><span class="p">.</span><span class="nx">js</span><span class="o">:</span><span class="mi">309</span><span class="o">:</span><span class="mi">7</span>
-     <span class="mi">309</span><span class="o">:</span>       <span class="nx">next</span><span class="p">(</span><span class="nx">suites</span><span class="p">.</span><span class="nx">pop</span><span class="p">());</span>
-  <span class="nx">at</span> <span class="nx">next</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/node_modules/mocha/lib/runner.js:247:23)</span>
-     <span class="mi">247</span><span class="o">:</span>     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">hook</span><span class="p">)</span> <span class="k">return</span> <span class="nx">fn</span><span class="p">();</span>
-  <span class="nx">at</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">_onImmediate</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/node_modules/mocha/lib/runner.js:276:5)</span>
-     <span class="mi">276</span><span class="o">:</span>     <span class="nx">next</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<div class="highlight"><pre><code>Error: Something went wrong
+  at Object.module.exports.returnError (/home/alex/a3/node-error/test/data/object.js:8:12)
+     Object.module.exports.returnError (/home/alex/a3/node-error/test/data/object.coffee:8:6)
+     08:   new Error &quot;Something went wrong&quot;
+  at Context.&lt;anonymous&gt; (/home/alex/a3/node-error/test/run/default.coffee:152:22)
+     152: undefined
+  at callFn (/home/alex/a3/node-error/node_modules/mocha/lib/runnable.js:223:21)
+     223:     var result = fn.call(ctx);
+  at Test.Runnable.run (/home/alex/a3/node-error/node_modules/mocha/lib/runnable.js:216:7)
+     216:       callFn(this.fn);
+  at Runner.runTest (/home/alex/a3/node-error/node_modules/mocha/lib/runner.js:374:10)
+     374:     test.run(fn);
+  at /home/alex/a3/node-error/node_modules/mocha/lib/runner.js:452:12
+     452:       self.runTest(function(err){
+  at next (/home/alex/a3/node-error/node_modules/mocha/lib/runner.js:299:14)
+     299:       return fn();
+  at /home/alex/a3/node-error/node_modules/mocha/lib/runner.js:309:7
+     309:       next(suites.pop());
+  at next (/home/alex/a3/node-error/node_modules/mocha/lib/runner.js:247:23)
+     247:     if (!hook) return fn();
+  at Object._onImmediate (/home/alex/a3/node-error/node_modules/mocha/lib/runner.js:276:5)
+     276:     next(0);
 </code></pre></div>
 
 
@@ -565,12 +565,12 @@ displayed here won't match).</p>
 <p>Error message:</p>
 
 
-<div class="highlight"><pre><code><span class="nb">Error</span><span class="o">:</span> <span class="nx">Something</span> <span class="nx">went</span> <span class="nx">wrong</span>
-  <span class="nx">at</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">returnError</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/test/data/object.js:8:12)</span>
-     <span class="mi">08</span><span class="o">:</span>     <span class="k">return</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s2">&quot;Something went wrong&quot;</span><span class="p">);</span>
-     <span class="nb">Object</span><span class="p">.</span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">returnError</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/test/data/object.coffee:8:6)</span>
-     <span class="mi">08</span><span class="o">:</span>   <span class="k">new</span> <span class="nb">Error</span> <span class="s2">&quot;Something went wrong&quot;</span>
-  <span class="nx">at</span> <span class="nx">Context</span><span class="p">.</span><span class="o">&lt;</span><span class="nx">anonymous</span><span class="o">&gt;</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/test/run/default.coffee:167:22)</span>
+<div class="highlight"><pre><code>Error: Something went wrong
+  at Object.module.exports.returnError (/home/alex/a3/node-error/test/data/object.js:8:12)
+     08:     return new Error(&quot;Something went wrong&quot;);
+     Object.module.exports.returnError (/home/alex/a3/node-error/test/data/object.coffee:8:6)
+     08:   new Error &quot;Something went wrong&quot;
+  at Context.&lt;anonymous&gt; (/home/alex/a3/node-error/test/run/default.coffee:167:22)
 </code></pre></div>
 
 
@@ -599,8 +599,8 @@ displayed here won't match).</p>
 <p>Error message:</p>
 
 
-<div class="highlight"><pre><code><span class="nb">Error</span><span class="o">:</span> <span class="nx">Something</span> <span class="nx">went</span> <span class="nx">wrong</span>
-  <span class="nx">Caused</span> <span class="nx">by</span> <span class="nb">Error</span><span class="o">:</span> <span class="nx">root</span> <span class="nx">fault</span> <span class="p">(</span><span class="nx">somethere</span><span class="p">)</span>
+<div class="highlight"><pre><code>Error: Something went wrong
+  Caused by Error: root fault (somethere)
 </code></pre></div>
 
 
@@ -629,9 +629,9 @@ displayed here won't match).</p>
 <p>Error message:</p>
 
 
-<div class="highlight"><pre><code><span class="nb">Error</span><span class="o">:</span> <span class="nx">Something</span> <span class="nx">went</span> <span class="nx">wrong</span>
-  <span class="nx">Caused</span> <span class="nx">by</span> <span class="nb">Error</span><span class="o">:</span> <span class="nx">root</span> <span class="nx">fault</span> <span class="mi">1</span> <span class="p">(</span><span class="nx">somethere</span><span class="p">)</span>
-  <span class="nx">Caused</span> <span class="nx">by</span> <span class="nb">Error</span><span class="o">:</span> <span class="nx">root</span> <span class="nx">fault</span> <span class="mi">2</span> <span class="p">(</span><span class="nx">somethere</span><span class="p">)</span>
+<div class="highlight"><pre><code>Error: Something went wrong
+  Caused by Error: root fault 1 (somethere)
+  Caused by Error: root fault 2 (somethere)
 </code></pre></div>
 
 
@@ -660,9 +660,9 @@ displayed here won't match).</p>
 <p>Error message:</p>
 
 
-<div class="highlight"><pre><code><span class="nb">Error</span><span class="o">:</span> <span class="nx">Something</span> <span class="nx">went</span> <span class="nx">wrong</span>
-  <span class="nx">Caused</span> <span class="nx">by</span> <span class="nb">Error</span><span class="o">:</span> <span class="nx">root</span> <span class="nx">fault</span> <span class="mi">1</span> <span class="p">(</span><span class="nx">here</span><span class="p">)</span>
-  <span class="nx">Caused</span> <span class="nx">by</span> <span class="nb">Error</span><span class="o">:</span> <span class="nx">root</span> <span class="nx">fault</span> <span class="mi">2</span> <span class="p">(</span><span class="nx">there</span><span class="p">)</span>
+<div class="highlight"><pre><code>Error: Something went wrong
+  Caused by Error: root fault 1 (here)
+  Caused by Error: root fault 2 (there)
 </code></pre></div>
 
 
@@ -691,14 +691,14 @@ displayed here won't match).</p>
 <p>Error message:</p>
 
 
-<div class="highlight"><pre><code><span class="nb">Error</span><span class="o">:</span> <span class="nx">Something</span> <span class="nx">went</span> <span class="nx">wrong</span>
-  <span class="nx">at</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">returnCause</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/test/data/object.js:13:11)</span>
-     <span class="nb">Object</span><span class="p">.</span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">returnCause</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/test/data/object.coffee:11:12)</span>
-  <span class="nx">at</span> <span class="nx">Context</span><span class="p">.</span><span class="o">&lt;</span><span class="nx">anonymous</span><span class="o">&gt;</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/test/run/cause.coffee:105:22)</span>
-  <span class="nx">Caused</span> <span class="nx">by</span> <span class="nb">Error</span><span class="o">:</span> <span class="nx">root</span> <span class="nx">fault</span> <span class="p">(</span><span class="nx">somethere</span><span class="p">)</span>
-    <span class="nx">at</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">returnCause</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/test/data/object.js:14:17)</span>
-       <span class="nb">Object</span><span class="p">.</span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">returnCause</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/test/data/object.coffee:12:18)</span>
-    <span class="nx">at</span> <span class="nx">Context</span><span class="p">.</span><span class="o">&lt;</span><span class="nx">anonymous</span><span class="o">&gt;</span> <span class="p">(</span><span class="err">/home/alex/a3/node-error/test/run/cause.coffee:105:22)</span>
+<div class="highlight"><pre><code>Error: Something went wrong
+  at Object.module.exports.returnCause (/home/alex/a3/node-error/test/data/object.js:13:11)
+     Object.module.exports.returnCause (/home/alex/a3/node-error/test/data/object.coffee:11:12)
+  at Context.&lt;anonymous&gt; (/home/alex/a3/node-error/test/run/cause.coffee:105:22)
+  Caused by Error: root fault (somethere)
+    at Object.module.exports.returnCause (/home/alex/a3/node-error/test/data/object.js:14:17)
+       Object.module.exports.returnCause (/home/alex/a3/node-error/test/data/object.coffee:12:18)
+    at Context.&lt;anonymous&gt; (/home/alex/a3/node-error/test/run/cause.coffee:105:22)
 </code></pre></div>
 
 
@@ -715,7 +715,7 @@ displayed here won't match).</p>
 <p>To add this error handler to your application run (from your project's folder):</p>
 
 
-<div class="highlight"><pre><code><span class="o">&gt;</span> <span class="nx">npm</span> <span class="nx">install</span> <span class="nx">alinex</span><span class="o">-</span><span class="nx">error</span> <span class="o">--</span><span class="nx">save</span>
+<div class="highlight"><pre><code>npm install alinex-error --save
 </code></pre></div>
 
 
@@ -737,8 +737,7 @@ displayed here won't match).</p>
 main routine using:</p>
 
 
-<div class="highlight"><pre><code><span class="nx">errorHandler</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;alinex-error&#39;</span><span class="p">);</span>
-<span class="nx">errorHandler</span><span class="p">.</span><span class="nx">install</span><span class="p">()</span>
+<div class="highlight"><pre><code><span class="nv">errorHandler = </span><span class="nx">require</span> <span class="s">&#39;alinex-error&#39;</span>
 </code></pre></div>
 
 
@@ -746,7 +745,7 @@ main routine using:</p>
 <p>Or the same in one statement:</p>
 
 
-<div class="highlight"><pre><code><span class="nx">errorHandler</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;alinex-error&#39;</span><span class="p">).</span><span class="nx">install</span><span class="p">();</span>
+<div class="highlight"><pre><code><span class="nv">errorHandler = </span><span class="nx">require</span><span class="p">(</span><span class="s">&#39;alinex-error&#39;</span><span class="p">).</span><span class="nx">install</span><span class="p">()</span>
 </code></pre></div>
 
 
@@ -756,8 +755,8 @@ main routine using:</p>
 <p>Alternatively an already caught Error may be reported using:</p>
 
 
-<div class="highlight"><pre><code><span class="nx">errorHandler</span><span class="p">.</span><span class="nx">report</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
-<span class="nx">errorHandler</span><span class="p">.</span><span class="nx">report</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">level</span><span class="p">);</span>
+<div class="highlight"><pre><code><span class="nx">errorHandler</span><span class="p">.</span><span class="nx">report</span> <span class="nx">error</span>
+<span class="nx">errorHandler</span><span class="p">.</span><span class="nx">report</span> <span class="nx">error</span><span class="p">,</span> <span class="nx">level</span>
 </code></pre></div>
 
 
@@ -765,7 +764,7 @@ main routine using:</p>
 <p>or retrieved as formatted string using:</p>
 
 
-<div class="highlight"><pre><code><span class="nx">errorHandler</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+<div class="highlight"><pre><code><span class="nx">errorHandler</span><span class="p">.</span><span class="nx">format</span> <span class="nx">error</span>
 </code></pre></div>
 
 
@@ -785,7 +784,7 @@ main routine using:</p>
 <p>You may always throw an error the same way using:</p>
 
 
-<div class="highlight"><pre><code><span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s2">&quot;Message&quot;</span><span class="p">);</span>
+<div class="highlight"><pre><code><span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span> <span class="s">&quot;Message&quot;</span>
 </code></pre></div>
 
 
@@ -793,7 +792,7 @@ main routine using:</p>
 <p>You may also report any object as error like:</p>
 
 
-<div class="highlight"><pre><code><span class="nx">errorHandler</span><span class="p">.</span><span class="nx">report</span><span class="p">(</span><span class="s2">&quot;Something went wrong!&quot;</span><span class="p">);</span>
+<div class="highlight"><pre><code><span class="nx">errorHandler</span><span class="p">.</span><span class="nx">report</span> <span class="s">&quot;Something went wrong!&quot;</span>
 </code></pre></div>
 
 
@@ -810,13 +809,12 @@ main routine using:</p>
 <p>If you catch an error and rethrow it you may use:</p>
 
 
-<div class="highlight"><pre><code><span class="k">try</span> <span class="p">{</span>
-  <span class="p">...</span>
-<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">ex</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">err</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s2">&quot;Something went wrong!&quot;</span><span class="p">);</span>
-  <span class="nx">err</span><span class="p">.</span><span class="nx">cause</span> <span class="o">=</span> <span class="nx">ex</span><span class="p">;</span>
-  <span class="nx">err</span><span class="p">.</span><span class="nx">codePart</span> <span class="o">=</span> <span class="s2">&quot;input-1&quot;</span><span class="p">;</span>
-<span class="p">}</span>
+<div class="highlight"><pre><code>    <span class="k">try</span>
+      <span class="p">...</span>
+    <span class="k">catch</span> <span class="nx">ex</span>
+      <span class="nv">err = </span><span class="k">new</span> <span class="nb">Error</span> <span class="s">&quot;Something went wrong!&quot;</span>
+      <span class="nv">err.cause = </span><span class="nx">ex</span>
+      <span class="nv">err.codePart = </span><span class="s">&quot;input-1&quot;</span>
 </code></pre></div>
 
 
@@ -836,9 +834,9 @@ main routine using:</p>
 new error instance and add all your different real errors as the <code>cause</code> array:</p>
 
 
-<div class="highlight"><pre><code><span class="nx">errList</span> <span class="o">=</span> <span class="nx">doSomething</span><span class="p">();</span>
-<span class="nx">err</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s2">&quot;Something went wrong!&quot;</span><span class="p">);</span>
-<span class="nx">err</span><span class="p">.</span><span class="nx">cause</span> <span class="o">=</span> <span class="nx">errList</span><span class="p">;</span>
+<div class="highlight"><pre><code><span class="nv">errList = </span><span class="nx">doSomething</span><span class="p">()</span>
+<span class="nv">err = </span><span class="k">new</span> <span class="nb">Error</span> <span class="s">&quot;Something went wrong!&quot;</span>
+<span class="nv">err.cause = </span><span class="nx">errList</span>
 </code></pre></div>
 
 
@@ -874,37 +872,37 @@ code.</p>
 structure:</p>
 
 
-<div class="highlight"><pre><code><span class="nx">errorHandler</span><span class="p">.</span><span class="nx">config</span> <span class="o">=</span>
-  <span class="nx">colors</span><span class="o">:</span> <span class="kc">true</span>          <span class="err">#</span> <span class="nx">should</span> <span class="nx">colors</span> <span class="nx">be</span> <span class="nx">allowed</span> <span class="nx">on</span> <span class="nx">console</span> <span class="nx">output</span>
+<div class="highlight"><pre><code><span class="nv">errorHandler.config =</span>
+  <span class="nv">colors: </span><span class="kc">true</span>          <span class="c1"># should colors be allowed on console output</span>
 
-  <span class="err">#</span> <span class="nx">Define</span> <span class="nx">whether</span> <span class="nx">and</span> <span class="nx">which</span> <span class="nx">stack</span> <span class="nx">lines</span> <span class="nx">to</span> <span class="nx">show</span>
-  <span class="nx">stack</span><span class="o">:</span>
-    <span class="nx">view</span><span class="o">:</span> <span class="kc">true</span>          <span class="err">#</span> <span class="nx">show</span> <span class="nx">stack</span> <span class="nx">trace</span> <span class="nx">or</span> <span class="nx">not</span>
-    <span class="nx">modules</span><span class="o">:</span> <span class="kc">false</span>      <span class="err">#</span> <span class="nx">show</span> <span class="nx">node_module</span> <span class="nx">trace</span>
-    <span class="nx">system</span><span class="o">:</span> <span class="kc">false</span>       <span class="err">#</span> <span class="nx">show</span> <span class="nx">system</span> <span class="nx">module</span> <span class="nx">trace</span>
+  <span class="c1"># Define whether and which stack lines to show</span>
+  <span class="nv">stack:</span>
+    <span class="nv">view: </span><span class="kc">true</span>          <span class="c1"># show stack trace or not</span>
+    <span class="nv">modules: </span><span class="kc">false</span>      <span class="c1"># show node_module trace</span>
+    <span class="nv">system: </span><span class="kc">false</span>       <span class="c1"># show system module trace</span>
 
-  <span class="err">#</span> <span class="nx">Define</span> <span class="k">if</span> <span class="nx">and</span> <span class="nx">how</span> <span class="nx">much</span> <span class="nx">code</span> <span class="nx">to</span> <span class="nx">show</span>
-  <span class="nx">code</span><span class="o">:</span>
-    <span class="nx">view</span><span class="o">:</span> <span class="kc">true</span>          <span class="err">#</span> <span class="nx">view</span> <span class="nx">code</span> <span class="nx">sources</span> <span class="nx">or</span> <span class="nx">not</span>
-    <span class="nx">before</span><span class="o">:</span> <span class="mi">2</span>           <span class="err">#</span> <span class="nx">number</span> <span class="nx">of</span> <span class="nx">lines</span> <span class="nx">to</span> <span class="nx">show</span> <span class="nx">before</span> <span class="nx">the</span> <span class="nx">referenced</span> <span class="nx">one</span>
-    <span class="nx">after</span><span class="o">:</span> <span class="mi">2</span>            <span class="err">#</span> <span class="nx">number</span> <span class="nx">of</span> <span class="nx">lines</span> <span class="nx">to</span> <span class="nx">show</span> <span class="nx">after</span> <span class="nx">the</span> <span class="nx">referenced</span> <span class="nx">one</span>
-    <span class="nx">compiled</span><span class="o">:</span> <span class="kc">false</span>     <span class="err">#</span> <span class="nx">show</span> <span class="nx">also</span> <span class="nx">code</span> <span class="nx">of</span> <span class="nx">compiled</span> <span class="nx">code</span>
-    <span class="nx">all</span><span class="o">:</span> <span class="kc">false</span>          <span class="err">#</span> <span class="nx">show</span> <span class="nx">code</span> <span class="nx">of</span> <span class="nx">all</span> <span class="nx">lines</span> <span class="nx">or</span> <span class="nx">only</span> <span class="nx">the</span> <span class="nx">first</span>
-    <span class="nx">modules</span><span class="o">:</span> <span class="kc">false</span>      <span class="err">#</span> <span class="nx">show</span> <span class="nx">code</span> <span class="nx">within</span> <span class="nx">node_modules</span>
+  <span class="c1"># Define if and how much code to show</span>
+  <span class="nv">code:</span>
+    <span class="nv">view: </span><span class="kc">true</span>          <span class="c1"># view code sources or not</span>
+    <span class="nv">before: </span><span class="mi">2</span>           <span class="c1"># number of lines to show before the referenced one</span>
+    <span class="nv">after: </span><span class="mi">2</span>            <span class="c1"># number of lines to show after the referenced one</span>
+    <span class="nv">compiled: </span><span class="kc">false</span>     <span class="c1"># show also code of compiled code</span>
+    <span class="nv">all: </span><span class="kc">false</span>          <span class="c1"># show code of all lines or only the first</span>
+    <span class="nv">modules: </span><span class="kc">false</span>      <span class="c1"># show code within node_modules</span>
 
-  <span class="err">#</span> <span class="nx">Display</span> <span class="nx">of</span> <span class="nx">the</span> <span class="nx">errors</span> <span class="nx">cause</span> <span class="k">if</span> <span class="nx">there</span> <span class="nx">is</span> <span class="nx">one</span>
-  <span class="nx">cause</span><span class="o">:</span>
-    <span class="nx">view</span><span class="o">:</span> <span class="kc">true</span>          <span class="err">#</span> <span class="nx">view</span> <span class="nx">caused</span> <span class="nx">errors</span>
-    <span class="nx">stack</span><span class="o">:</span> <span class="kc">true</span>         <span class="err">#</span> <span class="nx">view</span> <span class="nx">also</span> <span class="nx">stack</span> <span class="nx">like</span> <span class="nx">on</span> <span class="nx">main</span> <span class="nx">error</span>
+  <span class="c1"># Display of the errors cause if there is one</span>
+  <span class="nv">cause:</span>
+    <span class="nv">view: </span><span class="kc">true</span>          <span class="c1"># view caused errors</span>
+    <span class="nv">stack: </span><span class="kc">true</span>         <span class="c1"># view also stack like on main error</span>
 
-  <span class="err">#</span> <span class="nx">Should</span> <span class="nx">command</span> <span class="nx">exit</span> <span class="nx">after</span> <span class="nx">an</span> <span class="nx">uncaught</span> <span class="nx">error</span> <span class="nx">is</span> <span class="nx">reported</span>
-  <span class="nx">uncaught</span><span class="o">:</span>
-    <span class="nx">exit</span><span class="o">:</span> <span class="kc">true</span>          <span class="err">#</span> <span class="nx">should</span> <span class="nx">process</span> <span class="nx">be</span> <span class="nx">exited</span> <span class="nx">after</span> <span class="nx">uncaught</span> <span class="nx">error</span>
-    <span class="nx">timeout</span><span class="o">:</span> <span class="mi">1000</span>       <span class="err">#</span> <span class="nx">timeout</span> <span class="nx">to</span> <span class="nx">wait</span> <span class="nx">before</span> <span class="nx">exit</span> <span class="nx">to</span> <span class="nx">write</span> <span class="nx">logs</span>
-    <span class="nx">code</span><span class="o">:</span> <span class="mi">2</span>             <span class="err">#</span> <span class="nx">exit</span> <span class="nx">code</span> <span class="nx">to</span> <span class="nx">use</span>
+  <span class="c1"># Should command exit after an uncaught error is reported</span>
+  <span class="nv">uncaught:</span>
+    <span class="nv">exit: </span><span class="kc">true</span>          <span class="c1"># should process be exited after uncaught error</span>
+    <span class="nv">timeout: </span><span class="mi">1000</span>       <span class="c1"># timeout to wait before exit to write logs</span>
+    <span class="nv">code: </span><span class="mi">2</span>             <span class="c1"># exit code to use</span>
 
-  <span class="err">#</span> <span class="nx">define</span> <span class="nx">a</span> <span class="nx">specific</span> <span class="nx">logger</span>
-  <span class="nx">logger</span><span class="o">:</span> <span class="nx">console</span>
+  <span class="c1"># define a specific logger</span>
+  <span class="nv">logger: </span><span class="nx">console</span>
 </code></pre></div>
 
 

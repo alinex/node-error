@@ -6,7 +6,7 @@
   <link rel="stylesheet" media="all" href="../doc-style.css" />
   <script src="../doc-filelist.js"></script>
   <script>
-    var relativeDir = "../", thisFile = "home/alex/a3/node-error/src/indexcoffee", defaultSidebar = true;
+    var relativeDir = "../", thisFile = "home/alex/a3//src/index.coffee", defaultSidebar = true;
   </script>
   <script src="../doc-script.js"></script>
   <script src="../fileSearch.js"></script>
@@ -246,7 +246,7 @@ then the default behavior will be used.</p>
 <p>Install the error handler for uncaught Errors</p>
         </td>
         <td class="code highlight"><div class="highlight"><pre>
-<span class="nv">module.exports.install = </span><span class="nf">-&gt;</span>
+<span class="nv">install = </span><span class="nf">-&gt;</span>
   <span class="nb">Error</span><span class="p">.</span><span class="nv">prepareStackTrace = </span><span class="nx">prepareStackTrace</span>
   <span class="nx">process</span><span class="p">.</span><span class="nx">on</span> <span class="s">&#39;uncaughtException&#39;</span><span class="p">,</span> <span class="nx">uncaughtError</span>
   <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span>
@@ -962,6 +962,11 @@ in case we are in the browser (i.e. directories may start with "http://")</p>
         </td>
         <td class="code highlight"><div class="highlight"><pre>
   <span class="nx">origin</span>
+
+<span class="nx">install</span><span class="p">()</span>
+
+<span class="nv">module.exports.install = </span><span class="nf">-&gt;</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">warn</span> <span class="s">&quot;DEPRECATED call to alinex-error.install() no longer needed&quot;</span>
 </pre></div>
         </td>
       </tr>
