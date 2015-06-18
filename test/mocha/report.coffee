@@ -5,7 +5,7 @@ winston = require 'winston'
 describe "Report error", ->
 
   object = require '../data/object.js'
-  errorHandler = require '../../lib/index.js'
+  errorHandler = require '../../src/index.js'
   config = errorHandler.config
 
   beforeEach ->
