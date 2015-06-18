@@ -6,7 +6,7 @@
   <link rel="stylesheet" media="all" href="doc-style.css" />
   <script src="doc-filelist.js"></script>
   <script>
-    var relativeDir = "", thisFile = "home/alex/a3//README.md", defaultSidebar = true;
+    var relativeDir = "", thisFile = "home/alex/a3/node-error/README.md", defaultSidebar = true;
   </script>
   <script src="doc-script.js"></script>
   <script src="fileSearch.js"></script>
@@ -15,7 +15,17 @@
   <link rel="stylesheet" href="goToLine.css" />
 </head>
 <body>
-  <div id="sidebar_wrapper">
+  <nav>
+<div class="logo"><a href="http://alinex.github.io" onmouseover="lllogo.src='http://alinex.github.io/images/Alinex-200.png'" onmouseout="lllogo.src='http://alinex.github.io/images/Alinex-black-200.png'">
+  <img name="lllogo" src="http://alinex.github.io/images/Alinex-black-200.png" width="150" title="Alinex Universe Homepage" />
+  </a>
+  <img src="http://alinex.github.io/images/Alinex-200.png" style="display:none" alt="preloading" />
+</div>
+<div class="links">
+  <a href="http://alinex.github.io/blog.html" class="btn btn-primary"><span class="glyphicon-cog"></span> Blog</a>
+  <a href="http://alinex.github.io/code.html" class="btn btn-warning"><span class="glyphicon-pencil"></span> Code</a>
+</div>
+</nav><div id="sidebar_wrapper">
     <div id="sidebar_switch">
       <span class="tree">Files</span>
       <span class="headings">Headings</span>
@@ -100,7 +110,7 @@
     </div>
   </div>
   <div id="sidebar-toggle"></div>
-  <div id="container"><a id="fork" href="https://github.com/alinex/node-error.git" title="Fork me on GitHub"></a><div class="docs markdown">
+  <div id="container" tabindex="0"><a id="fork" href="https://github.com/alinex/node-error.git" title="Fork me on GitHub"></a><div class="docs markdown">
 <div class="pilwrap" id="package%3A%20alinex-error">
   <h1>
     <a href="#package%3A%20alinex-error" name="package%3A%20alinex-error" class="pilcrow">&#182;</a>
@@ -110,6 +120,7 @@
 
 
 <p><a href="https://travis-ci.org/alinex/node-error"><img src="https://travis-ci.org/alinex/node-error.svg?branch=master" alt="Build Status" title="" /></a>
+<a href="https://coveralls.io/r/alinex/node-error?branch=master"><img src="https://coveralls.io/repos/alinex/node-error/badge.svg?branch=master" alt="Coverage Status" title="" /></a>
 <a href="https://gemnasium.com/alinex/node-error"><img src="https://gemnasium.com/alinex/node-error.png" alt="Dependency Status" title="" /></a></p>
 
 <p>This will replace the standard error handler with one which will</p>
