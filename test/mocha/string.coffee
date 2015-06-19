@@ -4,7 +4,7 @@ expect = chai.expect
 describe "String reporting", ->
 
   object = require '../data/object.js'
-  errorHandler = require '../../src/index.js'
+  errorHandler = require '../../src/index'
   config = errorHandler.config
 
   beforeEach ->

@@ -5,7 +5,7 @@ util = require 'util'
 describe "Error with cause reporting", ->
 
   object = require '../data/object.js'
-  errorHandler = require '../../src/index.js'
+  errorHandler = require '../../src/index'
   config = errorHandler.config
 
   makedoc = (msg) ->

@@ -37,8 +37,8 @@
   },
   "devDependencies": {
     "alinex-builder": "1.x",
-    "winston": "0.x",
-    "chai": "2.x"
+    "winston": "1.x",
+    "chai": "3.x"
   },
   "optionalDependencies": {},
   "engines": {
