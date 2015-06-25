@@ -16,8 +16,8 @@ This will replace the standard error handler with one which will
 For the normal use it is really simple and only have to be loaded and installed
 once in your application.
 
-It is one of the modules of the [Alinex Universe](http://alinex.github.io/node-alinex)
-following the code standards defined there.
+> It is one of the modules of the [Alinex Universe](http://alinex.github.io/code.html)
+> following the code standards defined in the [General Docs](http://alinex.github.io/node-alinex).
 
 
 Possible Output
@@ -423,18 +423,27 @@ Error: Something went wrong
 ```
 
 
-Installation
+Install
 -------------------------------------------------
 
-To add this error handler to your application run (from your project's folder):
+[![NPM](https://nodei.co/npm/alinex-error.png?downloads=true&downloadRank=true&stars=true)
+ ![Downloads](https://nodei.co/npm-dl/alinex-error.png?months=9&height=3)
+](https://www.npmjs.com/package/alinex-error)
+
+The easiest way is to let npm add the module directly to your modules
+(from within you node modules directory):
 
 ``` sh
 npm install alinex-error --save
 ```
 
-This will add the package, to your dependencies and install it.
+And update it to the latest version later:
 
-[![NPM](https://nodei.co/npm/alinex-error.png?downloads=true&stars=true)](https://nodei.co/npm/alinex-error/)
+``` sh
+npm update alinex-error --save
+```
+
+Always have a look at the latest [changes](Changelog.md).
 
 
 Usage
