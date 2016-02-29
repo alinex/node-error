@@ -6,24 +6,31 @@
   <link rel="stylesheet" media="all" href="../doc-style.css" />
   <script src="../doc-filelist.js"></script>
   <script>
-    var relativeDir = "../", thisFile = "home/alex/a3/node-error/src/index.coffee", defaultSidebar = true;
+    var relativeDir = "../";
+    var thisFile = "home/alex/github/node-error/src/index.coffee";
+    var defaultSidebar = true;
   </script>
   <script src="../doc-script.js"></script>
-  <script src="../fileSearch.js"></script>
-  <script src="../goToLine.js"></script>
-  <link rel="stylesheet" href="../fileSearch.css" />
-  <link rel="stylesheet" href="../goToLine.css" />
-</head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" /></head
 <body>
   <nav>
-<div class="logo"><a href="http://alinex.github.io" onmouseover="lllogo.src='https://alinex.github.io/images/Alinex-200.png'" onmouseout="lllogo.src='https://alinex.github.io/images/Alinex-black-200.png'">
-  <img name="lllogo" src="https://alinex.github.io/images/Alinex-black-200.png" width="150" title="Alinex Universe Homepage" />
+<div class="logo"><a href="http://alinex.github.io"
+  onmouseover="logo.src='https://alinex.github.io/images/Alinex-200.png'"
+  onmouseout="logo.src='https://alinex.github.io/images/Alinex-black-200.png'">
+  <img name="logo" src="https://alinex.github.io/images/Alinex-black-200.png"
+    width="150" title="Alinex Universe Homepage" />
   </a>
-  <img src="http://alinex.github.io/images/Alinex-200.png" style="display:none" alt="preloading" />
+  <img src="http://alinex.github.io/images/Alinex-200.png"
+    style="display:none" alt="preloading" />
 </div>
 <div class="links">
-  <a href="http://alinex.github.io/blog" class="btn btn-primary"><span class="glyphicon-cog"></span> Blog</a>
-  <a href="http://alinex.github.io/code.html" class="btn btn-warning"><span class="glyphicon-pencil"></span> Code</a>
+  <a href="http://alinex.github.io/blog"
+    class="btn btn-primary"><span class="glyphicon-pencil"></span> Blog</a>
+  <a href="http://alinex.github.io/develop"
+    class="btn btn-primary"><span class="glyphicon-book"></span> Develop</a>
+  <a href="http://alinex.github.io/code.html"
+    class="btn btn-warning"><span class="glyphicon-cog"></span> Code</a>
 </div>
 </nav><div id="sidebar_wrapper">
     <div id="sidebar_switch">
@@ -32,956 +39,994 @@
     </div>
     <div id="tree"></div>
     <div id="headings">
+
       <div class="heading h1">
-        <a href="#error%20handler">Error handler</a>
+        <a href="#error-handler">Error handler</a>
       </div>
+
       <div class="heading h2">
-        <a href="#node%20modules">Node Modules</a>
+        <a href="#node-modules">Node Modules</a>
       </div>
+
       <div class="heading h2">
         <a href="#configuration">Configuration</a>
       </div>
+
       <div class="heading h2">
-        <a href="#install%20error%20handler">Install error handler</a>
+        <a href="#install-error-handler">Install error handler</a>
       </div>
+
       <div class="heading h3">
-        <a href="#process%20uncaught%20error">Process uncaught error</a>
+        <a href="#process-uncaught-error">Process uncaught error</a>
       </div>
+
       <div class="heading h2">
-        <a href="#report%20error">Report error</a>
+        <a href="#report-error">Report error</a>
       </div>
+
       <div class="heading h2">
-        <a href="#format%20error">Format error</a>
+        <a href="#format-error">Format error</a>
       </div>
+
       <div class="heading h3">
-        <a href="#recursive%20part%20to%20format%20errors%20with%20cause">Recursive part to format errors with cause</a>
+        <a href="#recursive-part-to-format-errors-with-cause">Recursive part to format errors with cause</a>
       </div>
+
       <div class="heading h2">
-        <a href="#helper%20methods">Helper methods</a>
+        <a href="#helper-methods">Helper methods</a>
       </div>
+
       <div class="heading h3">
-        <a href="#overwrite%20internal%20stack%20trace%20formatting">Overwrite internal stack trace formatting</a>
+        <a href="#overwrite-internal-stack-trace-formatting">Overwrite internal stack trace formatting</a>
       </div>
+
       <div class="heading h3">
-        <a href="#retrieve%20highlighted%20code%20display">Retrieve highlighted code display</a>
+        <a href="#retrieve-highlighted-code-display">Retrieve highlighted code display</a>
       </div>
+
       <div class="heading h3">
-        <a href="#get%20the%20mapped%20frame">Get the mapped frame</a>
+        <a href="#get-the-mapped-frame">Get the mapped frame</a>
       </div>
+
       <div class="heading h3">
-        <a href="#find%20the%20mapped%20position">Find the mapped position</a>
+        <a href="#find-the-mapped-position">Find the mapped position</a>
       </div>
+
       <div class="heading h3">
-        <a href="#get%20the%20sourcemap%20data">Get the sourcemap data</a>
+        <a href="#get-the-sourcemap-data">Get the sourcemap data</a>
       </div>
+
       <div class="heading h3">
-        <a href="#retrieve%20file%20for%20node%20and%20browser">Retrieve file for node and browser</a>
+        <a href="#retrieve-file-for-node-and-browser">Retrieve file for node and browser</a>
       </div>
+
       <div class="heading h3">
-        <a href="#make%20path%20absolute">Make path absolute</a>
+        <a href="#make-path-absolute">Make path absolute</a>
       </div>
+
       <div class="heading h3">
-        <a href="#get%20eval%20origin">get eval origin</a>
+        <a href="#get-eval-origin">get eval origin</a>
       </div>
+
     </div>
   </div>
   <div id="sidebar-toggle"></div>
-  <div id="container" tabindex="0"><a id="fork" href="https://github.com/alinex/node-error.git" title="Fork me on GitHub"></a><div class="background highlight"></div>
+  <div id="container" tabindex="0"><a id="fork" href="https://github.com/alinex/node-error.git" title="Fork me on GitHub"></a>
+    <div class="background highlight"></div>
 <table cellpadding="0" cellspacing="0">
   <tbody>
+    
+    
       <tr>
         <td class="docs">
-<div class="pilwrap" id="error%20handler">
+          <div class="pilwrap" id="error-handler">
   <h1>
-    <a href="#error%20handler" name="error%20handler" class="pilcrow">&#182;</a>
-    Error handler
+    <a href="#error-handler" name="error-handler" class="pilcrow"></a>
+Error handler
   </h1>
 </div>
-
-
 <p>The error handling will only work if run through node.js not if called
 directly using iced or coffee. If interpreting coffee directly it will
 not always capture the errors using <code>process.on 'uncaughtException'</code>.
 That's a bug in the coffee interpreter implementation. Instead of this module
 then the default behavior will be used.</p>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre></pre></div>
+        <td class="code highlight">
+          <pre class="coffeescript">
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap" id="node%20modules">
+          <div class="pilwrap" id="node-modules">
   <h2>
-    <a href="#node%20modules" name="node%20modules" class="pilcrow">&#182;</a>
-    Node Modules
+    <a href="#node-modules" name="node-modules" class="pilcrow"></a>
+Node Modules
   </h2>
 </div>
 
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-
-
-</pre></div>
+        <td class="code highlight">
+          <pre class="coffeescript">
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-3" id="section-3">&#182;</a>
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-3" id="section-3"></a>
 </div>
 <p>include base modules</p>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="nv">fs = </span><span class="nx">require</span> <span class="s">&#39;fs&#39;</span>
-<span class="nv">util = </span><span class="nx">require</span> <span class="s">&#39;util&#39;</span>
-<span class="nv">path = </span><span class="nx">require</span> <span class="s">&#39;path&#39;</span>
-<span class="nv">sourcemap = </span><span class="nx">require</span> <span class="s">&#39;source-map&#39;</span>
-<span class="nv">sprintf = </span><span class="nx">require</span><span class="p">(</span><span class="s">&quot;sprintf-js&quot;</span><span class="p">).</span><span class="nx">sprintf</span>
-<span class="nv">chalk = </span><span class="nx">require</span> <span class="s">&#39;chalk&#39;</span>
+        <td class="code highlight">
+          <pre class="coffeescript">fs = <span class="hljs-built_in">require</span> <span class="hljs-string">'fs'</span>
+util = <span class="hljs-built_in">require</span> <span class="hljs-string">'util'</span>
+path = <span class="hljs-built_in">require</span> <span class="hljs-string">'path'</span>
+sourcemap = <span class="hljs-built_in">require</span> <span class="hljs-string">'source-map'</span>
+sprintf = <span class="hljs-built_in">require</span>(<span class="hljs-string">"sprintf-js"</span>).sprintf
+chalk = <span class="hljs-built_in">require</span> <span class="hljs-string">'chalk'</span>
 
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap" id="configuration">
+          <div class="pilwrap" id="configuration">
   <h2>
-    <a href="#configuration" name="configuration" class="pilcrow">&#182;</a>
-    Configuration
+    <a href="#configuration" name="configuration" class="pilcrow"></a>
+Configuration
   </h2>
 </div>
 
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="nv">module.exports.config =</span>
-  <span class="nv">colors: </span><span class="kc">true</span>
-  <span class="nv">properties: </span><span class="kc">true</span>
-
-</pre></div>
+        <td class="code highlight">
+          <pre class="coffeescript"><span class="hljs-built_in">module</span>.exports.config =
+  <span class="hljs-attribute">colors</span>: <span class="hljs-literal">true</span>
+  <span class="hljs-attribute">properties</span>: <span class="hljs-literal">true</span>
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-5" id="section-5">&#182;</a>
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-5" id="section-5"></a>
 </div>
 <p>Define whether and which stack lines to show</p>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="nv">stack:</span>
-    <span class="nv">view: </span><span class="kc">true</span>
-    <span class="nv">modules: </span><span class="kc">false</span>
-    <span class="nv">system: </span><span class="kc">false</span>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="coffeescript">  <span class="hljs-attribute">stack</span>:
+    <span class="hljs-attribute">view</span>: <span class="hljs-literal">true</span>
+    <span class="hljs-attribute">modules</span>: <span class="hljs-literal">false</span>
+    <span class="hljs-attribute">system</span>: <span class="hljs-literal">false</span>
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-6" id="section-6">&#182;</a>
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-6" id="section-6"></a>
 </div>
 <p>Define if and how much code to show</p>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="nv">code:</span>
-    <span class="nv">view: </span><span class="kc">true</span>
-    <span class="nv">before: </span><span class="mi">2</span>
-    <span class="nv">after: </span><span class="mi">2</span>
-    <span class="nv">compiled: </span><span class="kc">false</span>
-    <span class="nv">all: </span><span class="kc">false</span>
-    <span class="nv">modules: </span><span class="kc">false</span>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="coffeescript">  <span class="hljs-attribute">code</span>:
+    <span class="hljs-attribute">view</span>: <span class="hljs-literal">true</span>
+    <span class="hljs-attribute">before</span>: <span class="hljs-number">2</span>
+    <span class="hljs-attribute">after</span>: <span class="hljs-number">2</span>
+    <span class="hljs-attribute">compiled</span>: <span class="hljs-literal">false</span>
+    <span class="hljs-attribute">all</span>: <span class="hljs-literal">false</span>
+    <span class="hljs-attribute">modules</span>: <span class="hljs-literal">false</span>
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-7" id="section-7">&#182;</a>
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-7" id="section-7"></a>
 </div>
 <p>Display of the errors cause if there is one</p>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="nv">cause:</span>
-    <span class="nv">view: </span><span class="kc">true</span>
-    <span class="nv">stack: </span><span class="kc">true</span>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="coffeescript">  <span class="hljs-attribute">cause</span>:
+    <span class="hljs-attribute">view</span>: <span class="hljs-literal">true</span>
+    <span class="hljs-attribute">stack</span>: <span class="hljs-literal">true</span>
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-8" id="section-8">&#182;</a>
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-8" id="section-8"></a>
 </div>
 <p>Should command exit after an uncaught error is reported</p>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="nv">uncaught:</span>
-    <span class="nv">exit: </span><span class="kc">true</span>
-    <span class="nv">timeout: </span><span class="mi">1000</span>
-    <span class="nv">code: </span><span class="o">-</span><span class="mi">1</span>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="coffeescript">  <span class="hljs-attribute">uncaught</span>:
+    <span class="hljs-attribute">exit</span>: <span class="hljs-literal">true</span>
+    <span class="hljs-attribute">timeout</span>: <span class="hljs-number">1000</span>
+    <span class="hljs-attribute">code</span>: -<span class="hljs-number">1</span>
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-9" id="section-9">&#182;</a>
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-9" id="section-9"></a>
 </div>
 <p>define a specific logger</p>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="nv">logger: </span><span class="nx">console</span>
+        <td class="code highlight">
+          <pre class="coffeescript">  <span class="hljs-attribute">logger</span>: <span class="hljs-built_in">console</span>
 
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap" id="install%20error%20handler">
+          <div class="pilwrap" id="install-error-handler">
   <h2>
-    <a href="#install%20error%20handler" name="install%20error%20handler" class="pilcrow">&#182;</a>
-    Install error handler
+    <a href="#install-error-handler" name="install-error-handler" class="pilcrow"></a>
+Install error handler
   </h2>
 </div>
-
-
 <p>Install the error handler for uncaught Errors</p>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="nv">install = </span><span class="nf">-&gt;</span>
-  <span class="nb">Error</span><span class="p">.</span><span class="nv">prepareStackTrace = </span><span class="nx">prepareStackTrace</span>
-  <span class="nx">process</span><span class="p">.</span><span class="nx">on</span> <span class="s">&#39;uncaughtException&#39;</span><span class="p">,</span> <span class="nx">uncaughtError</span>
-  <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span>
+        <td class="code highlight">
+          <pre class="coffeescript"><span class="hljs-function"><span class="hljs-title">install</span> = -&gt;</span>
+  Error.prepareStackTrace = prepareStackTrace
+  process.<span class="hljs-literal">on</span> <span class="hljs-string">'uncaughtException'</span>, uncaughtError
+  <span class="hljs-built_in">module</span>.exports
 
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap" id="process%20uncaught%20error">
+          <div class="pilwrap" id="process-uncaught-error">
   <h3>
-    <a href="#process%20uncaught%20error" name="process%20uncaught%20error" class="pilcrow">&#182;</a>
-    Process uncaught error
+    <a href="#process-uncaught-error" name="process-uncaught-error" class="pilcrow"></a>
+Process uncaught error
   </h3>
 </div>
-
-
 <p>The error will be caught, reported (colorful) and then the process will be
 stopped with exit value 2 if defined.</p>
-
 <p><strong>Arguments:</strong></p>
-
 <ul>
 <li><code>err</code>
 Error object instance to report.</li>
 </ul>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="nv">uncaughtError = </span><span class="nf">(err) -&gt;</span>
-  <span class="nv">config = </span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">config</span>
-  <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">report</span> <span class="nx">err</span>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="coffeescript"><span class="hljs-function"><span class="hljs-title">uncaughtError</span> = <span class="hljs-params">(err)</span> -&gt;</span>
+  config = <span class="hljs-built_in">module</span>.exports.config
+  <span class="hljs-built_in">module</span>.exports.report err
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-12" id="section-12">&#182;</a>
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-12" id="section-12"></a>
 </div>
 <p>stop processing after short timeout to finish logging</p>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="k">if</span> <span class="nx">config</span><span class="p">.</span><span class="nx">uncaught</span><span class="p">.</span><span class="nx">exit</span>
-    <span class="nx">setTimeout</span> <span class="nf">-&gt;</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">error</span> <span class="nx">chalk</span><span class="p">.</span><span class="nx">yellow</span> <span class="s">&quot;Exiting after error logging timeout.&quot;</span>
-      <span class="nx">process</span><span class="p">.</span><span class="nx">exit</span> <span class="nx">err</span><span class="p">.</span><span class="nx">code</span> <span class="o">?</span> <span class="nx">config</span><span class="p">.</span><span class="nx">uncaught</span><span class="p">.</span><span class="nx">code</span>
-    <span class="p">,</span> <span class="nx">config</span><span class="p">.</span><span class="nx">uncaught</span><span class="p">.</span><span class="nx">timeout</span>
+        <td class="code highlight">
+          <pre class="coffeescript">  <span class="hljs-keyword">if</span> config.uncaught.exit
+    setTimeout -&gt;
+      <span class="hljs-built_in">console</span>.error chalk.yellow <span class="hljs-string">"Exiting after error logging timeout."</span>
+      process.exit err.code ? config.uncaught.code
+    , config.uncaught.timeout
 
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap" id="report%20error">
+          <div class="pilwrap" id="report-error">
   <h2>
-    <a href="#report%20error" name="report%20error" class="pilcrow">&#182;</a>
-    Report error
+    <a href="#report-error" name="report-error" class="pilcrow"></a>
+Report error
   </h2>
 </div>
-
-
 <p>The given error will be reported to error output like configured. This may
 be colorful with stack trace, source mapping and code view.</p>
-
 <p><strong>Arguments:</strong></p>
-
 <ul>
 <li><code>err</code>
 Error object instance to report.</li>
 <li><code>level</code>
 Log level to use, must correspond with a method in logger.</li>
 </ul>
-
 <p>This may use any specified logger, which have <code>logger.&lt;level&gt;(&lt;error&gt;)</code> or
 a method <code>logger.log(&lt;level&gt;, &lt;error&gt;)</code>.</p>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="nv">report = module.exports.report = </span><span class="nf">(err, level = &#39;error&#39;) -&gt;</span>
-  <span class="k">if</span> <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">logger</span><span class="o">?</span><span class="p">[</span><span class="nx">level</span><span class="p">]</span><span class="o">?</span>
-    <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">logger</span><span class="p">[</span><span class="nx">level</span><span class="p">]</span> <span class="nx">format</span> <span class="nx">err</span>
-  <span class="k">else</span> <span class="k">if</span> <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">logger</span><span class="o">?</span><span class="p">.</span><span class="nx">log</span><span class="o">?</span>
-    <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">logger</span><span class="p">.</span><span class="nx">log</span> <span class="nx">level</span><span class="p">,</span> <span class="nx">format</span> <span class="nx">err</span>
-  <span class="k">else</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span> <span class="nx">format</span> <span class="nx">err</span>
+        <td class="code highlight">
+          <pre class="coffeescript">report = <span class="hljs-built_in">module</span>.exports.report = <span class="hljs-function"><span class="hljs-params">(err, level = <span class="hljs-string">'error'</span>)</span> -&gt;</span>
+  <span class="hljs-keyword">if</span> <span class="hljs-built_in">module</span>.exports.config.logger?[level]?
+    <span class="hljs-built_in">module</span>.exports.config.logger[level] format err
+  <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> <span class="hljs-built_in">module</span>.exports.config.logger?.log?
+    <span class="hljs-built_in">module</span>.exports.config.logger.log level, format err
+  <span class="hljs-keyword">else</span>
+    <span class="hljs-built_in">console</span>.error format err
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap" id="format%20error">
+          <div class="pilwrap" id="format-error">
   <h2>
-    <a href="#format%20error" name="format%20error" class="pilcrow">&#182;</a>
-    Format error
+    <a href="#format-error" name="format-error" class="pilcrow"></a>
+Format error
   </h2>
 </div>
-
-
 <p>The given error will be formatted as string. This may be colorful with stack
 trace, source mapping and code view.</p>
-
 <p><strong>Arguments:</strong></p>
-
 <ul>
 <li><code>err</code>
 Error object instance to report.</li>
 </ul>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="nv">module.exports.format = </span><span class="nf">(err) -&gt;</span> <span class="nx">format</span> <span class="nx">err</span>
+        <td class="code highlight">
+          <pre class="coffeescript"><span class="hljs-built_in">module</span>.exports.format = <span class="hljs-function"><span class="hljs-params">(err)</span> -&gt;</span> format err
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap" id="recursive%20part%20to%20format%20errors%20with%20cause">
+          <div class="pilwrap" id="recursive-part-to-format-errors-with-cause">
   <h3>
-    <a href="#recursive%20part%20to%20format%20errors%20with%20cause" name="recursive%20part%20to%20format%20errors%20with%20cause" class="pilcrow">&#182;</a>
-    Recursive part to format errors with cause
+    <a href="#recursive-part-to-format-errors-with-cause" name="recursive-part-to-format-errors-with-cause" class="pilcrow"></a>
+Recursive part to format errors with cause
   </h3>
 </div>
 
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="nv">format = </span><span class="nf">(err, level, codePart) -&gt;</span>
-  <span class="nv">config = </span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">config</span>
-  <span class="k">if</span> <span class="nx">err</span> <span class="k">instanceof</span> <span class="nb">Error</span>
-    <span class="nv">msg = </span><span class="nx">err</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span>
-    <span class="nv">msg = </span><span class="s">&quot;Caused by </span><span class="si">#{</span><span class="nx">msg</span><span class="si">}</span><span class="s">&quot;</span> <span class="k">if</span> <span class="nx">level</span>
-    <span class="nx">msg</span> <span class="o">+=</span> <span class="s">&quot; (</span><span class="si">#{</span><span class="nx">codePart</span><span class="si">}</span><span class="s">)&quot;</span> <span class="k">if</span> <span class="nx">codePart</span>
-    <span class="k">if</span> <span class="nx">config</span><span class="p">.</span><span class="nx">colors</span>
-      <span class="nv">msg = </span><span class="nx">chalk</span><span class="p">.</span><span class="nx">bold</span><span class="p">[</span><span class="k">if</span> <span class="nx">level</span><span class="o">?</span> <span class="k">then</span> <span class="s">&#39;magenta&#39;</span> <span class="k">else</span> <span class="s">&#39;red&#39;</span><span class="p">]</span> <span class="nx">msg</span>
-    <span class="k">if</span> <span class="nx">config</span><span class="p">.</span><span class="nx">properties</span>
-      <span class="k">for</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">value</span> <span class="k">of</span> <span class="nx">err</span>
-        <span class="k">continue</span> <span class="k">if</span> <span class="nx">name</span> <span class="k">in</span> <span class="p">[</span><span class="s">&#39;cause&#39;</span><span class="p">,</span> <span class="s">&#39;codePart&#39;</span><span class="p">]</span>
-        <span class="nv">name = </span><span class="nx">name</span><span class="p">.</span><span class="nx">charAt</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="nx">toUpperCase</span><span class="p">()</span> <span class="o">+</span> <span class="nx">name</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-        <span class="nv">value = </span><span class="nx">util</span><span class="p">.</span><span class="nx">inspect</span> <span class="nx">value</span> <span class="k">if</span> <span class="k">typeof</span> <span class="nx">value</span> <span class="o">isnt</span> <span class="s">&#39;string&#39;</span>
-        <span class="nx">msg</span> <span class="o">+=</span> <span class="s">&quot;\n</span><span class="si">#{</span><span class="nx">name</span><span class="si">}</span><span class="s">: </span><span class="si">#{</span><span class="nx">value</span><span class="p">.</span><span class="nx">replace</span> <span class="sr">/\n/g</span><span class="p">,</span> <span class="s">&#39;\n  &#39;</span><span class="si">}</span><span class="s">&quot;</span>
-    <span class="k">if</span> <span class="nx">config</span><span class="p">.</span><span class="nx">stack</span><span class="p">.</span><span class="nx">view</span> <span class="o">and</span> <span class="nx">err</span><span class="p">.</span><span class="nx">stack</span><span class="o">?</span> <span class="o">and</span> <span class="nx">err</span><span class="p">.</span><span class="nx">stack</span><span class="p">.</span><span class="nx">match</span> <span class="sr">/\n/</span>
-      <span class="nx">msg</span> <span class="o">+=</span> <span class="nx">err</span><span class="p">.</span><span class="nx">stack</span><span class="p">.</span><span class="nx">replace</span> <span class="sr">/.*?\n/</span><span class="p">,</span> <span class="s">&#39;\n&#39;</span>
-    <span class="k">if</span> <span class="o">not</span> <span class="nx">config</span><span class="p">.</span><span class="nx">cause</span><span class="p">.</span><span class="nx">stack</span> <span class="o">and</span> <span class="nx">level</span>
-      <span class="k">return</span> <span class="nx">msg</span>
-    <span class="k">if</span> <span class="nx">err</span><span class="p">.</span><span class="nx">cause</span> <span class="o">and</span> <span class="nx">config</span><span class="p">.</span><span class="nx">cause</span><span class="p">.</span><span class="nx">view</span>
-      <span class="nx">level</span> <span class="o">?=</span> <span class="mi">0</span>
-      <span class="k">if</span> <span class="nb">Array</span><span class="p">.</span><span class="nx">isArray</span> <span class="nx">err</span><span class="p">.</span><span class="nx">cause</span>
-        <span class="k">for</span> <span class="nx">entry</span> <span class="k">in</span> <span class="nx">err</span><span class="p">.</span><span class="nx">cause</span>
-          <span class="k">if</span> <span class="nx">entry</span>
-            <span class="nv">cause = </span><span class="nx">format</span> <span class="nx">entry</span><span class="p">,</span> <span class="nx">level</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nx">codePart</span> <span class="o">?</span> <span class="kc">null</span>
-            <span class="nx">msg</span> <span class="o">+=</span> <span class="s">&quot;\n&quot;</span> <span class="o">+</span> <span class="nx">cause</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="sr">/\n/</span><span class="p">).</span><span class="nx">map</span> <span class="nf">(l) -&gt;</span>
-              <span class="nv">l = </span><span class="s">&quot;  </span><span class="si">#{</span><span class="nx">l</span><span class="si">}</span><span class="s">&quot;</span> <span class="k">for</span> <span class="nx">i</span> <span class="k">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">..</span><span class="nx">level</span><span class="p">]</span>
-            <span class="p">.</span><span class="nx">join</span> <span class="s">&quot;\n&quot;</span>
-      <span class="k">else</span> <span class="k">if</span> <span class="k">typeof</span> <span class="nx">err</span><span class="p">.</span><span class="nx">cause</span> <span class="o">is</span> <span class="s">&#39;object&#39;</span> <span class="o">and</span> <span class="o">not</span><span class="p">(</span><span class="nx">err</span><span class="p">.</span><span class="nx">cause</span> <span class="k">instanceof</span> <span class="nb">Error</span><span class="p">)</span>
-        <span class="k">for</span> <span class="nx">codePart</span><span class="p">,</span> <span class="nx">entry</span> <span class="k">of</span> <span class="nx">err</span><span class="p">.</span><span class="nx">cause</span>
-          <span class="nv">cause = </span><span class="nx">format</span> <span class="nx">entry</span><span class="p">,</span> <span class="nx">level</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nx">codePart</span> <span class="o">?</span> <span class="kc">null</span>
-          <span class="nx">msg</span> <span class="o">+=</span> <span class="s">&quot;\n&quot;</span> <span class="o">+</span> <span class="nx">cause</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="sr">/\n/</span><span class="p">).</span><span class="nx">map</span> <span class="nf">(l) -&gt;</span>
-            <span class="nv">l = </span><span class="s">&quot;  </span><span class="si">#{</span><span class="nx">l</span><span class="si">}</span><span class="s">&quot;</span> <span class="k">for</span> <span class="nx">i</span> <span class="k">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">..</span><span class="nx">level</span><span class="p">]</span>
-          <span class="p">.</span><span class="nx">join</span> <span class="s">&quot;\n&quot;</span>
-      <span class="k">else</span>
-        <span class="nv">cause = </span><span class="nx">format</span> <span class="nx">err</span><span class="p">.</span><span class="nx">cause</span><span class="p">,</span> <span class="nx">level</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nx">codePart</span> <span class="o">?</span> <span class="kc">null</span>
-        <span class="nx">msg</span> <span class="o">+=</span> <span class="s">&quot;\n&quot;</span> <span class="o">+</span> <span class="nx">cause</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="sr">/\n/</span><span class="p">).</span><span class="nx">map</span> <span class="nf">(l) -&gt;</span>
-          <span class="nv">l = </span><span class="s">&quot;  </span><span class="si">#{</span><span class="nx">l</span><span class="si">}</span><span class="s">&quot;</span> <span class="k">for</span> <span class="nx">i</span> <span class="k">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">..</span><span class="nx">level</span><span class="p">]</span>
-        <span class="p">.</span><span class="nx">join</span> <span class="s">&quot;\n&quot;</span>
-  <span class="k">else</span>
-    <span class="nv">msg = </span><span class="s">&quot;Error: </span><span class="si">#{</span><span class="nx">err</span><span class="o">?</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span><span class="si">}</span><span class="s">&quot;</span>
-    <span class="nv">msg = </span><span class="nx">chalk</span><span class="p">.</span><span class="nx">bold</span><span class="p">.</span><span class="nx">red</span> <span class="nx">msg</span> <span class="k">if</span> <span class="nx">config</span><span class="p">.</span><span class="nx">colors</span>
-  <span class="k">return</span> <span class="nx">msg</span>
+        <td class="code highlight">
+          <pre class="coffeescript"><span class="hljs-function"><span class="hljs-title">format</span> = <span class="hljs-params">(err, level, codePart)</span> -&gt;</span>
+  config = <span class="hljs-built_in">module</span>.exports.config
+  <span class="hljs-keyword">if</span> err <span class="hljs-keyword">instanceof</span> Error
+    msg = err.toString()
+    msg = <span class="hljs-string">"Caused by <span class="hljs-subst">#{msg}</span>"</span> <span class="hljs-keyword">if</span> level
+    msg += <span class="hljs-string">" (<span class="hljs-subst">#{codePart}</span>)"</span> <span class="hljs-keyword">if</span> codePart
+    <span class="hljs-keyword">if</span> config.colors
+      msg = chalk.bold[<span class="hljs-keyword">if</span> level? <span class="hljs-keyword">then</span> <span class="hljs-string">'magenta'</span> <span class="hljs-keyword">else</span> <span class="hljs-string">'red'</span>] msg
+    <span class="hljs-keyword">if</span> config.properties
+      <span class="hljs-keyword">for</span> name, value <span class="hljs-keyword">of</span> err
+        <span class="hljs-keyword">continue</span> <span class="hljs-keyword">if</span> name <span class="hljs-keyword">in</span> [<span class="hljs-string">'cause'</span>, <span class="hljs-string">'codePart'</span>]
+        name = name.charAt(<span class="hljs-number">0</span>).toUpperCase() + name.slice(<span class="hljs-number">1</span>)
+        value = util.inspect value <span class="hljs-keyword">if</span> <span class="hljs-keyword">typeof</span> value <span class="hljs-keyword">isnt</span> <span class="hljs-string">'string'</span>
+        msg += <span class="hljs-string">"\n<span class="hljs-subst">#{name}</span>: <span class="hljs-subst">#{value.replace <span class="hljs-regexp">/\n/g</span>, <span class="hljs-string">'\n  '</span>}</span>"</span>
+    <span class="hljs-keyword">if</span> config.stack.view <span class="hljs-keyword">and</span> err.stack? <span class="hljs-keyword">and</span> err.stack.match <span class="hljs-regexp">/\n/</span>
+      msg += err.stack.replace <span class="hljs-regexp">/.*?\n/</span>, <span class="hljs-string">'\n'</span>
+    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> config.cause.stack <span class="hljs-keyword">and</span> level
+      <span class="hljs-keyword">return</span> msg
+    <span class="hljs-keyword">if</span> err.cause <span class="hljs-keyword">and</span> config.cause.view
+      level ?= <span class="hljs-number">0</span>
+      <span class="hljs-keyword">if</span> Array.isArray err.cause
+        <span class="hljs-keyword">for</span> entry <span class="hljs-keyword">in</span> err.cause
+          <span class="hljs-keyword">if</span> entry
+            cause = format entry, level+<span class="hljs-number">1</span>, err.codePart ? <span class="hljs-literal">null</span>
+            msg += <span class="hljs-string">"\n"</span> + cause.split(<span class="hljs-regexp">/\n/</span>).map (l) -&gt;
+              l = <span class="hljs-string">"  <span class="hljs-subst">#{l}</span>"</span> <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> [<span class="hljs-number">0.</span>.level]
+            .join <span class="hljs-string">"\n"</span>
+      <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> <span class="hljs-keyword">typeof</span> err.cause <span class="hljs-keyword">is</span> <span class="hljs-string">'object'</span> <span class="hljs-keyword">and</span> <span class="hljs-keyword">not</span>(err.cause <span class="hljs-keyword">instanceof</span> Error)
+        <span class="hljs-keyword">for</span> codePart, entry <span class="hljs-keyword">of</span> err.cause
+          cause = format entry, level+<span class="hljs-number">1</span>, codePart ? <span class="hljs-literal">null</span>
+          msg += <span class="hljs-string">"\n"</span> + cause.split(<span class="hljs-regexp">/\n/</span>).map (l) -&gt;
+            l = <span class="hljs-string">"  <span class="hljs-subst">#{l}</span>"</span> <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> [<span class="hljs-number">0.</span>.level]
+          .join <span class="hljs-string">"\n"</span>
+      <span class="hljs-keyword">else</span>
+        cause = format err.cause, level+<span class="hljs-number">1</span>, err.codePart ? <span class="hljs-literal">null</span>
+        msg += <span class="hljs-string">"\n"</span> + cause.split(<span class="hljs-regexp">/\n/</span>).map (l) -&gt;
+          l = <span class="hljs-string">"  <span class="hljs-subst">#{l}</span>"</span> <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> [<span class="hljs-number">0.</span>.level]
+        .join <span class="hljs-string">"\n"</span>
+  <span class="hljs-keyword">else</span>
+    msg = <span class="hljs-string">"Error: <span class="hljs-subst">#{err?.toString()}</span>"</span>
+    msg = chalk.bold.red msg <span class="hljs-keyword">if</span> config.colors
+  <span class="hljs-keyword">return</span> msg
 
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap" id="helper%20methods">
+          <div class="pilwrap" id="helper-methods">
   <h2>
-    <a href="#helper%20methods" name="helper%20methods" class="pilcrow">&#182;</a>
-    Helper methods
+    <a href="#helper-methods" name="helper-methods" class="pilcrow"></a>
+Helper methods
   </h2>
 </div>
 
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-
-
-</pre></div>
+        <td class="code highlight">
+          <pre class="coffeescript">
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap" id="overwrite%20internal%20stack%20trace%20formatting">
+          <div class="pilwrap" id="overwrite-internal-stack-trace-formatting">
   <h3>
-    <a href="#overwrite%20internal%20stack%20trace%20formatting" name="overwrite%20internal%20stack%20trace%20formatting" class="pilcrow">&#182;</a>
-    Overwrite internal stack trace formatting
+    <a href="#overwrite-internal-stack-trace-formatting" name="overwrite-internal-stack-trace-formatting" class="pilcrow"></a>
+Overwrite internal stack trace formatting
   </h3>
 </div>
-
-
 <p>This function is part of the V8 stack trace API, for more info see:
-<a href='http://code.google.com/p/v8/wiki/JavaScriptStackTraceApi'>http://code.google.com/p/v8/wiki/JavaScriptStackTraceApi</a></p>
+http://code.google.com/p/v8/wiki/JavaScriptStackTraceApi</p>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="nv">prepareStackTrace = </span><span class="nf">(err, stack) -&gt;</span>
-  <span class="nv">config = </span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">config</span>
-  <span class="k">unless</span> <span class="nx">config</span><span class="p">.</span><span class="nx">stack</span><span class="p">.</span><span class="nx">view</span>
-    <span class="nv">stack = </span><span class="nx">stack</span><span class="p">[..</span><span class="mi">1</span><span class="p">]</span>
-  <span class="nv">message = </span><span class="nx">err</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span>
-  <span class="nv">message = </span><span class="nx">chalk</span><span class="p">.</span><span class="nx">bold</span><span class="p">.</span><span class="nx">red</span> <span class="nx">message</span> <span class="k">if</span> <span class="nx">config</span><span class="p">.</span><span class="nx">colors</span>
-  <span class="nv">stackline = </span><span class="mi">0</span>
-  <span class="k">return</span> <span class="nx">message</span> <span class="o">+</span> <span class="nx">stack</span><span class="p">.</span><span class="nx">map</span> <span class="nf">(frame) -&gt;</span>
-    <span class="nx">stackline</span><span class="o">++</span>
-    <span class="k">unless</span> <span class="nx">config</span><span class="p">.</span><span class="nx">stack</span><span class="p">.</span><span class="nx">modules</span>
-      <span class="k">return</span> <span class="s">&#39;&#39;</span> <span class="k">if</span> <span class="o">~</span><span class="nx">frame</span><span class="p">.</span><span class="nx">getFileName</span><span class="p">()</span><span class="o">?</span><span class="p">.</span><span class="nx">indexOf</span> <span class="s">&#39;/node_modules/&#39;</span>
-    <span class="k">return</span> <span class="s">&#39;&#39;</span> <span class="k">unless</span> <span class="nx">config</span><span class="p">.</span><span class="nx">stack</span><span class="p">.</span><span class="nx">system</span> <span class="o">or</span> <span class="o">~</span><span class="nx">frame</span><span class="p">.</span><span class="nx">getFileName</span><span class="p">()</span><span class="o">?</span><span class="p">.</span><span class="nx">indexOf</span> <span class="s">&#39;/&#39;</span>
-    <span class="nv">map = </span><span class="nx">mapFrame</span> <span class="nx">frame</span>
-    <span class="nv">out = </span><span class="s">&quot;\n  at </span><span class="si">#{</span><span class="nx">frame</span><span class="si">}</span><span class="s">&quot;</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">config</span><span class="p">.</span><span class="nx">code</span><span class="p">.</span><span class="nx">all</span> <span class="o">or</span> <span class="nx">stackline</span> <span class="o">is</span> <span class="mi">1</span><span class="p">)</span> <span class="o">and</span> <span class="p">(</span><span class="o">not</span> <span class="nx">map</span> <span class="o">or</span> <span class="nx">config</span><span class="p">.</span><span class="nx">code</span><span class="p">.</span><span class="nx">compiled</span> <span class="o">is</span> <span class="kc">true</span><span class="p">)</span>
-      <span class="nx">out</span> <span class="o">+=</span> <span class="nx">getCodeview</span> <span class="nx">frame</span>
-    <span class="k">if</span> <span class="nx">map</span>
-      <span class="nx">out</span> <span class="o">+=</span> <span class="s">&quot;\n     </span><span class="si">#{</span><span class="nx">map</span><span class="si">}</span><span class="s">&quot;</span>
-      <span class="nx">out</span> <span class="o">+=</span> <span class="nx">getCodeview</span> <span class="nx">map</span>
-    <span class="k">return</span> <span class="nx">out</span>
-  <span class="p">.</span><span class="nx">join</span> <span class="s">&#39;&#39;</span>
+        <td class="code highlight">
+          <pre class="coffeescript"><span class="hljs-function"><span class="hljs-title">prepareStackTrace</span> = <span class="hljs-params">(err, stack)</span> -&gt;</span>
+  config = <span class="hljs-built_in">module</span>.exports.config
+  <span class="hljs-keyword">unless</span> config.stack.view
+    stack = stack[.<span class="hljs-number">.1</span>]
+  message = err.toString()
+  message = chalk.bold.red message <span class="hljs-keyword">if</span> config.colors
+  stackline = <span class="hljs-number">0</span>
+  <span class="hljs-keyword">return</span> message + stack.map (frame) -&gt;
+    stackline++
+    <span class="hljs-keyword">unless</span> config.stack.modules
+      <span class="hljs-keyword">return</span> <span class="hljs-string">''</span> <span class="hljs-keyword">if</span> ~frame.getFileName()?.indexOf <span class="hljs-string">'/node_modules/'</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-string">''</span> <span class="hljs-keyword">unless</span> config.stack.system <span class="hljs-keyword">or</span> ~frame.getFileName()?.indexOf <span class="hljs-string">'/'</span>
+    map = mapFrame frame
+    out = <span class="hljs-string">"\n  at <span class="hljs-subst">#{frame}</span>"</span>
+    <span class="hljs-keyword">if</span> (config.code.all <span class="hljs-keyword">or</span> stackline <span class="hljs-keyword">is</span> <span class="hljs-number">1</span>) <span class="hljs-keyword">and</span> (<span class="hljs-keyword">not</span> map <span class="hljs-keyword">or</span> config.code.compiled <span class="hljs-keyword">is</span> <span class="hljs-literal">true</span>)
+      out += getCodeview frame
+    <span class="hljs-keyword">if</span> map
+      out += <span class="hljs-string">"\n     <span class="hljs-subst">#{map}</span>"</span>
+      out += getCodeview map
+    <span class="hljs-keyword">return</span> out
+  .join <span class="hljs-string">''</span>
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap" id="retrieve%20highlighted%20code%20display">
+          <div class="pilwrap" id="retrieve-highlighted-code-display">
   <h3>
-    <a href="#retrieve%20highlighted%20code%20display" name="retrieve%20highlighted%20code%20display" class="pilcrow">&#182;</a>
-    Retrieve highlighted code display
+    <a href="#retrieve-highlighted-code-display" name="retrieve-highlighted-code-display" class="pilcrow"></a>
+Retrieve highlighted code display
   </h3>
 </div>
 
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="nv">getCodeview = </span><span class="nf">(frame) -&gt;</span>
-  <span class="nv">config = </span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">config</span>
-  <span class="k">return</span> <span class="s">&#39;&#39;</span> <span class="k">unless</span> <span class="nx">config</span><span class="p">.</span><span class="nx">code</span><span class="p">.</span><span class="nx">view</span>
-  <span class="k">unless</span> <span class="nx">config</span><span class="p">.</span><span class="nx">code</span><span class="p">.</span><span class="nx">modules</span>
-    <span class="k">return</span> <span class="s">&#39;&#39;</span> <span class="k">if</span> <span class="o">~</span><span class="nx">frame</span><span class="p">.</span><span class="nx">getFileName</span><span class="p">()</span><span class="o">?</span><span class="p">.</span><span class="nx">indexOf</span> <span class="s">&#39;/node_modules/&#39;</span>
-  <span class="nv">contents = </span><span class="nx">retrieveFile</span> <span class="nx">frame</span><span class="p">.</span><span class="nx">getFileName</span><span class="p">()</span>
-  <span class="k">return</span> <span class="s">&#39;&#39;</span> <span class="k">unless</span> <span class="nx">contents</span>
-  <span class="nv">lines = </span><span class="nx">contents</span><span class="o">?</span><span class="p">.</span><span class="nx">split</span> <span class="sr">/(?:\r\n|\n)/</span>
-  <span class="nv">out = </span><span class="s">&#39;&#39;</span>
-  <span class="nv">max = </span><span class="nx">lines</span><span class="p">.</span><span class="nx">length</span><span class="p">.</span><span class="nx">toString</span><span class="p">().</span><span class="nx">length</span>
-  <span class="nv">num = </span><span class="nx">frame</span><span class="p">.</span><span class="nx">getLineNumber</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span>
-
-</pre></div>
+        <td class="code highlight">
+          <pre class="coffeescript"><span class="hljs-function"><span class="hljs-title">getCodeview</span> = <span class="hljs-params">(frame)</span> -&gt;</span>
+  config = <span class="hljs-built_in">module</span>.exports.config
+  <span class="hljs-keyword">return</span> <span class="hljs-string">''</span> <span class="hljs-keyword">unless</span> config.code.view
+  <span class="hljs-keyword">unless</span> config.code.modules
+    <span class="hljs-keyword">return</span> <span class="hljs-string">''</span> <span class="hljs-keyword">if</span> ~frame.getFileName()?.indexOf <span class="hljs-string">'/node_modules/'</span>
+  contents = retrieveFile frame.getFileName()
+  <span class="hljs-keyword">return</span> <span class="hljs-string">''</span> <span class="hljs-keyword">unless</span> contents
+  lines = contents?.split <span class="hljs-regexp">/(?:\r\n|\n)/</span>
+  out = <span class="hljs-string">''</span>
+  max = lines.length.toString().length
+  num = frame.getLineNumber() - <span class="hljs-number">1</span>
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-19" id="section-19">&#182;</a>
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-19" id="section-19"></a>
 </div>
 <p>lines before</p>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="k">if</span> <span class="nx">config</span><span class="p">.</span><span class="nx">code</span><span class="p">.</span><span class="nx">before</span>
-    <span class="nv">num = </span><span class="nx">num</span> <span class="o">-</span> <span class="nx">config</span><span class="p">.</span><span class="nx">code</span><span class="p">.</span><span class="nx">before</span>
-    <span class="k">for</span> <span class="nx">i</span> <span class="k">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">..</span><span class="nx">config</span><span class="p">.</span><span class="nx">code</span><span class="p">.</span><span class="nx">before</span><span class="p">]</span>
-      <span class="nv">line = </span><span class="nx">sprintf</span> <span class="s">&quot;\n     %0</span><span class="si">#{</span><span class="nx">max</span><span class="si">}</span><span class="s">d: </span><span class="si">#{</span><span class="nx">lines</span><span class="p">[</span><span class="nx">num</span><span class="o">++</span><span class="p">]</span><span class="si">}</span><span class="s">&quot;</span><span class="p">,</span> <span class="nx">num</span>
-      <span class="nx">out</span> <span class="o">+=</span> <span class="k">if</span> <span class="nx">config</span><span class="p">.</span><span class="nx">colors</span> <span class="k">then</span> <span class="nx">chalk</span><span class="p">.</span><span class="nx">grey</span> <span class="nx">line</span> <span class="k">else</span> <span class="nx">line</span>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="coffeescript">  <span class="hljs-keyword">if</span> config.code.before
+    num = num - config.code.before
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> [<span class="hljs-number">1.</span>.config.code.before]
+      line = sprintf <span class="hljs-string">"\n     %0<span class="hljs-subst">#{max}</span>d: <span class="hljs-subst">#{lines[num++]}</span>"</span>, num
+      out += <span class="hljs-keyword">if</span> config.colors <span class="hljs-keyword">then</span> chalk.grey line <span class="hljs-keyword">else</span> line
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-20" id="section-20">&#182;</a>
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-20" id="section-20"></a>
 </div>
 <p>highlight line</p>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="nv">line = </span><span class="nx">sprintf</span> <span class="s">&quot;\n     %0</span><span class="si">#{</span><span class="nx">max</span><span class="si">}</span><span class="s">d: </span><span class="si">#{</span><span class="nx">lines</span><span class="p">[</span><span class="nx">num</span><span class="o">++</span><span class="p">]</span><span class="si">}</span><span class="s">&quot;</span><span class="p">,</span> <span class="nx">num</span>
-  <span class="k">if</span> <span class="nx">config</span><span class="p">.</span><span class="nx">colors</span>
-    <span class="nv">pos = </span><span class="nx">frame</span><span class="p">.</span><span class="nx">getColumnNumber</span><span class="p">()</span> <span class="o">+</span> <span class="nx">max</span> <span class="o">+</span> <span class="mi">8</span>
-    <span class="nx">out</span> <span class="o">+=</span> <span class="nx">chalk</span><span class="p">.</span><span class="nx">yellow</span> <span class="nx">line</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">pos</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-    <span class="nx">out</span> <span class="o">+=</span> <span class="nx">chalk</span><span class="p">.</span><span class="nx">yellow</span><span class="p">.</span><span class="nx">underline</span> <span class="nx">line</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="nx">pos</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="nx">pos</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span>
-    <span class="nx">out</span> <span class="o">+=</span> <span class="nx">chalk</span><span class="p">.</span><span class="nx">yellow</span> <span class="nx">line</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="nx">pos</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span>
-  <span class="k">else</span>
-    <span class="nx">out</span> <span class="o">+=</span> <span class="nx">line</span>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="coffeescript">  line = sprintf <span class="hljs-string">"\n     %0<span class="hljs-subst">#{max}</span>d: <span class="hljs-subst">#{lines[num++]}</span>"</span>, num
+  <span class="hljs-keyword">if</span> config.colors
+    pos = frame.getColumnNumber() + max + <span class="hljs-number">8</span>
+    out += chalk.yellow line.slice(<span class="hljs-number">0</span>, pos-<span class="hljs-number">1</span>)
+    out += chalk.yellow.underline line.slice(pos-<span class="hljs-number">1</span>, pos+<span class="hljs-number">2</span>)
+    out += chalk.yellow line.slice(pos+<span class="hljs-number">2</span>)
+  <span class="hljs-keyword">else</span>
+    out += line
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-21" id="section-21">&#182;</a>
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-21" id="section-21"></a>
 </div>
 <p>lines after</p>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="k">if</span> <span class="nx">config</span><span class="p">.</span><span class="nx">code</span><span class="p">.</span><span class="nx">after</span>
-    <span class="k">for</span> <span class="nx">i</span> <span class="k">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">..</span><span class="nx">config</span><span class="p">.</span><span class="nx">code</span><span class="p">.</span><span class="nx">after</span><span class="p">]</span>
-      <span class="nv">line = </span><span class="nx">sprintf</span> <span class="s">&quot;\n     %0</span><span class="si">#{</span><span class="nx">max</span><span class="si">}</span><span class="s">d: </span><span class="si">#{</span><span class="nx">lines</span><span class="p">[</span><span class="nx">num</span><span class="o">++</span><span class="p">]</span><span class="si">}</span><span class="s">&quot;</span><span class="p">,</span> <span class="nx">num</span>
-      <span class="nx">out</span> <span class="o">+=</span> <span class="k">if</span> <span class="nx">config</span><span class="p">.</span><span class="nx">colors</span> <span class="k">then</span> <span class="nx">chalk</span><span class="p">.</span><span class="nx">grey</span> <span class="nx">line</span> <span class="k">else</span> <span class="nx">line</span>
-  <span class="nx">out</span>
+        <td class="code highlight">
+          <pre class="coffeescript">  <span class="hljs-keyword">if</span> config.code.after
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> [<span class="hljs-number">1.</span>.config.code.after]
+      line = sprintf <span class="hljs-string">"\n     %0<span class="hljs-subst">#{max}</span>d: <span class="hljs-subst">#{lines[num++]}</span>"</span>, num
+      out += <span class="hljs-keyword">if</span> config.colors <span class="hljs-keyword">then</span> chalk.grey line <span class="hljs-keyword">else</span> line
+  out
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap" id="get%20the%20mapped%20frame">
+          <div class="pilwrap" id="get-the-mapped-frame">
   <h3>
-    <a href="#get%20the%20mapped%20frame" name="get%20the%20mapped%20frame" class="pilcrow">&#182;</a>
-    Get the mapped frame
+    <a href="#get-the-mapped-frame" name="get-the-mapped-frame" class="pilcrow"></a>
+Get the mapped frame
   </h3>
 </div>
 
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="nv">mapFrame = </span><span class="nf">(frame) -&gt;</span>
-
-</pre></div>
+        <td class="code highlight">
+          <pre class="coffeescript"><span class="hljs-function"><span class="hljs-title">mapFrame</span> = <span class="hljs-params">(frame)</span> -&gt;</span>
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-23" id="section-23">&#182;</a>
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-23" id="section-23"></a>
 </div>
 <p>Most call sites will return the source file from getFileName(), but code
-passed to eval() ending in "//# sourceURL=..." will return the source file
+passed to eval() ending in &quot;//# sourceURL=...&quot; will return the source file
 from getScriptNameOrSourceURL() instead</p>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="nv">source = </span><span class="nx">frame</span><span class="p">.</span><span class="nx">getFileName</span><span class="p">()</span> <span class="o">||</span> <span class="nx">frame</span><span class="p">.</span><span class="nx">getScriptNameOrSourceURL</span><span class="p">()</span>
-  <span class="k">if</span> <span class="nx">source</span>
-    <span class="nv">position = </span><span class="nx">mapSourcePosition</span><span class="p">(</span>
-      <span class="nv">source: </span><span class="nx">source</span>
-      <span class="nv">line: </span><span class="nx">frame</span><span class="p">.</span><span class="nx">getLineNumber</span><span class="p">()</span>
-      <span class="nv">column: </span><span class="nx">frame</span><span class="p">.</span><span class="nx">getColumnNumber</span><span class="p">()</span>
-    <span class="p">)</span>
-    <span class="k">return</span> <span class="kc">null</span> <span class="k">unless</span> <span class="nx">position</span>
-    <span class="k">return</span> <span class="p">(</span>
-      <span class="nv">__proto__: </span><span class="nx">frame</span>
-      <span class="nv">getFileName: </span><span class="nf">-&gt;</span> <span class="nx">position</span><span class="p">.</span><span class="nx">source</span>
-      <span class="nv">getLineNumber: </span><span class="nf">-&gt;</span> <span class="nx">position</span><span class="p">.</span><span class="nx">line</span>
-      <span class="nv">getColumnNumber: </span><span class="nf">-&gt;</span> <span class="nx">position</span><span class="p">.</span><span class="nx">column</span>
-      <span class="nv">getScriptNameOrSourceURL: </span><span class="nf">-&gt;</span> <span class="nx">position</span><span class="p">.</span><span class="nx">source</span>
-    <span class="p">)</span>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="coffeescript">  source = frame.getFileName() || frame.getScriptNameOrSourceURL()
+  <span class="hljs-keyword">if</span> source
+    position = mapSourcePosition(
+      <span class="hljs-attribute">source</span>: source
+      <span class="hljs-attribute">line</span>: frame.getLineNumber()
+      <span class="hljs-attribute">column</span>: frame.getColumnNumber()
+    )
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span> <span class="hljs-keyword">unless</span> position
+    <span class="hljs-keyword">return</span> (
+      <span class="hljs-attribute">__proto__</span>: frame
+      <span class="hljs-attribute">getFileName</span>: <span class="hljs-function">-&gt;</span> position.source
+      <span class="hljs-attribute">getLineNumber</span>: <span class="hljs-function">-&gt;</span> position.line
+      <span class="hljs-attribute">getColumnNumber</span>: <span class="hljs-function">-&gt;</span> position.column
+      <span class="hljs-attribute">getScriptNameOrSourceURL</span>: <span class="hljs-function">-&gt;</span> position.source
+    )
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-24" id="section-24">&#182;</a>
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-24" id="section-24"></a>
 </div>
 <p>Code called using eval() needs special handling</p>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="nv">origin = </span><span class="nx">frame</span><span class="p">.</span><span class="nx">isEval</span><span class="p">()</span> <span class="o">and</span> <span class="nx">frame</span><span class="p">.</span><span class="nx">getEvalOrigin</span><span class="p">()</span>
-  <span class="k">if</span> <span class="nx">origin</span>
-    <span class="nv">origin = </span><span class="nx">mapEvalOrigin</span><span class="p">(</span><span class="nx">origin</span><span class="p">)</span>
-    <span class="k">return</span> <span class="p">(</span>
-      <span class="nv">__proto__: </span><span class="nx">frame</span>
-      <span class="nv">getEvalOrigin: </span><span class="nf">-&gt;</span>
-        <span class="nx">origin</span>
-    <span class="p">)</span>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="coffeescript">  origin = frame.isEval() <span class="hljs-keyword">and</span> frame.getEvalOrigin()
+  <span class="hljs-keyword">if</span> origin
+    origin = mapEvalOrigin(origin)
+    <span class="hljs-keyword">return</span> (
+      <span class="hljs-attribute">__proto__</span>: frame
+      <span class="hljs-attribute">getEvalOrigin</span>: <span class="hljs-function">-&gt;</span>
+        origin
+    )
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-25" id="section-25">&#182;</a>
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-25" id="section-25"></a>
 </div>
 <p>If we get here then we were unable to change the source position</p>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="kc">null</span>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="coffeescript">  <span class="hljs-literal">null</span>
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-26" id="section-26">&#182;</a>
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-26" id="section-26"></a>
 </div>
 <p>Maps a file path to a source map for that file</p>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="nv">sourceMapCache = </span><span class="p">{}</span>
+        <td class="code highlight">
+          <pre class="coffeescript">sourceMapCache = {}
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap" id="find%20the%20mapped%20position">
+          <div class="pilwrap" id="find-the-mapped-position">
   <h3>
-    <a href="#find%20the%20mapped%20position" name="find%20the%20mapped%20position" class="pilcrow">&#182;</a>
-    Find the mapped position
+    <a href="#find-the-mapped-position" name="find-the-mapped-position" class="pilcrow"></a>
+Find the mapped position
   </h3>
 </div>
 
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="nv">mapSourcePosition = </span><span class="nf">(position) -&gt;</span>
-  <span class="nv">sourceMap = </span><span class="nx">sourceMapCache</span><span class="p">[</span><span class="nx">position</span><span class="p">.</span><span class="nx">source</span><span class="p">]</span>
-
-</pre></div>
+        <td class="code highlight">
+          <pre class="coffeescript"><span class="hljs-function"><span class="hljs-title">mapSourcePosition</span> = <span class="hljs-params">(position)</span> -&gt;</span>
+  sourceMap = sourceMapCache[position.source]
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-28" id="section-28">&#182;</a>
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-28" id="section-28"></a>
 </div>
 <p>retrieve source map</p>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="k">unless</span> <span class="nx">sourceMap</span>
-    <span class="nv">urlAndMap = </span><span class="nx">retrieveSourceMap</span><span class="p">(</span><span class="nx">position</span><span class="p">.</span><span class="nx">source</span><span class="p">)</span>
-    <span class="k">if</span> <span class="nx">urlAndMap</span>
-      <span class="nv">sourceMap = </span><span class="nx">sourceMapCache</span><span class="p">[</span><span class="nx">position</span><span class="p">.</span><span class="nx">source</span><span class="p">]</span> <span class="o">=</span>
-        <span class="nv">url: </span><span class="nx">urlAndMap</span><span class="p">.</span><span class="nx">url</span>
-        <span class="nv">map: </span><span class="k">new</span> <span class="nx">sourcemap</span><span class="p">.</span><span class="nx">SourceMapConsumer</span><span class="p">(</span><span class="nx">urlAndMap</span><span class="p">.</span><span class="nx">map</span><span class="p">)</span>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="coffeescript">  <span class="hljs-keyword">unless</span> sourceMap
+    urlAndMap = retrieveSourceMap(position.source)
+    <span class="hljs-keyword">if</span> urlAndMap
+      sourceMap = sourceMapCache[position.source] =
+        <span class="hljs-attribute">url</span>: urlAndMap.url
+        <span class="hljs-attribute">map</span>: <span class="hljs-keyword">new</span> sourcemap.SourceMapConsumer(urlAndMap.map)
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-29" id="section-29">&#182;</a>
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-29" id="section-29"></a>
 </div>
 <p>Resolve the source URL relative to the URL of the source map</p>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="k">if</span> <span class="nx">sourceMap</span>
-    <span class="nv">mapPosition = </span><span class="nx">sourceMap</span><span class="p">.</span><span class="nx">map</span><span class="p">.</span><span class="nx">originalPositionFor</span> <span class="nx">position</span>
-    <span class="k">if</span> <span class="nx">mapPosition</span><span class="p">.</span><span class="nx">source</span>
-      <span class="nv">mapPosition.source = </span><span class="nx">supportRelativeURL</span> <span class="nx">path</span><span class="p">.</span><span class="nx">dirname</span><span class="p">(</span><span class="nx">position</span><span class="p">.</span><span class="nx">source</span><span class="p">),</span> <span class="nx">mapPosition</span><span class="p">.</span><span class="nx">source</span>
-      <span class="k">return</span> <span class="nx">mapPosition</span>
-  <span class="kc">null</span>
+        <td class="code highlight">
+          <pre class="coffeescript">  <span class="hljs-keyword">if</span> sourceMap
+    mapPosition = sourceMap.map.originalPositionFor position
+    <span class="hljs-keyword">if</span> mapPosition.source
+      mapPosition.source = supportRelativeURL path.dirname(position.source), mapPosition.source
+      <span class="hljs-keyword">return</span> mapPosition
+  <span class="hljs-literal">null</span>
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap" id="get%20the%20sourcemap%20data">
+          <div class="pilwrap" id="get-the-sourcemap-data">
   <h3>
-    <a href="#get%20the%20sourcemap%20data" name="get%20the%20sourcemap%20data" class="pilcrow">&#182;</a>
-    Get the sourcemap data
+    <a href="#get-the-sourcemap-data" name="get-the-sourcemap-data" class="pilcrow"></a>
+Get the sourcemap data
   </h3>
 </div>
-
-
 <p>Takes a
 generated source filename; returns a {map, optional url} object, or null if
 there is no source map.  The map field may be either a string or the parsed
 JSON object (ie, it must be a valid argument to the SourceMapConsumer
 constructor).</p>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="nv">retrieveSourceMap = </span><span class="nf">(source) -&gt;</span>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="coffeescript"><span class="hljs-function"><span class="hljs-title">retrieveSourceMap</span> = <span class="hljs-params">(source)</span> -&gt;</span>
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-31" id="section-31">&#182;</a>
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-31" id="section-31"></a>
 </div>
 <p>Get the URL of the source map</p>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="nv">fileData = </span><span class="nx">retrieveFile</span><span class="p">(</span><span class="nx">source</span><span class="p">)</span>
-  <span class="nv">match = </span><span class="sr">/\/\/[#@]\s*sourceMappingURL=(.*)\s*$/m</span><span class="p">.</span><span class="nx">exec</span><span class="p">(</span><span class="nx">fileData</span><span class="p">)</span>
-  <span class="k">return</span> <span class="kc">null</span>  <span class="k">unless</span> <span class="nx">match</span>
-  <span class="nv">sourceMappingURL = </span><span class="nx">match</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <td class="code highlight">
+          <pre class="coffeescript">  fileData = retrieveFile(source)
+  match = <span class="hljs-regexp">/\/\/[#@]\s*sourceMappingURL=(.*)\s*$/m</span>.exec(fileData)
+  <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>  <span class="hljs-keyword">unless</span> match
+  sourceMappingURL = match[<span class="hljs-number">1</span>]
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-32" id="section-32">&#182;</a>
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-32" id="section-32"></a>
 </div>
 <p>Read the contents of the source map</p>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="nv">sourceMapData = </span><span class="kc">undefined</span>
-  <span class="nv">dataUrlPrefix = </span><span class="s">&quot;data:application/json;base64,&quot;</span>
-  <span class="k">if</span> <span class="nx">sourceMappingURL</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">dataUrlPrefix</span><span class="p">.</span><span class="nx">length</span><span class="p">).</span><span class="nx">toLowerCase</span><span class="p">()</span> <span class="o">is</span> <span class="nx">dataUrlPrefix</span>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="coffeescript">  sourceMapData = <span class="hljs-literal">undefined</span>
+  dataUrlPrefix = <span class="hljs-string">"data:application/json;base64,"</span>
+  <span class="hljs-keyword">if</span> sourceMappingURL.slice(<span class="hljs-number">0</span>, dataUrlPrefix.length).toLowerCase() <span class="hljs-keyword">is</span> dataUrlPrefix
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-33" id="section-33">&#182;</a>
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-33" id="section-33"></a>
 </div>
 <p>Support source map URL as a data url</p>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-    <span class="nv">sourceMapData = </span><span class="k">new</span> <span class="nx">Buffer</span><span class="p">(</span><span class="nx">sourceMappingURL</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="nx">dataUrlPrefix</span><span class="p">.</span><span class="nx">length</span><span class="p">),</span> <span class="s">&quot;base64&quot;</span><span class="p">).</span><span class="nx">toString</span><span class="p">()</span>
-  <span class="k">else</span>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="coffeescript">    sourceMapData = <span class="hljs-keyword">new</span> Buffer(sourceMappingURL.slice(dataUrlPrefix.length), <span class="hljs-string">"base64"</span>).toString()
+  <span class="hljs-keyword">else</span>
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-34" id="section-34">&#182;</a>
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-34" id="section-34"></a>
 </div>
 <p>Support source map URLs relative to the source URL</p>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-    <span class="nv">dir = </span><span class="nx">path</span><span class="p">.</span><span class="nx">dirname</span><span class="p">(</span><span class="nx">source</span><span class="p">)</span>
-    <span class="nv">sourceMappingURL = </span><span class="nx">supportRelativeURL</span><span class="p">(</span><span class="nx">dir</span><span class="p">,</span> <span class="nx">sourceMappingURL</span><span class="p">)</span>
-    <span class="nv">sourceMapData = </span><span class="nx">retrieveFile</span><span class="p">(</span><span class="nx">sourceMappingURL</span><span class="p">,</span> <span class="s">&quot;utf8&quot;</span><span class="p">)</span>
-  <span class="k">return</span> <span class="kc">null</span>  <span class="k">unless</span> <span class="nx">sourceMapData</span>
-  <span class="nv">url: </span><span class="nx">sourceMappingURL</span>
-  <span class="nv">map: </span><span class="nx">sourceMapData</span>
+        <td class="code highlight">
+          <pre class="coffeescript">    dir = path.dirname(source)
+    sourceMappingURL = supportRelativeURL(dir, sourceMappingURL)
+    sourceMapData = retrieveFile(sourceMappingURL, <span class="hljs-string">"utf8"</span>)
+  <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>  <span class="hljs-keyword">unless</span> sourceMapData
+  <span class="hljs-attribute">url</span>: sourceMappingURL
+  <span class="hljs-attribute">map</span>: sourceMapData
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-35" id="section-35">&#182;</a>
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-35" id="section-35"></a>
 </div>
 <p>Maps a file path to a source map for that file</p>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="nv">isInBrowser = </span><span class="nf">-&gt;</span> <span class="k">typeof</span> <span class="nb">window</span> <span class="o">isnt</span> <span class="s">&quot;undefined&quot;</span>
+        <td class="code highlight">
+          <pre class="coffeescript"><span class="hljs-function"><span class="hljs-title">isInBrowser</span> = -&gt;</span> <span class="hljs-keyword">typeof</span> <span class="hljs-built_in">window</span> <span class="hljs-keyword">isnt</span> <span class="hljs-string">"undefined"</span>
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap" id="retrieve%20file%20for%20node%20and%20browser">
+          <div class="pilwrap" id="retrieve-file-for-node-and-browser">
   <h3>
-    <a href="#retrieve%20file%20for%20node%20and%20browser" name="retrieve%20file%20for%20node%20and%20browser" class="pilcrow">&#182;</a>
-    Retrieve file for node and browser
+    <a href="#retrieve-file-for-node-and-browser" name="retrieve-file-for-node-and-browser" class="pilcrow"></a>
+Retrieve file for node and browser
   </h3>
 </div>
 
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="nv">retrieveFile = </span><span class="nf">(path) -&gt;</span>
-  <span class="k">return</span> <span class="nx">fileContentsCache</span><span class="p">[</span><span class="nx">path</span><span class="p">]</span>  <span class="k">if</span> <span class="nx">path</span> <span class="k">of</span> <span class="nx">fileContentsCache</span>
-  <span class="k">try</span>
-
-</pre></div>
+        <td class="code highlight">
+          <pre class="coffeescript"><span class="hljs-function"><span class="hljs-title">retrieveFile</span> = <span class="hljs-params">(path)</span> -&gt;</span>
+  <span class="hljs-keyword">return</span> fileContentsCache[path]  <span class="hljs-keyword">if</span> path <span class="hljs-keyword">of</span> fileContentsCache
+  <span class="hljs-keyword">try</span>
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-37" id="section-37">&#182;</a>
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-37" id="section-37"></a>
 </div>
 <p>Use AJAX if we are in the browser</p>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-    <span class="k">if</span> <span class="nx">isInBrowser</span><span class="p">()</span>
-      <span class="nv">xhr = </span><span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">()</span>
-      <span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span> <span class="s">&quot;GET&quot;</span><span class="p">,</span> <span class="nx">path</span><span class="p">,</span> <span class="kc">false</span>
-      <span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span> <span class="kc">null</span>
-      <span class="nv">contents = </span><span class="p">(</span><span class="k">if</span> <span class="nx">xhr</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">is</span> <span class="mi">4</span> <span class="k">then</span> <span class="nx">xhr</span><span class="p">.</span><span class="nx">responseText</span> <span class="k">else</span> <span class="kc">null</span><span class="p">)</span>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="coffeescript">    <span class="hljs-keyword">if</span> isInBrowser()
+      xhr = <span class="hljs-keyword">new</span> XMLHttpRequest()
+      xhr.open <span class="hljs-string">"GET"</span>, path, <span class="hljs-literal">false</span>
+      xhr.send <span class="hljs-literal">null</span>
+      contents = (<span class="hljs-keyword">if</span> xhr.readyState <span class="hljs-keyword">is</span> <span class="hljs-number">4</span> <span class="hljs-keyword">then</span> xhr.responseText <span class="hljs-keyword">else</span> <span class="hljs-literal">null</span>)
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-38" id="section-38">&#182;</a>
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-38" id="section-38"></a>
 </div>
 <p>Otherwise, use the file system</p>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-    <span class="k">else</span>
-      <span class="nv">contents = </span><span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span> <span class="nx">path</span><span class="p">,</span> <span class="s">&quot;utf8&quot;</span>
-  <span class="k">catch</span> <span class="nx">ex</span>
-    <span class="nv">contents = </span><span class="kc">null</span>
-  <span class="nx">fileContentsCache</span><span class="p">[</span><span class="nx">path</span><span class="p">]</span> <span class="o">=</span> <span class="nx">contents</span>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="coffeescript">    <span class="hljs-keyword">else</span>
+      contents = fs.readFileSync path, <span class="hljs-string">"utf8"</span>
+  <span class="hljs-keyword">catch</span> ex
+    contents = <span class="hljs-literal">null</span>
+  fileContentsCache[path] = contents
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-39" id="section-39">&#182;</a>
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-39" id="section-39"></a>
 </div>
 <p>Maps a file path to a string containing the file contents</p>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="nv">fileContentsCache = </span><span class="p">{}</span>
+        <td class="code highlight">
+          <pre class="coffeescript">fileContentsCache = {}
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap" id="make%20path%20absolute">
+          <div class="pilwrap" id="make-path-absolute">
   <h3>
-    <a href="#make%20path%20absolute" name="make%20path%20absolute" class="pilcrow">&#182;</a>
-    Make path absolute
+    <a href="#make-path-absolute" name="make-path-absolute" class="pilcrow"></a>
+Make path absolute
   </h3>
 </div>
-
-
 <p>Support URLs relative to a directory, but be careful about a protocol prefix
-in case we are in the browser (i.e. directories may start with "http://")</p>
+in case we are in the browser (i.e. directories may start with &quot;http://&quot;)</p>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="nv">supportRelativeURL = </span><span class="nf">(dir, url) -&gt;</span>
-  <span class="nv">match = </span><span class="sr">/^\w+:\/\/[^\/]*/</span><span class="p">.</span><span class="nx">exec</span><span class="p">(</span><span class="nx">dir</span><span class="p">)</span>
-  <span class="nv">protocol = </span><span class="p">(</span><span class="k">if</span> <span class="nx">match</span> <span class="k">then</span> <span class="nx">match</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">else</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
-  <span class="nx">protocol</span> <span class="o">+</span> <span class="nx">path</span><span class="p">.</span><span class="nx">resolve</span> <span class="nx">dir</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="nx">protocol</span><span class="p">.</span><span class="nx">length</span><span class="p">),</span> <span class="nx">url</span>
+        <td class="code highlight">
+          <pre class="coffeescript"><span class="hljs-function"><span class="hljs-title">supportRelativeURL</span> = <span class="hljs-params">(dir, url)</span> -&gt;</span>
+  match = <span class="hljs-regexp">/^\w+:\/\/[^\/]*/</span>.exec(dir)
+  protocol = (<span class="hljs-keyword">if</span> match <span class="hljs-keyword">then</span> match[<span class="hljs-number">0</span>] <span class="hljs-keyword">else</span> <span class="hljs-string">""</span>)
+  protocol + path.resolve dir.slice(protocol.length), url
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap" id="get%20eval%20origin">
+          <div class="pilwrap" id="get-eval-origin">
   <h3>
-    <a href="#get%20eval%20origin" name="get%20eval%20origin" class="pilcrow">&#182;</a>
-    get eval origin
+    <a href="#get-eval-origin" name="get-eval-origin" class="pilcrow"></a>
+get eval origin
   </h3>
 </div>
-
-
 <p>Parses code generated by FormatEvalOrigin(), a function inside V8:
-<a href='https://code.google.com/p/v8/source/browse/trunk/src/messages.js'>https://code.google.com/p/v8/source/browse/trunk/src/messages.js</a></p>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="nv">mapEvalOrigin = </span><span class="nf">(origin) -&gt;</span>
+https://code.google.com/p/v8/source/browse/trunk/src/messages.js</p>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="coffeescript"><span class="hljs-function"><span class="hljs-title">mapEvalOrigin</span> = <span class="hljs-params">(origin)</span> -&gt;</span>
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-42" id="section-42">&#182;</a>
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-42" id="section-42"></a>
 </div>
 <p>Most eval() calls are in this format</p>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="nv">match = </span><span class="sr">/^eval at ([^(]+) \((.+):(\d+):(\d+)\)$/</span><span class="p">.</span><span class="nx">exec</span><span class="p">(</span><span class="nx">origin</span><span class="p">)</span>
-  <span class="k">if</span> <span class="nx">match</span>
-    <span class="nv">position = </span><span class="nx">mapSourcePosition</span><span class="p">(</span>
-      <span class="nv">source: </span><span class="nx">match</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
-      <span class="nv">line: </span><span class="nx">match</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
-      <span class="nv">column: </span><span class="nx">match</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
-    <span class="p">)</span>
-    <span class="k">return</span> <span class="s">&quot;eval at </span><span class="si">#{</span><span class="nx">match</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s"> (</span><span class="si">#{</span><span class="nx">position</span><span class="p">.</span><span class="nx">source</span><span class="si">}</span><span class="s">:</span><span class="si">#{</span><span class="nx">position</span><span class="p">.</span><span class="nx">line</span><span class="si">}</span><span class="s">:</span><span class="si">#{</span><span class="nx">position</span><span class="p">.</span><span class="nx">column</span><span class="si">}</span><span class="s">)&quot;</span>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="coffeescript">  match = <span class="hljs-regexp">/^eval at ([^(]+) \((.+):(\d+):(\d+)\)$/</span>.exec(origin)
+  <span class="hljs-keyword">if</span> match
+    position = mapSourcePosition(
+      <span class="hljs-attribute">source</span>: match[<span class="hljs-number">2</span>]
+      <span class="hljs-attribute">line</span>: match[<span class="hljs-number">3</span>]
+      <span class="hljs-attribute">column</span>: match[<span class="hljs-number">4</span>]
+    )
+    <span class="hljs-keyword">return</span> <span class="hljs-string">"eval at <span class="hljs-subst">#{match[<span class="hljs-number">1</span>]}</span> (<span class="hljs-subst">#{position.source}</span>:<span class="hljs-subst">#{position.line}</span>:<span class="hljs-subst">#{position.column}</span>)"</span>
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-43" id="section-43">&#182;</a>
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-43" id="section-43"></a>
 </div>
 <p>Parse nested eval() calls using recursion</p>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="nv">match = </span><span class="sr">/^eval at ([^(]+) \((.+)\)$/</span><span class="p">.</span><span class="nx">exec</span><span class="p">(</span><span class="nx">origin</span><span class="p">)</span>
-  <span class="k">return</span> <span class="s">&quot;eval at &quot;</span> <span class="o">+</span> <span class="nx">match</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s">&quot; (&quot;</span> <span class="o">+</span> <span class="nx">mapEvalOrigin</span><span class="p">(</span><span class="nx">match</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="o">+</span> <span class="s">&quot;)&quot;</span>  <span class="k">if</span> <span class="nx">match</span>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="coffeescript">  match = <span class="hljs-regexp">/^eval at ([^(]+) \((.+)\)$/</span>.exec(origin)
+  <span class="hljs-keyword">return</span> <span class="hljs-string">"eval at "</span> + match[<span class="hljs-number">1</span>] + <span class="hljs-string">" ("</span> + mapEvalOrigin(match[<span class="hljs-number">2</span>]) + <span class="hljs-string">")"</span>  <span class="hljs-keyword">if</span> match
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-44" id="section-44">&#182;</a>
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-44" id="section-44"></a>
 </div>
 <p>Make sure we still return useful information if we didn't find anything</p>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="nx">origin</span>
+        <td class="code highlight">
+          <pre class="coffeescript">  origin
 
-<span class="nx">install</span><span class="p">()</span>
+install()
 
-<span class="nv">module.exports.install = </span><span class="nf">-&gt;</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">warn</span> <span class="s">&quot;DEPRECATED call to alinex-error.install() no longer needed&quot;</span>
-</pre></div>
+<span class="hljs-built_in">module</span>.exports.install = <span class="hljs-function">-&gt;</span>
+  <span class="hljs-built_in">console</span>.warn <span class="hljs-string">"DEPRECATED call to alinex-error.install() no longer needed"</span>
+
+</pre>
         </td>
       </tr>
+    
   </tbody>
 </table>
+
   </div>
 </body>
 </html>

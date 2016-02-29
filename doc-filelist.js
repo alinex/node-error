@@ -1,1 +1,1 @@
-var tree={"files":[".travis.yml","Changelog.md","README.md"],"dirs":{"coverage":{"dirs":{"lcov-report":{"files":["base.css","index.html","prettify.css","prettify.js","sorter.js"],"dirs":{"src":{"files":["index.coffee.html","index.html"]}}}}},"src":{"files":["index.coffee"]}}};
+var tree={"files":["Changelog.md","README.md","package.json"],"dirs":{"src":{"files":["index.coffee"]}}};
