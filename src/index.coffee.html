@@ -166,10 +166,7 @@ util = <span class="hljs-built_in">require</span> <span class="hljs-string">'uti
 path = <span class="hljs-built_in">require</span> <span class="hljs-string">'path'</span>
 sourcemap = <span class="hljs-built_in">require</span> <span class="hljs-string">'source-map'</span>
 sprintf = <span class="hljs-built_in">require</span>(<span class="hljs-string">"sprintf-js"</span>).sprintf
-chalk = <span class="hljs-built_in">require</span> <span class="hljs-string">'chalk'</span>
-
-
-</pre>
+chalk = <span class="hljs-built_in">require</span> <span class="hljs-string">'chalk'</span></pre>
         </td>
       </tr>
     
@@ -186,8 +183,7 @@ Configuration
         <td class="code highlight">
           <pre class="coffeescript"><span class="hljs-built_in">module</span>.exports.config =
   <span class="hljs-attribute">colors</span>: <span class="hljs-literal">true</span>
-  <span class="hljs-attribute">properties</span>: <span class="hljs-literal">true</span>
-</pre>
+  <span class="hljs-attribute">properties</span>: <span class="hljs-literal">true</span></pre>
         </td>
       </tr>
     
@@ -203,8 +199,7 @@ Configuration
           <pre class="coffeescript">  <span class="hljs-attribute">stack</span>:
     <span class="hljs-attribute">view</span>: <span class="hljs-literal">true</span>
     <span class="hljs-attribute">modules</span>: <span class="hljs-literal">false</span>
-    <span class="hljs-attribute">system</span>: <span class="hljs-literal">false</span>
-</pre>
+    <span class="hljs-attribute">system</span>: <span class="hljs-literal">false</span></pre>
         </td>
       </tr>
     
@@ -223,8 +218,7 @@ Configuration
     <span class="hljs-attribute">after</span>: <span class="hljs-number">2</span>
     <span class="hljs-attribute">compiled</span>: <span class="hljs-literal">false</span>
     <span class="hljs-attribute">all</span>: <span class="hljs-literal">false</span>
-    <span class="hljs-attribute">modules</span>: <span class="hljs-literal">false</span>
-</pre>
+    <span class="hljs-attribute">modules</span>: <span class="hljs-literal">false</span></pre>
         </td>
       </tr>
     
@@ -239,8 +233,7 @@ Configuration
         <td class="code highlight">
           <pre class="coffeescript">  <span class="hljs-attribute">cause</span>:
     <span class="hljs-attribute">view</span>: <span class="hljs-literal">true</span>
-    <span class="hljs-attribute">stack</span>: <span class="hljs-literal">true</span>
-</pre>
+    <span class="hljs-attribute">stack</span>: <span class="hljs-literal">true</span></pre>
         </td>
       </tr>
     
@@ -256,8 +249,7 @@ Configuration
           <pre class="coffeescript">  <span class="hljs-attribute">uncaught</span>:
     <span class="hljs-attribute">exit</span>: <span class="hljs-literal">true</span>
     <span class="hljs-attribute">timeout</span>: <span class="hljs-number">1000</span>
-    <span class="hljs-attribute">code</span>: -<span class="hljs-number">1</span>
-</pre>
+    <span class="hljs-attribute">code</span>: -<span class="hljs-number">1</span></pre>
         </td>
       </tr>
     
@@ -270,10 +262,7 @@ Configuration
 
         </td>
         <td class="code highlight">
-          <pre class="coffeescript">  <span class="hljs-attribute">logger</span>: <span class="hljs-built_in">console</span>
-
-
-</pre>
+          <pre class="coffeescript">  <span class="hljs-attribute">logger</span>: <span class="hljs-built_in">console</span></pre>
         </td>
       </tr>
     
@@ -292,10 +281,7 @@ Install error handler
           <pre class="coffeescript"><span class="hljs-function"><span class="hljs-title">install</span> = -&gt;</span>
   Error.prepareStackTrace = prepareStackTrace
   process.<span class="hljs-literal">on</span> <span class="hljs-string">'uncaughtException'</span>, uncaughtError
-  <span class="hljs-built_in">module</span>.exports
-
-
-</pre>
+  <span class="hljs-built_in">module</span>.exports</pre>
         </td>
       </tr>
     
@@ -319,8 +305,7 @@ Error object instance to report.</li>
         <td class="code highlight">
           <pre class="coffeescript"><span class="hljs-function"><span class="hljs-title">uncaughtError</span> = <span class="hljs-params">(err)</span> -&gt;</span>
   config = <span class="hljs-built_in">module</span>.exports.config
-  <span class="hljs-built_in">module</span>.exports.report err
-</pre>
+  <span class="hljs-built_in">module</span>.exports.report err</pre>
         </td>
       </tr>
     
@@ -337,10 +322,7 @@ Error object instance to report.</li>
     setTimeout -&gt;
       <span class="hljs-built_in">console</span>.error chalk.yellow <span class="hljs-string">"Exiting after error logging timeout."</span>
       process.exit err.code ? config.uncaught.code
-    , config.uncaught.timeout
-
-
-</pre>
+    , config.uncaught.timeout</pre>
         </td>
       </tr>
     
@@ -372,9 +354,7 @@ a method <code>logger.log(&lt;level&gt;, &lt;error&gt;)</code>.</p>
   <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> <span class="hljs-built_in">module</span>.exports.config.logger?.log?
     <span class="hljs-built_in">module</span>.exports.config.logger.log level, format err
   <span class="hljs-keyword">else</span>
-    <span class="hljs-built_in">console</span>.error format err
-
-</pre>
+    <span class="hljs-built_in">console</span>.error format err</pre>
         </td>
       </tr>
     
@@ -396,9 +376,7 @@ Error object instance to report.</li>
 
         </td>
         <td class="code highlight">
-          <pre class="coffeescript"><span class="hljs-built_in">module</span>.exports.format = <span class="hljs-function"><span class="hljs-params">(err)</span> -&gt;</span> format err
-
-</pre>
+          <pre class="coffeescript"><span class="hljs-built_in">module</span>.exports.format = <span class="hljs-function"><span class="hljs-params">(err)</span> -&gt;</span> format err</pre>
         </td>
       </tr>
     
@@ -454,10 +432,7 @@ Recursive part to format errors with cause
   <span class="hljs-keyword">else</span>
     msg = <span class="hljs-string">"Error: <span class="hljs-subst">#{err?.toString()}</span>"</span>
     msg = chalk.bold.red msg <span class="hljs-keyword">if</span> config.colors
-  <span class="hljs-keyword">return</span> msg
-
-
-</pre>
+  <span class="hljs-keyword">return</span> msg</pre>
         </td>
       </tr>
     
@@ -509,9 +484,7 @@ http://code.google.com/p/v8/wiki/JavaScriptStackTraceApi</p>
       out += <span class="hljs-string">"\n     <span class="hljs-subst">#{map}</span>"</span>
       out += getCodeview map
     <span class="hljs-keyword">return</span> out
-  .join <span class="hljs-string">''</span>
-
-</pre>
+  .join <span class="hljs-string">''</span></pre>
         </td>
       </tr>
     
@@ -536,8 +509,7 @@ Retrieve highlighted code display
   lines = contents?.split <span class="hljs-regexp">/(?:\r\n|\n)/</span>
   out = <span class="hljs-string">''</span>
   max = lines.length.toString().length
-  num = frame.getLineNumber() - <span class="hljs-number">1</span>
-</pre>
+  num = frame.getLineNumber() - <span class="hljs-number">1</span></pre>
         </td>
       </tr>
     
@@ -554,8 +526,7 @@ Retrieve highlighted code display
     num = num - config.code.before
     <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> [<span class="hljs-number">1.</span>.config.code.before]
       line = sprintf <span class="hljs-string">"\n     %0<span class="hljs-subst">#{max}</span>d: <span class="hljs-subst">#{lines[num++]}</span>"</span>, num
-      out += <span class="hljs-keyword">if</span> config.colors <span class="hljs-keyword">then</span> chalk.grey line <span class="hljs-keyword">else</span> line
-</pre>
+      out += <span class="hljs-keyword">if</span> config.colors <span class="hljs-keyword">then</span> chalk.grey line <span class="hljs-keyword">else</span> line</pre>
         </td>
       </tr>
     
@@ -575,8 +546,7 @@ Retrieve highlighted code display
     out += chalk.yellow.underline line.slice(pos-<span class="hljs-number">1</span>, pos+<span class="hljs-number">2</span>)
     out += chalk.yellow line.slice(pos+<span class="hljs-number">2</span>)
   <span class="hljs-keyword">else</span>
-    out += line
-</pre>
+    out += line</pre>
         </td>
       </tr>
     
@@ -593,9 +563,7 @@ Retrieve highlighted code display
     <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> [<span class="hljs-number">1.</span>.config.code.after]
       line = sprintf <span class="hljs-string">"\n     %0<span class="hljs-subst">#{max}</span>d: <span class="hljs-subst">#{lines[num++]}</span>"</span>, num
       out += <span class="hljs-keyword">if</span> config.colors <span class="hljs-keyword">then</span> chalk.grey line <span class="hljs-keyword">else</span> line
-  out
-
-</pre>
+  out</pre>
         </td>
       </tr>
     
@@ -610,8 +578,7 @@ Get the mapped frame
 
         </td>
         <td class="code highlight">
-          <pre class="coffeescript"><span class="hljs-function"><span class="hljs-title">mapFrame</span> = <span class="hljs-params">(frame)</span> -&gt;</span>
-</pre>
+          <pre class="coffeescript"><span class="hljs-function"><span class="hljs-title">mapFrame</span> = <span class="hljs-params">(frame)</span> -&gt;</span></pre>
         </td>
       </tr>
     
@@ -640,8 +607,7 @@ from getScriptNameOrSourceURL() instead</p>
       <span class="hljs-attribute">getLineNumber</span>: <span class="hljs-function">-&gt;</span> position.line
       <span class="hljs-attribute">getColumnNumber</span>: <span class="hljs-function">-&gt;</span> position.column
       <span class="hljs-attribute">getScriptNameOrSourceURL</span>: <span class="hljs-function">-&gt;</span> position.source
-    )
-</pre>
+    )</pre>
         </td>
       </tr>
     
@@ -661,8 +627,7 @@ from getScriptNameOrSourceURL() instead</p>
       <span class="hljs-attribute">__proto__</span>: frame
       <span class="hljs-attribute">getEvalOrigin</span>: <span class="hljs-function">-&gt;</span>
         origin
-    )
-</pre>
+    )</pre>
         </td>
       </tr>
     
@@ -675,8 +640,7 @@ from getScriptNameOrSourceURL() instead</p>
 
         </td>
         <td class="code highlight">
-          <pre class="coffeescript">  <span class="hljs-literal">null</span>
-</pre>
+          <pre class="coffeescript">  <span class="hljs-literal">null</span></pre>
         </td>
       </tr>
     
@@ -689,9 +653,7 @@ from getScriptNameOrSourceURL() instead</p>
 
         </td>
         <td class="code highlight">
-          <pre class="coffeescript">sourceMapCache = {}
-
-</pre>
+          <pre class="coffeescript">sourceMapCache = {}</pre>
         </td>
       </tr>
     
@@ -707,8 +669,7 @@ Find the mapped position
         </td>
         <td class="code highlight">
           <pre class="coffeescript"><span class="hljs-function"><span class="hljs-title">mapSourcePosition</span> = <span class="hljs-params">(position)</span> -&gt;</span>
-  sourceMap = sourceMapCache[position.source]
-</pre>
+  sourceMap = sourceMapCache[position.source]</pre>
         </td>
       </tr>
     
@@ -726,8 +687,7 @@ Find the mapped position
     <span class="hljs-keyword">if</span> urlAndMap
       sourceMap = sourceMapCache[position.source] =
         <span class="hljs-attribute">url</span>: urlAndMap.url
-        <span class="hljs-attribute">map</span>: <span class="hljs-keyword">new</span> sourcemap.SourceMapConsumer(urlAndMap.map)
-</pre>
+        <span class="hljs-attribute">map</span>: <span class="hljs-keyword">new</span> sourcemap.SourceMapConsumer(urlAndMap.map)</pre>
         </td>
       </tr>
     
@@ -745,9 +705,7 @@ Find the mapped position
     <span class="hljs-keyword">if</span> mapPosition.source
       mapPosition.source = supportRelativeURL path.dirname(position.source), mapPosition.source
       <span class="hljs-keyword">return</span> mapPosition
-  <span class="hljs-literal">null</span>
-
-</pre>
+  <span class="hljs-literal">null</span></pre>
         </td>
       </tr>
     
@@ -767,8 +725,7 @@ constructor).</p>
 
         </td>
         <td class="code highlight">
-          <pre class="coffeescript"><span class="hljs-function"><span class="hljs-title">retrieveSourceMap</span> = <span class="hljs-params">(source)</span> -&gt;</span>
-</pre>
+          <pre class="coffeescript"><span class="hljs-function"><span class="hljs-title">retrieveSourceMap</span> = <span class="hljs-params">(source)</span> -&gt;</span></pre>
         </td>
       </tr>
     
@@ -784,9 +741,7 @@ constructor).</p>
           <pre class="coffeescript">  fileData = retrieveFile(source)
   match = <span class="hljs-regexp">/\/\/[#@]\s*sourceMappingURL=(.*)\s*$/m</span>.exec(fileData)
   <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>  <span class="hljs-keyword">unless</span> match
-  sourceMappingURL = match[<span class="hljs-number">1</span>]
-
-</pre>
+  sourceMappingURL = match[<span class="hljs-number">1</span>]</pre>
         </td>
       </tr>
     
@@ -801,8 +756,7 @@ constructor).</p>
         <td class="code highlight">
           <pre class="coffeescript">  sourceMapData = <span class="hljs-literal">undefined</span>
   dataUrlPrefix = <span class="hljs-string">"data:application/json;base64,"</span>
-  <span class="hljs-keyword">if</span> sourceMappingURL.slice(<span class="hljs-number">0</span>, dataUrlPrefix.length).toLowerCase() <span class="hljs-keyword">is</span> dataUrlPrefix
-</pre>
+  <span class="hljs-keyword">if</span> sourceMappingURL.slice(<span class="hljs-number">0</span>, dataUrlPrefix.length).toLowerCase() <span class="hljs-keyword">is</span> dataUrlPrefix</pre>
         </td>
       </tr>
     
@@ -816,8 +770,7 @@ constructor).</p>
         </td>
         <td class="code highlight">
           <pre class="coffeescript">    sourceMapData = <span class="hljs-keyword">new</span> Buffer(sourceMappingURL.slice(dataUrlPrefix.length), <span class="hljs-string">"base64"</span>).toString()
-  <span class="hljs-keyword">else</span>
-</pre>
+  <span class="hljs-keyword">else</span></pre>
         </td>
       </tr>
     
@@ -835,9 +788,7 @@ constructor).</p>
     sourceMapData = retrieveFile(sourceMappingURL, <span class="hljs-string">"utf8"</span>)
   <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>  <span class="hljs-keyword">unless</span> sourceMapData
   <span class="hljs-attribute">url</span>: sourceMappingURL
-  <span class="hljs-attribute">map</span>: sourceMapData
-
-</pre>
+  <span class="hljs-attribute">map</span>: sourceMapData</pre>
         </td>
       </tr>
     
@@ -850,9 +801,7 @@ constructor).</p>
 
         </td>
         <td class="code highlight">
-          <pre class="coffeescript"><span class="hljs-function"><span class="hljs-title">isInBrowser</span> = -&gt;</span> <span class="hljs-keyword">typeof</span> <span class="hljs-built_in">window</span> <span class="hljs-keyword">isnt</span> <span class="hljs-string">"undefined"</span>
-
-</pre>
+          <pre class="coffeescript"><span class="hljs-function"><span class="hljs-title">isInBrowser</span> = -&gt;</span> <span class="hljs-keyword">typeof</span> <span class="hljs-built_in">window</span> <span class="hljs-keyword">isnt</span> <span class="hljs-string">"undefined"</span></pre>
         </td>
       </tr>
     
@@ -869,8 +818,7 @@ Retrieve file for node and browser
         <td class="code highlight">
           <pre class="coffeescript"><span class="hljs-function"><span class="hljs-title">retrieveFile</span> = <span class="hljs-params">(path)</span> -&gt;</span>
   <span class="hljs-keyword">return</span> fileContentsCache[path]  <span class="hljs-keyword">if</span> path <span class="hljs-keyword">of</span> fileContentsCache
-  <span class="hljs-keyword">try</span>
-</pre>
+  <span class="hljs-keyword">try</span></pre>
         </td>
       </tr>
     
@@ -887,8 +835,7 @@ Retrieve file for node and browser
       xhr = <span class="hljs-keyword">new</span> XMLHttpRequest()
       xhr.open <span class="hljs-string">"GET"</span>, path, <span class="hljs-literal">false</span>
       xhr.send <span class="hljs-literal">null</span>
-      contents = (<span class="hljs-keyword">if</span> xhr.readyState <span class="hljs-keyword">is</span> <span class="hljs-number">4</span> <span class="hljs-keyword">then</span> xhr.responseText <span class="hljs-keyword">else</span> <span class="hljs-literal">null</span>)
-</pre>
+      contents = (<span class="hljs-keyword">if</span> xhr.readyState <span class="hljs-keyword">is</span> <span class="hljs-number">4</span> <span class="hljs-keyword">then</span> xhr.responseText <span class="hljs-keyword">else</span> <span class="hljs-literal">null</span>)</pre>
         </td>
       </tr>
     
@@ -905,8 +852,7 @@ Retrieve file for node and browser
       contents = fs.readFileSync path, <span class="hljs-string">"utf8"</span>
   <span class="hljs-keyword">catch</span> ex
     contents = <span class="hljs-literal">null</span>
-  fileContentsCache[path] = contents
-</pre>
+  fileContentsCache[path] = contents</pre>
         </td>
       </tr>
     
@@ -919,9 +865,7 @@ Retrieve file for node and browser
 
         </td>
         <td class="code highlight">
-          <pre class="coffeescript">fileContentsCache = {}
-
-</pre>
+          <pre class="coffeescript">fileContentsCache = {}</pre>
         </td>
       </tr>
     
@@ -941,9 +885,7 @@ in case we are in the browser (i.e. directories may start with &quot;http://&quo
           <pre class="coffeescript"><span class="hljs-function"><span class="hljs-title">supportRelativeURL</span> = <span class="hljs-params">(dir, url)</span> -&gt;</span>
   match = <span class="hljs-regexp">/^\w+:\/\/[^\/]*/</span>.exec(dir)
   protocol = (<span class="hljs-keyword">if</span> match <span class="hljs-keyword">then</span> match[<span class="hljs-number">0</span>] <span class="hljs-keyword">else</span> <span class="hljs-string">""</span>)
-  protocol + path.resolve dir.slice(protocol.length), url
-
-</pre>
+  protocol + path.resolve dir.slice(protocol.length), url</pre>
         </td>
       </tr>
     
@@ -960,8 +902,7 @@ https://code.google.com/p/v8/source/browse/trunk/src/messages.js</p>
 
         </td>
         <td class="code highlight">
-          <pre class="coffeescript"><span class="hljs-function"><span class="hljs-title">mapEvalOrigin</span> = <span class="hljs-params">(origin)</span> -&gt;</span>
-</pre>
+          <pre class="coffeescript"><span class="hljs-function"><span class="hljs-title">mapEvalOrigin</span> = <span class="hljs-params">(origin)</span> -&gt;</span></pre>
         </td>
       </tr>
     
@@ -981,8 +922,7 @@ https://code.google.com/p/v8/source/browse/trunk/src/messages.js</p>
       <span class="hljs-attribute">line</span>: match[<span class="hljs-number">3</span>]
       <span class="hljs-attribute">column</span>: match[<span class="hljs-number">4</span>]
     )
-    <span class="hljs-keyword">return</span> <span class="hljs-string">"eval at <span class="hljs-subst">#{match[<span class="hljs-number">1</span>]}</span> (<span class="hljs-subst">#{position.source}</span>:<span class="hljs-subst">#{position.line}</span>:<span class="hljs-subst">#{position.column}</span>)"</span>
-</pre>
+    <span class="hljs-keyword">return</span> <span class="hljs-string">"eval at <span class="hljs-subst">#{match[<span class="hljs-number">1</span>]}</span> (<span class="hljs-subst">#{position.source}</span>:<span class="hljs-subst">#{position.line}</span>:<span class="hljs-subst">#{position.column}</span>)"</span></pre>
         </td>
       </tr>
     
@@ -996,8 +936,7 @@ https://code.google.com/p/v8/source/browse/trunk/src/messages.js</p>
         </td>
         <td class="code highlight">
           <pre class="coffeescript">  match = <span class="hljs-regexp">/^eval at ([^(]+) \((.+)\)$/</span>.exec(origin)
-  <span class="hljs-keyword">return</span> <span class="hljs-string">"eval at "</span> + match[<span class="hljs-number">1</span>] + <span class="hljs-string">" ("</span> + mapEvalOrigin(match[<span class="hljs-number">2</span>]) + <span class="hljs-string">")"</span>  <span class="hljs-keyword">if</span> match
-</pre>
+  <span class="hljs-keyword">return</span> <span class="hljs-string">"eval at "</span> + match[<span class="hljs-number">1</span>] + <span class="hljs-string">" ("</span> + mapEvalOrigin(match[<span class="hljs-number">2</span>]) + <span class="hljs-string">")"</span>  <span class="hljs-keyword">if</span> match</pre>
         </td>
       </tr>
     
@@ -1015,9 +954,7 @@ https://code.google.com/p/v8/source/browse/trunk/src/messages.js</p>
 install()
 
 <span class="hljs-built_in">module</span>.exports.install = <span class="hljs-function">-&gt;</span>
-  <span class="hljs-built_in">console</span>.warn <span class="hljs-string">"DEPRECATED call to alinex-error.install() no longer needed"</span>
-
-</pre>
+  <span class="hljs-built_in">console</span>.warn <span class="hljs-string">"DEPRECATED call to alinex-error.install() no longer needed"</span></pre>
         </td>
       </tr>
     
