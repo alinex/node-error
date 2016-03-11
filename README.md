@@ -17,7 +17,7 @@ For the normal use it is really simple and only have to be loaded and installed
 once in your application.
 
 > It is one of the modules of the [Alinex Universe](http://alinex.github.io/code.html)
-> following the code standards defined in the [General Docs](http://alinex.github.io/node-alinex).
+> following the code standards defined in the [General Docs](http://alinex.github.io/develop).
 
 
 Possible Output
