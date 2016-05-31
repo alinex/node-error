@@ -7,7 +7,7 @@
   <script src="doc-filelist.js"></script>
   <script>
     var relativeDir = "";
-    var thisFile = "home/alex/github/node-error/README.md";
+    var thisFile = "README.md";
     var defaultSidebar = true;
   </script>
   <script src="doc-script.js"></script>
@@ -165,7 +165,7 @@ Package: alinex-error
 once in your application.</p>
 <blockquote>
 <p>It is one of the modules of the <a href="http://alinex.github.io/code.html">Alinex Universe</a>
-following the code standards defined in the <a href="http://alinex.github.io/node-alinex">General Docs</a>.</p>
+following the code standards defined in the <a href="http://alinex.github.io/develop">General Docs</a>.</p>
 </blockquote>
 <div class="pilwrap" id="possible-output">
   <h2>
@@ -553,7 +553,7 @@ Install
 <p>And update it to the latest version later:</p>
 <pre><code class="sh">npm update alinex-error --save
 </code></pre>
-<p>Always have a look at the latest <a href="Changelog.md.html.html">changes</a>.</p>
+<p>Always have a look at the latest <a href="Changelog.md.html">changes</a>.</p>
 <div class="pilwrap" id="usage">
   <h2>
     <a href="#usage" name="usage" class="pilcrow"></a>
@@ -638,36 +638,36 @@ Configuration
 <p>To configure the output you may set values within the exported config
 structure:</p>
 <pre><code class="coffee">errorHandler.config =
-  <span class="hljs-attribute">colors</span>: <span class="hljs-literal">true</span>          <span class="hljs-comment"># should colors be allowed on console output</span>
+  colors: <span class="hljs-literal">true</span>          <span class="hljs-comment"># should colors be allowed on console output</span>
 
   <span class="hljs-comment"># Define whether and which stack lines to show</span>
-  <span class="hljs-attribute">stack</span>:
-    <span class="hljs-attribute">view</span>: <span class="hljs-literal">true</span>          <span class="hljs-comment"># show stack trace or not</span>
-    <span class="hljs-attribute">modules</span>: <span class="hljs-literal">false</span>      <span class="hljs-comment"># show node_module trace</span>
-    <span class="hljs-attribute">system</span>: <span class="hljs-literal">false</span>       <span class="hljs-comment"># show system module trace</span>
+  stack:
+    view: <span class="hljs-literal">true</span>          <span class="hljs-comment"># show stack trace or not</span>
+    modules: <span class="hljs-literal">false</span>      <span class="hljs-comment"># show node_module trace</span>
+    system: <span class="hljs-literal">false</span>       <span class="hljs-comment"># show system module trace</span>
 
   <span class="hljs-comment"># Define if and how much code to show</span>
-  <span class="hljs-attribute">code</span>:
-    <span class="hljs-attribute">view</span>: <span class="hljs-literal">true</span>          <span class="hljs-comment"># view code sources or not</span>
-    <span class="hljs-attribute">before</span>: <span class="hljs-number">2</span>           <span class="hljs-comment"># number of lines to show before the referenced one</span>
-    <span class="hljs-attribute">after</span>: <span class="hljs-number">2</span>            <span class="hljs-comment"># number of lines to show after the referenced one</span>
-    <span class="hljs-attribute">compiled</span>: <span class="hljs-literal">false</span>     <span class="hljs-comment"># show also code of compiled code</span>
-    <span class="hljs-attribute">all</span>: <span class="hljs-literal">false</span>          <span class="hljs-comment"># show code of all lines or only the first</span>
-    <span class="hljs-attribute">modules</span>: <span class="hljs-literal">false</span>      <span class="hljs-comment"># show code within node_modules</span>
+  code:
+    view: <span class="hljs-literal">true</span>          <span class="hljs-comment"># view code sources or not</span>
+    before: <span class="hljs-number">2</span>           <span class="hljs-comment"># number of lines to show before the referenced one</span>
+    after: <span class="hljs-number">2</span>            <span class="hljs-comment"># number of lines to show after the referenced one</span>
+    compiled: <span class="hljs-literal">false</span>     <span class="hljs-comment"># show also code of compiled code</span>
+    all: <span class="hljs-literal">false</span>          <span class="hljs-comment"># show code of all lines or only the first</span>
+    modules: <span class="hljs-literal">false</span>      <span class="hljs-comment"># show code within node_modules</span>
 
   <span class="hljs-comment"># Display of the errors cause if there is one</span>
-  <span class="hljs-attribute">cause</span>:
-    <span class="hljs-attribute">view</span>: <span class="hljs-literal">true</span>          <span class="hljs-comment"># view caused errors</span>
-    <span class="hljs-attribute">stack</span>: <span class="hljs-literal">true</span>         <span class="hljs-comment"># view also stack like on main error</span>
+  cause:
+    view: <span class="hljs-literal">true</span>          <span class="hljs-comment"># view caused errors</span>
+    stack: <span class="hljs-literal">true</span>         <span class="hljs-comment"># view also stack like on main error</span>
 
   <span class="hljs-comment"># Should command exit after an uncaught error is reported</span>
-  <span class="hljs-attribute">uncaught</span>:
-    <span class="hljs-attribute">exit</span>: <span class="hljs-literal">true</span>          <span class="hljs-comment"># should process be exited after uncaught error</span>
-    <span class="hljs-attribute">timeout</span>: <span class="hljs-number">1000</span>       <span class="hljs-comment"># timeout to wait before exit to write logs</span>
-    <span class="hljs-attribute">code</span>: <span class="hljs-number">2</span>             <span class="hljs-comment"># exit code to use</span>
+  uncaught:
+    exit: <span class="hljs-literal">true</span>          <span class="hljs-comment"># should process be exited after uncaught error</span>
+    timeout: <span class="hljs-number">1000</span>       <span class="hljs-comment"># timeout to wait before exit to write logs</span>
+    code: <span class="hljs-number">2</span>             <span class="hljs-comment"># exit code to use</span>
 
   <span class="hljs-comment"># define a specific logger</span>
-  <span class="hljs-attribute">logger</span>: <span class="hljs-built_in">console</span>
+  logger: <span class="hljs-built_in">console</span>
 </code></pre>
 <p>The above given values are the default values which you may change to customize
 the output. As logger you may specify any logger like <code>console</code> or <code>winston</code> or
