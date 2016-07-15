@@ -16,7 +16,7 @@ This will replace the standard error handler with one which will
 For the normal use it is really simple and only have to be loaded and installed
 once in your application.
 
-> It is one of the modules of the [Alinex Universe](http://alinex.github.io/code.html)
+> It is one of the modules of the [Alinex Namespace](http://alinex.github.io/code.html)
 > following the code standards defined in the [General Docs](http://alinex.github.io/develop).
 
 
